@@ -21,6 +21,7 @@ namespace pricenerds3D
         {
             // this skeleton should be created at import instead of now. just putting it here for now   
             InitializeSkeleton();
+            basePose = new P3D_SkeletonPose(skeleton);
         }
 
         // This is essentially a backwards way of creating a skeleton. We already have the skeleton using GameObjects for testing purposes. We have to replace this later with a custom importer
@@ -58,7 +59,6 @@ namespace pricenerds3D
             for (int i = 0; i < parentObject.childCount; i++)
             {
                 Transform child = parentObject.GetChild(i);
-                //Debug.Log(child.name);
                 sum++;
 
                 if (child.childCount > 0)
@@ -80,7 +80,6 @@ namespace pricenerds3D
             joint.m_localPosition = transform.transform.localPosition;
             joint.m_localRotation = transform.transform.localRotation;
             joint.m_localScale = transform.transform.localScale;
-            joint.test = transform;
 
             return joint;
         }
@@ -95,16 +94,15 @@ namespace pricenerds3D
             }
 
             Gizmos.color = _boneColor;
-            //P3D_SkeletonHelpers.P3D_DrawSkeletonGizmo(skeleton);
 
             // test
             for(int i = 0; i < skeleton.m_jointCount; i++)
             {
-                sbyte parentIndex = skeleton.m_joints[i].m_parentIndex;
+                sbyte parentIndex = basePose.m_skeleton.m_joints[i].m_parentIndex;
 
                 if(parentIndex == -1) continue;
-                Vector3 start = skeleton.m_joints[parentIndex].test.transform.position;
-                Vector3 end = skeleton.m_joints[i].test.transform.position;
+                Vector3 start = basePose.m_worldSpace[parentIndex].MultiplyPoint3x4(Vector3.zero);
+                Vector3 end = basePose.m_worldSpace[i].MultiplyPoint3x4(Vector3.zero);
 
                 P3D_SkeletonHelpers.P3D_DrawBoneGizmo(start, end);
             }
