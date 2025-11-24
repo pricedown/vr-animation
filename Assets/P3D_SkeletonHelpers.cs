@@ -8,7 +8,7 @@ namespace pricenerds3D
         // this is a helper function I wrote for drawing a bone from a start to end 
         // it draws a bone similar to how a program like blender / maya would
         // you call it in a recursive loop to draw all bones of a skeletal hierarchy
-        public static void DrawBone(Vector3 start, Vector3 end)
+        public static void P3D_DrawBoneGizmo(Vector3 start, Vector3 end)
         {
             Vector3 dir = end - start;
             float length = dir.magnitude;
@@ -19,7 +19,11 @@ namespace pricenerds3D
 
             // create an orthonormal basis
             Vector3 zOrtho = dir;
+
+            // if we're super lined up with the axis it might not render anything
             Vector3 xOrtho = Vector3.Cross(zOrtho, Vector3.right).normalized;
+            if (xOrtho.magnitude < 0.001f) xOrtho = Vector3.Cross(zOrtho, Vector3.up).normalized;
+
             Vector3 yOrtho = Vector3.Cross(zOrtho, xOrtho);
 
             // this builds a transformation matrix that we can use fo
@@ -60,6 +64,18 @@ namespace pricenerds3D
             Gizmos.DrawLine(b2, bottom);
             Gizmos.DrawLine(b3, bottom);
             Gizmos.DrawLine(b4, bottom);
+        }
+
+        // draws a skeleton by iterating through all joints of the skeleton
+        public static void P3D_DrawSkeletonGizmo(P3D_Skeleton skeleton) // note for later, pass in P3D_SkeletonPose, not P3D_Skeleton
+        {
+            for (int i = 0; i < skeleton.m_joints.Length - 1; i++)
+            {
+                P3D_Joint currentJoint = skeleton.m_joints[i];
+                P3D_Joint nextJoint = skeleton.m_joints[i + 1];
+
+                P3D_DrawBoneGizmo(currentJoint.m_localPosition, nextJoint.m_localPosition);
+            }
         }
     }
 }

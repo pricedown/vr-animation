@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _sampleHierarchy: {fileID: 1956459069}
   _gizmosEnabled: 1
-  _boneColor: {r: 0, g: 0.35851717, b: 1, a: 1}
+  _boneColor: {r: 0, g: 0.003310442, b: 1, a: 1}
 --- !u!4 &1956459069
 Transform:
   m_ObjectHideFlags: 0

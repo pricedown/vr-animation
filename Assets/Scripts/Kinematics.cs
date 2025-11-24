@@ -4,8 +4,16 @@ using UnityEngine;
 
 namespace pricenerds3D
 {
-    public class P3D_Kinematics
+    public static class P3D_Kinematics
     {
+        public static void SolveForwardKinematics()
+        {
 
+        }
+
+        public static void SolveInverseKinematics()
+        {
+
+        }
     }
 }
