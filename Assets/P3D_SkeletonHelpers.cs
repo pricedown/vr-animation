@@ -8,7 +8,7 @@ namespace pricenerds3D
         // this is a helper function I wrote for drawing a bone from a start to end 
         // it draws a bone similar to how a program like blender / maya would
         // you call it in a recursive loop to draw all bones of a skeletal hierarchy
-        public static void P3D_DrawBoneGizmo(Vector3 start, Vector3 end)
+        public static void DrawBoneGizmo(Vector3 start, Vector3 end)
         {
             Vector3 dir = end - start;
             float length = dir.magnitude;
@@ -67,15 +67,64 @@ namespace pricenerds3D
         }
 
         // draws a skeleton by iterating through all joints of the skeleton
-        public static void P3D_DrawSkeletonGizmo(P3D_Skeleton skeleton) // note for later, pass in P3D_SkeletonPose, not P3D_Skeleton
+        public static void DrawSkeletonPoseGizmo(P3D_SkeletonPose pose) // note for later, pass in P3D_SkeletonPose, not P3D_Skeleton
         {
-            for (int i = 0; i < skeleton.m_joints.Length - 1; i++)
+            for (int i = 0; i < pose.m_skeleton.m_jointCount; i++)
             {
-                P3D_Joint currentJoint = skeleton.m_joints[i];
-                P3D_Joint nextJoint = skeleton.m_joints[i + 1];
+                sbyte parentIndex = pose.m_skeleton.m_joints[i].m_parentIndex;
 
-                P3D_DrawBoneGizmo(currentJoint.m_localPosition, nextJoint.m_localPosition);
+                if (parentIndex == -1) continue;
+
+                // NOTES for joe!!
+                // MultiplyPoint3x4 is a cool function, it's optimized for what we want!!!
+                // we will only ever make affine transformations, which is what MultiplyPoint3x4 accels at
+                // the function wipes out the last row which is always constant [0 0 0 1]
+                // MultiplyPoint3x4 also can be used to just quickly extract the translation component because you can just zero out the rotation and scale properties to get translation back
+
+                Vector3 start = pose.m_worldSpace[parentIndex].MultiplyPoint3x4(Vector3.zero);
+                Vector3 end = pose.m_worldSpace[i].MultiplyPoint3x4(Vector3.zero);
+                DrawBoneGizmo(start, end);
             }
+        }
+
+        // This function is responsible for recursively creating a skeleton from a Transform hierarchy
+        public static void CreateSkeletonFromHierarchy(Transform hierarchyParent, P3D_Skeleton skeleton)
+        {
+            sbyte currentIndex = 0;
+
+            CreateSkeletonFromHierarchyRecursive(hierarchyParent.GetChild(0), ref currentIndex, -1, skeleton);
+        }
+
+        // Helper function that manages the recursion of hierarchy creation
+        private static void CreateSkeletonFromHierarchyRecursive(Transform current, ref sbyte currentIndex, sbyte parentIndex, P3D_Skeleton skeleton)
+        {
+            // keep track of the current index to send to children to use as the parentIndex
+            sbyte self = currentIndex;
+            skeleton.m_joints[self] = CreateJointByGameObject(current, parentIndex);
+
+            // keeps track of where we are in the array
+            currentIndex++;
+
+            // Recursive step to continue filling out the skeleton
+            for (int i = 0; i < current.childCount; i++)
+            {
+                Transform child = current.GetChild(i);
+                CreateSkeletonFromHierarchyRecursive(child, ref currentIndex, self, skeleton);
+            }
+        }
+
+        // Helper function that creates a joint based on a passed GameObject
+        public static P3D_Joint CreateJointByGameObject(Transform transform, sbyte parentIndex)
+        {
+            P3D_Joint joint = new P3D_Joint();
+
+            joint.m_name = transform.name;
+            joint.m_parentIndex = parentIndex;
+            joint.m_localPosition = transform.transform.localPosition;
+            joint.m_localRotation = transform.transform.localRotation;
+            joint.m_localScale = transform.transform.localScale;
+
+            return joint;
         }
     }
 }
