@@ -27,25 +27,27 @@ namespace pricenerds3D
         public void InitializeSkeleton()
         {
             skeleton = new P3D_Skeleton((UInt32)GetAllChildrenCount(_sampleHierarchy));
-            CreateRecursiveSkeletonFromGameObjectHierarchy(_sampleHierarchy, -1, skeleton);
+
+            sbyte currentIndex = 0;
+            CreateSkeletonFromHierarchy(_sampleHierarchy.GetChild(0), ref currentIndex, -1, skeleton);
         }
-
-        public P3D_Skeleton CreateRecursiveSkeletonFromGameObjectHierarchy(Transform parent, sbyte startIndex, P3D_Skeleton skeleton)
+        
+        // This function is responsible for recursively creating a skeleton from a Transform hierarchy
+        public void CreateSkeletonFromHierarchy(Transform current, ref sbyte currentIndex, sbyte parentIndex, P3D_Skeleton skeleton)
         {
-            for (int i = 0; i < parent.childCount; i++)
+            // keep track of the current index to send to children to use as the parentIndex
+            sbyte self = currentIndex;
+            skeleton.m_joints[self] = CreateJointByGameObject(current, parentIndex);
+
+            // keeps track of where we are in the array
+            currentIndex++;
+
+            // Recursive step to continue filling out the skeleton
+            for(int i = 0; i < current.childCount; i++)
             {
-                Transform child = parent.GetChild(i);
-                skeleton.m_joints[startIndex + 1] = CreateJointByGameObject(child, startIndex);
-                Debug.Log(child.name + ", " + startIndex);
-                startIndex++;
-
-                if(child.childCount > 0)
-                {
-                    return CreateRecursiveSkeletonFromGameObjectHierarchy(child, startIndex, skeleton);
-                }
+                Transform child = current.GetChild(i);
+                CreateSkeletonFromHierarchy(child, ref currentIndex, self, skeleton);
             }
-
-            return skeleton;
         }
 
         // Helper function that gets all children of a hierarchy
@@ -67,16 +69,6 @@ namespace pricenerds3D
 
             return sum;
         }
-
-        /*
-        public P3D_Skeleton AddBones(Transform search)
-        {
-            for(int i = 0; i < search.childCount; i++)
-            {
-                
-            }
-        }*/
-
 
         // Helper debug function that creates a joint based on a passed GameObject
         public P3D_Joint CreateJointByGameObject(Transform transform, sbyte parentIndex)
