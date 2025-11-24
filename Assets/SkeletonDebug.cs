@@ -83,7 +83,7 @@ namespace pricenerds3D
             if (!_gizmosEnabled) return;
 
             Gizmos.color = _boneColor;
-            P3D_SkeletonHelpers.DrawBone(Vector3.zero, new Vector3(0, 1, 0));
+            P3D_SkeletonHelpers.DrawBone(Vector3.zero, new Vector3(1, 1, 0));
         }
 
         private void DrawSkeleton(Transform parent)
