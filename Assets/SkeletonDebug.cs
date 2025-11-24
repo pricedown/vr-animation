@@ -101,6 +101,13 @@ namespace pricenerds3D
                 sbyte parentIndex = basePose.m_skeleton.m_joints[i].m_parentIndex;
 
                 if(parentIndex == -1) continue;
+
+                // NOTES for joe!!
+                // MultiplyPoint3x4 is a cool function, it's optimized for what we want!!!
+                // we will only ever make affine transformations, which is what MultiplyPoint3x4 accels at
+                // the function wipes out the last row which is always constant [0 0 0 1]
+                // MultiplyPoint3x4 also can be used to just quickly extract the translation component because you can just zero out the rotation and scale properties to get translation back
+
                 Vector3 start = basePose.m_worldSpace[parentIndex].MultiplyPoint3x4(Vector3.zero);
                 Vector3 end = basePose.m_worldSpace[i].MultiplyPoint3x4(Vector3.zero);
 

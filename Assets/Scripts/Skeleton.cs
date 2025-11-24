@@ -24,8 +24,7 @@ namespace pricenerds3D
 
         public P3D_Skeleton(UInt32 jointCount)
         {
-            this.m_jointCount = jointCount;
-
+            m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];
         }
     }
