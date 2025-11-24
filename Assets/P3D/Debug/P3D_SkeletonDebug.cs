@@ -31,6 +31,7 @@ namespace pricenerds3D
             P3D_SkeletonHelpers.CreateSkeletonFromHierarchy(_sampleHierarchy, skeleton);
         }
 
+        // this will have to be in a custom editor that reads from some kind of data file
         public void OnDrawGizmos()
         {
             if (!_gizmosEnabled) return;
