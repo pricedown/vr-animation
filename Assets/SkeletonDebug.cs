@@ -20,18 +20,32 @@ namespace pricenerds3D
         private void Awake()
         {
             // this skeleton should be created at import instead of now. just putting it here for now   
-
-            CreateRecursiveSkeleton();
+            InitializeSkeleton();
         }
 
         // This is essentially a backwards way of creating a skeleton. We already have the skeleton using GameObjects for testing purposes. We have to replace this later with a custom importer
-        public void CreateRecursiveSkeleton()
+        public void InitializeSkeleton()
         {
             skeleton = new P3D_Skeleton((UInt32)GetAllChildrenCount(_sampleHierarchy));
+            CreateRecursiveSkeletonFromGameObjectHierarchy(_sampleHierarchy, -1, skeleton);
+        }
 
-            // add the root
-            skeleton.m_joints[0] = CreateJointByGameObject(_sampleHierarchy, -1);
-            //RetrieveJointData(_sampleHierarchy);
+        public P3D_Skeleton CreateRecursiveSkeletonFromGameObjectHierarchy(Transform parent, sbyte startIndex, P3D_Skeleton skeleton)
+        {
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                Transform child = parent.GetChild(i);
+                skeleton.m_joints[startIndex + 1] = CreateJointByGameObject(child, startIndex);
+                Debug.Log(child.name + ", " + startIndex);
+                startIndex++;
+
+                if(child.childCount > 0)
+                {
+                    return CreateRecursiveSkeletonFromGameObjectHierarchy(child, startIndex, skeleton);
+                }
+            }
+
+            return skeleton;
         }
 
         // Helper function that gets all children of a hierarchy
@@ -42,7 +56,7 @@ namespace pricenerds3D
             for (int i = 0; i < parentObject.childCount; i++)
             {
                 Transform child = parentObject.GetChild(i);
-                Debug.Log(child.name);
+                //Debug.Log(child.name);
                 sum++;
 
                 if (child.childCount > 0)
@@ -83,11 +97,7 @@ namespace pricenerds3D
             if (!_gizmosEnabled) return;
 
             Gizmos.color = _boneColor;
-            P3D_SkeletonHelpers.DrawBone(Vector3.zero, new Vector3(1, 1, 0));
-        }
-
-        private void DrawSkeleton(Transform parent)
-        {
+            //P3D_SkeletonHelpers.P3D_DrawSkeletonGizmo(skeleton);
         }
     }
 }

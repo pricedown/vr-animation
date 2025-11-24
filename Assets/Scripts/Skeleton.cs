@@ -4,6 +4,7 @@ using UnityEngine;
 namespace pricenerds3D
 {
     // structure based on Game Engine Architecture (Jason Gregory)
+    [System.Serializable]
     public struct P3D_Joint
     {
         public string m_name;                   // readable human name
@@ -15,6 +16,7 @@ namespace pricenerds3D
         public Matrix4x4 m_bindMatrixInverse;   // inverse of m_bindMatrix
     }
 
+    [System.Serializable]
     public class P3D_Skeleton
     {
         public UInt32 m_jointCount;             // number of joints
