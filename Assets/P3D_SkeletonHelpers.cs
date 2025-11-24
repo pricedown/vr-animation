@@ -19,7 +19,11 @@ namespace pricenerds3D
 
             // create an orthonormal basis
             Vector3 zOrtho = dir;
+
+            // if we're super lined up with the axis it might not render anything
             Vector3 xOrtho = Vector3.Cross(zOrtho, Vector3.right).normalized;
+            if (xOrtho.magnitude < 0.001f) xOrtho = Vector3.Cross(zOrtho, Vector3.up).normalized;
+
             Vector3 yOrtho = Vector3.Cross(zOrtho, xOrtho);
 
             // this builds a transformation matrix that we can use fo
