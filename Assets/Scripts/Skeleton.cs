@@ -7,6 +7,7 @@ namespace pricenerds3D
     [System.Serializable]
     public struct P3D_Joint
     {
+        public Transform test;
         public string m_name;                   // readable human name
         public sbyte m_parentIndex;              // index of the parent in the skeleton (-1 if root)
         public Vector3 m_localPosition;

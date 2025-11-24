@@ -17,7 +17,7 @@ namespace pricenerds3D
         P3D_Skeleton skeleton;
         P3D_SkeletonPose basePose;
 
-        private void Awake()
+        private void OnEnable()
         {
             // this skeleton should be created at import instead of now. just putting it here for now   
             InitializeSkeleton();
@@ -80,6 +80,7 @@ namespace pricenerds3D
             joint.m_localPosition = transform.transform.localPosition;
             joint.m_localRotation = transform.transform.localRotation;
             joint.m_localScale = transform.transform.localScale;
+            joint.test = transform;
 
             return joint;
         }
@@ -87,9 +88,26 @@ namespace pricenerds3D
         public void OnDrawGizmos()
         {
             if (!_gizmosEnabled) return;
+            if (skeleton == null)
+            {
+                Debug.LogWarning("Failed to draw skeleton gizmos! Skeleton is null.");
+                return;
+            }
 
             Gizmos.color = _boneColor;
             //P3D_SkeletonHelpers.P3D_DrawSkeletonGizmo(skeleton);
+
+            // test
+            for(int i = 0; i < skeleton.m_jointCount; i++)
+            {
+                sbyte parentIndex = skeleton.m_joints[i].m_parentIndex;
+
+                if(parentIndex == -1) continue;
+                Vector3 start = skeleton.m_joints[parentIndex].test.transform.position;
+                Vector3 end = skeleton.m_joints[i].test.transform.position;
+
+                P3D_SkeletonHelpers.P3D_DrawBoneGizmo(start, end);
+            }
         }
     }
 }
