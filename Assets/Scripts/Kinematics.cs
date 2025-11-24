@@ -2,7 +2,10 @@ using System;
 using System.Reflection;
 using UnityEngine;
 
-public class Kinematics
+namespace pricenerds3D
 {
+    public class P3D_Kinematics
+    {
 
+    }
 }
