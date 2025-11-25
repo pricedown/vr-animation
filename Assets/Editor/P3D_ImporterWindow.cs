@@ -23,21 +23,9 @@ namespace pricenerds3D
         {
             GetFilePath();
 
-            if (hasSelectedFilePath)
+            if (hasSelectedFilePath && GUILayout.Button("Build Skeleton"))
             {
-                if (GUILayout.Button("Build Skeleton"))
-                {
-                    string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", "Skeleton", "asset");
-
-                    if (TryGetSkeletonGenerationPath(savePath, out string path))
-                    {
-                        if(P3D_DataLoader.TryLoadHTR(out P3D_SkeletonPose poseData, out P3D_Skeleton skeletonData, currentSelectedFilePath))
-                        {
-                            GenerateSkeletonFile(path, poseData, skeletonData);
-                            Debug.Log($"{SAVE_SUCCESS_LOG}");
-                        }
-                    }
-                }
+                OnBuildPressed();
             }
         }
 
@@ -47,6 +35,16 @@ namespace pricenerds3D
         }
 
         #region Helpers
+        private void OnBuildPressed()
+        {
+            string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", "Skeleton", "asset");
+            if (!TryGetSkeletonGenerationPath(savePath, out string path)) return;
+            if (!P3D_DataLoader.TryLoadHTR(out P3D_SkeletonPose poseData, out P3D_Skeleton skeletonData, currentSelectedFilePath)) return;
+
+            GenerateSkeletonFile(path, poseData, skeletonData);
+            Debug.Log($"{SAVE_SUCCESS_LOG}");
+        }
+
         private static void GetFilePath()
         {
             // Display a button to select a file

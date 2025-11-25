@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using Debug = UnityEngine.Debug;
+using UnityEditor;
 
 namespace pricenerds3D
 {
@@ -65,7 +66,7 @@ namespace pricenerds3D
 
             pose = null;
             skeleton = null;
-            EHTRSection currentSection;
+            EHTRSection currentSection = EHTRSection.HTR_File;
 
             // does the file exist?
             if (!File.Exists(filePath))
@@ -82,6 +83,9 @@ namespace pricenerds3D
             {
                 string rawLine = fileLines[i];
                 string line = rawLine.Trim(); // trims any white space from the line
+
+                float progress = (float)i / fileLines.Length;
+                EditorUtility.DisplayProgressBar($"Reading HTR File", $"Parsed {i}/{fileLines.Length} lines  ", progress);
 
                 // line introduces a new section
                 if (line[0] == '[')
@@ -106,7 +110,20 @@ namespace pricenerds3D
                         currentSection = EHTRSection.HTR_NodePose;
                     }
                 }
+
+                switch (currentSection)
+                {
+                    case EHTRSection.HTR_Header:
+                        break;
+                    case EHTRSection.HTR_Hierarchy:
+                        break;
+                    case EHTRSection.HTR_BasePose:
+                        break;
+                    case EHTRSection.HTR_NodePose:
+                        break;
+                }
             }
+            EditorUtility.ClearProgressBar();
 
             return true;
         }
