@@ -7,7 +7,7 @@ namespace pricenerds3D
     // Based on Animal3D by Dan Buckstein
     public static class P3D_DataLoader
     {
-        private enum EHTRSection
+        public enum EHTRSection
         {
             HTR_File,
             HTR_Header,
@@ -65,6 +65,7 @@ namespace pricenerds3D
 
             pose = null;
             skeleton = null;
+            EHTRSection currentSection;
 
             // does the file exist?
             if (!File.Exists(filePath))
@@ -75,6 +76,37 @@ namespace pricenerds3D
 
             // open and retrieve all lines from file
             string[] fileLines = File.ReadAllLines(filePath);
+
+            // parse each line
+            for(int i = 0; i < fileLines.Length; i++)
+            {
+                string rawLine = fileLines[i];
+                string line = rawLine.Trim(); // trims any white space from the line
+
+                // line introduces a new section
+                if (line[0] == '[')
+                {
+                    // remove square brackets
+                    string sectionName = line.Substring(1, line.Length - 2);
+
+                    if (sectionName == sections[(int)EHTRSection.HTR_Header])
+                        currentSection = EHTRSection.HTR_Header;
+                    else if (sectionName == sections[(int)EHTRSection.HTR_Hierarchy])
+                        currentSection = EHTRSection.HTR_Hierarchy;
+                    else if (sectionName == sections[(int)EHTRSection.HTR_BasePose])
+                        currentSection = EHTRSection.HTR_BasePose;
+                    else if (sectionName == sections[(int)EHTRSection.HTR_EOF])
+                    {
+                        // might need to do something special here
+                        currentSection = EHTRSection.HTR_EOF;
+                    }
+                    else if (sectionName == sections[(int)EHTRSection.HTR_NodePose])
+                    {
+                        // might need to do something special here
+                        currentSection = EHTRSection.HTR_NodePose;
+                    }
+                }
+            }
 
             return true;
         }
