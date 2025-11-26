@@ -3,6 +3,7 @@ using System.IO;
 using Debug = UnityEngine.Debug;
 using UnityEditor;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace pricenerds3D
 {
@@ -12,13 +13,30 @@ namespace pricenerds3D
     public struct P3D_HTRDataContainer
     {
         public uint numSegments;
-        public uint numFrames;
+        public uint totalFrames;
         public uint frameRate;
 
+        public string[] segmentNames;
         public Dictionary<string, string> segmentHierarchy;
         public Dictionary<string, Vector3> basePosePosition;
         public Dictionary<string, Quaternion> basePoseRotation;
+
+        public List<P3D_HTRAnimationDataContainer> animationData;
     }
+
+    // load each animation into seperate scriptable object data
+    public struct P3D_HTRAnimationDataContainer
+    {
+        public uint numFrames;
+        public string animationName;
+
+        public Dictionary<string, Vector3>[] position;
+        public Dictionary<string, Quaternion>[] rotation;
+    }
+
+    // algorithm
+    // 1. new animation? check how many frames are in the animation
+    // 2. fill in position and rotation for each joint
 
     public static class P3D_DataLoader
     {
@@ -81,6 +99,10 @@ namespace pricenerds3D
             data.basePosePosition = new();
             data.basePoseRotation = new();
 
+            // counters / helpers
+            int segmentCounter = 0;
+            string currentSegment = "";
+
             EHTRSection currentSection = EHTRSection.HTR_File;
 
             // does the file exist?
@@ -119,10 +141,13 @@ namespace pricenerds3D
                         // might need to do something special here
                         currentSection = EHTRSection.HTR_EOF;
                     }
-                    else if (sectionName == sections[(int)EHTRSection.HTR_NodePose])
+                    // we'll need to read from our segment names here
+                    else if (data.segmentNames != null && data.segmentNames.Contains(sectionName))
                     {
+                        Debug.Log("Section name: " + sectionName);
                         // might need to do something special here
                         currentSection = EHTRSection.HTR_NodePose;
+                        currentSegment = sectionName;
                     }
 
                     // skip if we're on a section
@@ -132,20 +157,77 @@ namespace pricenerds3D
                 // Add any relevant header information into the container
                 if(currentSection == EHTRSection.HTR_Header)
                 {
-                    string[] parts = line.Split('\t', ' '); // splits the information into a string array
+                    string[] headerStrArr = line.Split('\t', ' '); // splits the information into a string array
 
-                    Debug.Log($"{parts[0]}, {headerComponents[(int)EHTRHeaderComponents.H_NumSegments]}");
+                    // Get segment count
+                    if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumSegments])
+                    {
+                        data.numSegments = uint.Parse(headerStrArr[1]);
+                        data.segmentNames = new string[data.numSegments];
+                    }
 
-                    if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_NumSegments]) data.numSegments = uint.Parse(parts[1]);
-                    else if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_NumFrames]) data.numFrames = uint.Parse(parts[1]);
-                    else if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_DataFrameRate]) data.frameRate = uint.Parse(parts[1]);
+                    // Get frame count
+                    else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumFrames])
+                    {
+                        data.totalFrames = uint.Parse(headerStrArr[1]);
+                    }
+
+                    // Get frame rate
+                    else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_DataFrameRate])
+                    {
+                        data.frameRate = uint.Parse(headerStrArr[1]);
+                    }
                 }
 
                 // Add all segment hierarchy relationships in a dictionary to be processed later
-                if (currentSection == EHTRSection.HTR_Hierarchy)
+                else if (currentSection == EHTRSection.HTR_Hierarchy)
                 {
-                    string[] parts = line.Split('\t', ' '); // splits the information into a string array
-                    data.segmentHierarchy.Add(parts[0], parts[1]);
+                    string[] hierarchyStrArr = line.Split('\t', ' ');
+
+                    data.segmentNames[segmentCounter] = hierarchyStrArr[0]; // add each segment name
+                    data.segmentHierarchy.Add(hierarchyStrArr[0], hierarchyStrArr[1]); // child, parent
+
+                    segmentCounter++;
+                }
+
+                // Reads all base pose data (each segments default position and orientatikon relative to the parent)
+                // Segment      Tx Ty Tz    Rx Ry Rz Rw
+                else if (currentSection == EHTRSection.HTR_BasePose)
+                {
+                    string[] baseStrArr = line.Split('\t', ' ');
+
+                    // add translation
+                    data.basePosePosition.Add(baseStrArr[0], new Vector3(
+                        float.Parse(baseStrArr[1]),
+                        float.Parse(baseStrArr[2]),
+                        float.Parse(baseStrArr[3])));
+
+                    // add rotation
+                    data.basePoseRotation.Add(baseStrArr[0], new Quaternion(
+                        float.Parse(baseStrArr[4]),
+                        float.Parse(baseStrArr[5]),
+                        float.Parse(baseStrArr[6]),
+                        float.Parse(baseStrArr[7])));
+                }
+
+                // Frame num     Tx Ty Tz    Rx Ry Rz Rw
+                else if(currentSection == EHTRSection.HTR_NodePose)
+                {
+                    string[] nodeStrArr = line.Split('\t', ' ');
+
+                    uint frameNum = uint.Parse(nodeStrArr[0]);
+
+                    /*
+                    Vector3 translation = new Vector3(
+                        float.Parse(nodeStrArr[1]),
+                        float.Parse(nodeStrArr[2]),
+                        float.Parse(nodeStrArr[3]));
+
+                    Quaternion rotation = new Quaternion(
+                        float.Parse(nodeStrArr[4]),
+                        float.Parse(nodeStrArr[5]),
+                        float.Parse(nodeStrArr[6]),
+                        float.Parse(nodeStrArr[7]));*/
                 }
             }
             EditorUtility.ClearProgressBar();
