@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using Unity.Tutorials.Core.Editor;
+using static UnityEngine.Mesh;
 
 namespace pricenerds3D
 {
@@ -121,7 +122,30 @@ namespace pricenerds3D
             EditorUtility.FocusProjectWindow();
             Selection.activeObject = skeletonAsset;
 
+            string nameWithoutExtention = System.IO.Path.GetFileNameWithoutExtension(path);
+            string localPath = System.IO.Path.GetDirectoryName(path) + "/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".prefab";
+
+            // create prefab
+            GameObject blueprint = CreateSkeletonPrefabBlueprint(nameWithoutExtention, skeletonAsset);
+            GameObject prefab = PrefabUtility.SaveAsPrefabAsset(blueprint, localPath, out bool success);
+            DestroyImmediate(blueprint);
+
+            if (!success) Debug.LogError("Failed to create prefab!");
+
             Debug.LogWarning("poseData is an unused parameter that is not set yet, please do that !!!!!");
+        }
+
+        private static GameObject CreateSkeletonPrefabBlueprint(string name, P3D_GeneratedSkeletonAsset data)
+        {
+            // create a new gameobject
+            GameObject blueprint = new GameObject();
+            blueprint.name = name;
+
+            // add a rig component
+            P3D_RigInstance rig = blueprint.AddComponent<P3D_RigInstance>();
+            rig.data = data;
+
+            return blueprint;
         }
         #endregion
     }

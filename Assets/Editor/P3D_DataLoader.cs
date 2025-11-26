@@ -111,6 +111,8 @@ namespace pricenerds3D
                     }
                 }
 
+                //Debug.Log(line);
+
                 switch (currentSection)
                 {
                     case EHTRSection.HTR_Header:
