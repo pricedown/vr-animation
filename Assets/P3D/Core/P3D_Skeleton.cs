@@ -17,10 +17,10 @@ namespace pricenerds3D
 
     public class P3D_Skeleton
     {
-        public UInt32 m_jointCount;             // number of joints
+        public uint m_jointCount;             // number of joints
         public P3D_Joint[] m_joints;            // array of joints
 
-        public P3D_Skeleton(UInt32 jointCount)
+        public P3D_Skeleton(uint jointCount)
         {
             m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];

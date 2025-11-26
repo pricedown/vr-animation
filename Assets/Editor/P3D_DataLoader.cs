@@ -2,12 +2,27 @@ using UnityEngine;
 using System.IO;
 using Debug = UnityEngine.Debug;
 using UnityEditor;
+using System.Collections.Generic;
 
 namespace pricenerds3D
 {
     // Based on Animal3D by Dan Buckstein
+
+    // this data container will be filled with all the data we load from the HTR file
+    public struct P3D_HTRDataContainer
+    {
+        public uint numSegments;
+        public uint numFrames;
+        public uint frameRate;
+
+        public Dictionary<string, string> segmentHierarchy;
+        public Dictionary<string, Vector3> basePosePosition;
+        public Dictionary<string, Quaternion> basePoseRotation;
+    }
+
     public static class P3D_DataLoader
     {
+        #region Enum / String definitions
         public enum EHTRSection
         {
             HTR_File,
@@ -18,13 +33,29 @@ namespace pricenerds3D
             HTR_EOF
         }
 
+        public enum EHTRHeaderComponents
+        {
+            H_FileType,
+            H_DataType,
+            H_FileVersion,
+            H_NumSegments,
+            H_NumFrames,
+            H_DataFrameRate,
+            H_EulerRotationOrder,
+            H_CalibrationUnits,
+            H_RotationUnits,
+            H_GlobalAxisofGravity,
+            H_BoneLengthAxis,
+            H_ScaleFactor
+        }
+
         private static string[] sections = new string[] { 
             "",
-            "[Header]", 
-            "[SegmentNames&Hierarchy]", 
-            "[BasePosition]", 
+            "Header", 
+            "SegmentNames&Hierarchy", 
+            "BasePosition", 
             "",
-            "[EndOfFile]" 
+            "EndOfFile" 
         };
 
         private static string[] headerComponents = new string[] { 
@@ -41,31 +72,15 @@ namespace pricenerds3D
             "BoneLengthAxis",
             "ScaleFactor",
         };
+        #endregion
 
-        // this might actually need to load a bunch of poses but im still figuring that out
-        public static bool TryLoadHTR(out P3D_SkeletonPose pose, out P3D_Skeleton skeleton, string filePath)
+        public static bool LoadHTRData(out P3D_HTRDataContainer data, string filePath)
         {
-            // the HTR file contains multiple sections: header, segment names & hierarchy, base position and motion sections
+            data = new P3D_HTRDataContainer();
+            data.segmentHierarchy = new();
+            data.basePosePosition = new();
+            data.basePoseRotation = new();
 
-            // FileType - describes the type of file
-            // DataType - describes the transformation composition of translation, rotation, and scale
-            // FileVersion - describes the file version
-            // NumSegments - the count of segments found in the file
-            // NumFrames - the number of frames (samples) in the file
-            // CalibrationUnits - the translation units for the file
-            // RotationUnits - the rotation units for the file (almost always degrees)
-            // GlobalAxisofGravity - specifies the global up axis of the data (positive Y is the default, positive Z is a common alternative)
-            // BoneLengthAxis - the axis along which each segment is aligned, assume default is the Y axis
-            // ScaleFactor - the global scale applied to the data
-
-            // interpreting the data
-            // 1. create a matrix of rotation data from the motion data (matrix A)
-            // 2. take the initial rotation matrix (matrix B) multiply A on the right by B
-            // 3. sum the translation motion data and the initial motion data to create another matrix C, multiply AB on the right by C
-            // 4. the resulting transform, ABC, is the local transform for the element. multiply this on the right by the parents local transform, etc
-
-            pose = null;
-            skeleton = null;
             EHTRSection currentSection = EHTRSection.HTR_File;
 
             // does the file exist?
@@ -109,25 +124,38 @@ namespace pricenerds3D
                         // might need to do something special here
                         currentSection = EHTRSection.HTR_NodePose;
                     }
+
+                    // skip if we're on a section
+                    continue;
                 }
 
-                //Debug.Log(line);
-
-                switch (currentSection)
+                // Add any relevant header information into the container
+                if(currentSection == EHTRSection.HTR_Header)
                 {
-                    case EHTRSection.HTR_Header:
-                        break;
-                    case EHTRSection.HTR_Hierarchy:
-                        break;
-                    case EHTRSection.HTR_BasePose:
-                        break;
-                    case EHTRSection.HTR_NodePose:
-                        break;
+                    string[] parts = line.Split('\t', ' '); // splits the information into a string array
+
+                    Debug.Log($"{parts[0]}, {headerComponents[(int)EHTRHeaderComponents.H_NumSegments]}");
+
+                    if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_NumSegments]) data.numSegments = uint.Parse(parts[1]);
+                    else if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_NumFrames]) data.numFrames = uint.Parse(parts[1]);
+                    else if (parts[0] == headerComponents[(int)EHTRHeaderComponents.H_DataFrameRate]) data.frameRate = uint.Parse(parts[1]);
+                }
+
+                // Add all segment hierarchy relationships in a dictionary to be processed later
+                if (currentSection == EHTRSection.HTR_Hierarchy)
+                {
+                    string[] parts = line.Split('\t', ' '); // splits the information into a string array
+                    data.segmentHierarchy.Add(parts[0], parts[1]);
                 }
             }
             EditorUtility.ClearProgressBar();
-
             return true;
+        }
+
+        public static void ProcessHTRData(P3D_HTRDataContainer data, out P3D_SkeletonPose[] poses, out P3D_Skeleton skeleton)
+        {
+            poses = null;
+            skeleton = null;
         }
     }
 }
