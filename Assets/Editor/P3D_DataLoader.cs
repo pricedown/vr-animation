@@ -98,9 +98,13 @@ namespace pricenerds3D
             data.segmentHierarchy = new();
             data.basePosePosition = new();
             data.basePoseRotation = new();
+            data.animationData = new();
 
             // counters / helpers
             int segmentCounter = 0;
+            int commentCounter = 0; // this will keep track if we are on the first / end comment for animation names
+            int currentAnimationIndex = -1;
+            int currentFrameIndex = 0;
             string currentSegment = "";
 
             EHTRSection currentSection = EHTRSection.HTR_File;
@@ -124,6 +128,29 @@ namespace pricenerds3D
                 float progress = (float)i / fileLines.Length;
                 EditorUtility.DisplayProgressBar($"Reading HTR File", $"Parsed {i}/{fileLines.Length} lines  ", progress);
 
+                // Beginning of new animation
+                if (line[0] == '#' && commentCounter == 0)
+                {
+                    // record new animation
+                    string animationName = line.Substring(1, line.Length - 1).Trim(' ');
+                    Debug.Log(animationName);
+                    commentCounter++;
+
+                    data.animationData.Add(new P3D_HTRAnimationDataContainer() { animationName = animationName });
+
+                    continue;
+                }
+                // End of last animation
+                else if (line[0] == '#')
+                {
+                    // reset comment counter, we've reached the end of the animation
+                    commentCounter = 0;
+                    currentAnimationIndex++;
+                    currentFrameIndex = 0;
+
+                    continue;
+                }
+
                 // line introduces a new section
                 if (line[0] == '[')
                 {
@@ -144,7 +171,6 @@ namespace pricenerds3D
                     // we'll need to read from our segment names here
                     else if (data.segmentNames != null && data.segmentNames.Contains(sectionName))
                     {
-                        Debug.Log("Section name: " + sectionName);
                         // might need to do something special here
                         currentSection = EHTRSection.HTR_NodePose;
                         currentSegment = sectionName;
@@ -155,7 +181,7 @@ namespace pricenerds3D
                 }
 
                 // Add any relevant header information into the container
-                if(currentSection == EHTRSection.HTR_Header)
+                if (currentSection == EHTRSection.HTR_Header)
                 {
                     string[] headerStrArr = line.Split('\t', ' '); // splits the information into a string array
 
@@ -211,14 +237,13 @@ namespace pricenerds3D
                 }
 
                 // Frame num     Tx Ty Tz    Rx Ry Rz Rw
-                else if(currentSection == EHTRSection.HTR_NodePose)
+                else if (currentSection == EHTRSection.HTR_NodePose)
                 {
                     string[] nodeStrArr = line.Split('\t', ' ');
 
                     uint frameNum = uint.Parse(nodeStrArr[0]);
 
-                    /*
-                    Vector3 translation = new Vector3(
+                    Vector3 position = new Vector3(
                         float.Parse(nodeStrArr[1]),
                         float.Parse(nodeStrArr[2]),
                         float.Parse(nodeStrArr[3]));
@@ -227,7 +252,13 @@ namespace pricenerds3D
                         float.Parse(nodeStrArr[4]),
                         float.Parse(nodeStrArr[5]),
                         float.Parse(nodeStrArr[6]),
-                        float.Parse(nodeStrArr[7]));*/
+                        float.Parse(nodeStrArr[7]));
+
+                    data.animationData[currentAnimationIndex].position[currentFrameIndex].Add(currentSegment, position);
+                    data.animationData[currentAnimationIndex].rotation[currentFrameIndex].Add(currentSegment, rotation);
+
+                    // untested
+                    currentFrameIndex++;
                 }
             }
             EditorUtility.ClearProgressBar();
