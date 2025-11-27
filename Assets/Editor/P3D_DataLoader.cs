@@ -4,7 +4,6 @@ using Debug = UnityEngine.Debug;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
-using static UnityEngine.Analytics.IAnalytic;
 
 namespace pricenerds3D
 {
@@ -17,7 +16,7 @@ namespace pricenerds3D
         public uint totalFrames;
         public uint frameRate;
 
-        public string[] segmentNames;
+        public List<string> segmentNames;
         public Dictionary<string, string> segmentHierarchy;
         public Dictionary<string, Vector3> basePosePosition;
         public Dictionary<string, Quaternion> basePoseRotation;
@@ -29,6 +28,7 @@ namespace pricenerds3D
             basePosePosition = new();
             basePoseRotation = new();
             animationData = new();
+            segmentNames = new();
         }
     }
 
@@ -223,7 +223,6 @@ namespace pricenerds3D
                     if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumSegments])
                     {
                         data.numSegments = uint.Parse(headerStrArr[1]);
-                        data.segmentNames = new string[data.numSegments];
                     }
 
                     // Get frame count
@@ -244,7 +243,7 @@ namespace pricenerds3D
                 {
                     string[] hierarchyStrArr = line.Split('\t', ' ');
 
-                    data.segmentNames[segmentCounter] = hierarchyStrArr[0]; // add each segment name
+                    data.segmentNames.Add(hierarchyStrArr[0]); // add each segment
                     data.segmentHierarchy.Add(hierarchyStrArr[0], hierarchyStrArr[1]); // child, parent
 
                     segmentCounter++;
@@ -296,20 +295,41 @@ namespace pricenerds3D
             return true;
         }
 
-        public static void ProcessHTRData(P3D_HTRDataContainer data, out P3D_SkeletonPose[] poses, out P3D_Skeleton skeleton)
+        public static void ProcessHTRData(P3D_HTRDataContainer data, out P3D_ClipData[] clips, out P3D_Skeleton skeleton)
         {
-            poses = null;
-            skeleton = null;
+            // initialize data
+            clips = new P3D_ClipData[data.animationData.Count];
+            skeleton = new P3D_Skeleton((uint)data.segmentHierarchy.Count);
 
-            Debug.Log("Processing Step");
-            Debug.Log($"Animation count: {data.animationData.Count}");
+            BuildHierarchy(data.segmentNames, data.segmentHierarchy, skeleton);
 
             for (int i = 0; i < data.animationData.Count; i++) 
             {
+                // process each pose
+               
+                // create new clip
+                clips[i] = new P3D_ClipData(data.animationData[i].animationName);
+
                 Debug.Log($"Animation name: {data.animationData[i].animationName}");
                 Debug.Log($"Frame count: {data.animationData[i].numFrames}");
                 Debug.Log($"Positions count: {data.animationData[i].position.Length}");
                 Debug.Log($"Rotations count: {data.animationData[i].rotation.Length}");
+            }
+        }
+
+        private static void BuildHierarchy(List<string> segmentNames, Dictionary<string, string> segmentHierarchy, P3D_Skeleton skeleton)
+        {
+            for (int i = 0; i < segmentNames.Count; i++)
+            {
+                skeleton.m_joints[i].m_name = segmentNames[i];
+                sbyte parentIndex;
+
+                // this would be the root, which has no parent index
+                if (segmentHierarchy[segmentNames[i]] == "GLOBAL") parentIndex = -1;
+                // otherwise, find the index of the parent in the segment names
+                else parentIndex = (sbyte)segmentNames.IndexOf(segmentHierarchy[segmentNames[i]]);
+
+                skeleton.m_joints[i].m_parentIndex = parentIndex;
             }
         }
     }

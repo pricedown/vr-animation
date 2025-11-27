@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcf0c69155f15e645bd4242b7df429c6, type: 3}
-  m_Name: Skeleton
+  m_Name: xbot_loco
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_GeneratedSkeletonAsset

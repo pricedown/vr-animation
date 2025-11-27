@@ -38,13 +38,13 @@ namespace pricenerds3D
         #region Helpers
         private void OnBuildPressed()
         {
-            string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", "Skeleton", "asset");
+            string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", System.IO.Path.GetFileNameWithoutExtension(currentSelectedFilePath), "asset");
             if (!TryGetSkeletonGenerationPath(savePath, out string path)) return;
             if (!P3D_DataLoader.LoadHTRData(out P3D_HTRDataContainer data, currentSelectedFilePath)) return;
 
             // process data and send it to the generation step
-            P3D_DataLoader.ProcessHTRData(data, out P3D_SkeletonPose[] poseData, out P3D_Skeleton skeletonData);
-            GenerateSkeletonFile(path, poseData, skeletonData);
+            P3D_DataLoader.ProcessHTRData(data, out P3D_ClipData[] clipData, out P3D_Skeleton skeletonData);
+            GenerateAnimationFiles(path, clipData, skeletonData);
 
             Debug.Log($"{SAVE_SUCCESS_LOG}");
         }
@@ -110,7 +110,7 @@ namespace pricenerds3D
         }
 
         // Helper function that generates a skeleton data object
-        private static void GenerateSkeletonFile(string path, P3D_SkeletonPose[] poseData, P3D_Skeleton skeletonData)
+        private static void GenerateAnimationFiles(string path, P3D_ClipData[] clipData, P3D_Skeleton skeletonData)
         {
             // create asset instance to written to the disk
             P3D_GeneratedSkeletonAsset skeletonAsset = CreateInstance<P3D_GeneratedSkeletonAsset>();
