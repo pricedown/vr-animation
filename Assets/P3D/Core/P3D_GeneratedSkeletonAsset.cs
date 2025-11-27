@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+// Written by Seth Riddensdale
 namespace pricenerds3D
 {
     [Serializable]

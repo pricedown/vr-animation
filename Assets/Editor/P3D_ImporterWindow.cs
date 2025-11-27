@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 using Unity.Tutorials.Core.Editor;
-using static UnityEngine.Mesh;
 
+// Written by Seth Riddensdale
 namespace pricenerds3D
 {
+    /// <summary>
+    /// This class is an editor only class that interfaces with our HTR loader to allow the user to import a file
+    /// Generates a prefab for our rig instance, aswell as a ScriptableObject container for every AnimationClip in the HTR file
+    /// </summary>
     public class P3D_ImporterWindow : EditorWindow
     {
         private const string SAVE_FAILURE_ERROR_LOG = "Failed to save file!";
@@ -40,7 +44,7 @@ namespace pricenerds3D
         {
             string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", System.IO.Path.GetFileNameWithoutExtension(currentSelectedFilePath), "asset");
             if (!TryGetSkeletonGenerationPath(savePath, out string path)) return;
-            if (!P3D_DataLoader.LoadHTRData(out P3D_HTRDataContainer data, currentSelectedFilePath)) return;
+            if (!P3D_DataLoader.TryLoadHTRData(out P3D_HTRDataContainer data, currentSelectedFilePath)) return;
 
             // process data and send it to the generation step
             P3D_DataLoader.ProcessHTRData(data, out P3D_ClipData[] clipData, out P3D_Skeleton skeletonData);

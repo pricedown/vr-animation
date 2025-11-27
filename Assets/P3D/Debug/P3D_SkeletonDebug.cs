@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+// Written by Seth Riddensdale
 namespace pricenerds3D
 {
     public class P3D_SkeletonDebug : MonoBehaviour
@@ -14,8 +15,8 @@ namespace pricenerds3D
         [SerializeField]
         private Color _boneColor = Color.blue;
 
-        P3D_Skeleton skeleton;
-        P3D_SkeletonPose basePose;
+        public P3D_Skeleton skeleton;
+        public P3D_SkeletonPose basePose;
 
         private void OnEnable()
         {
@@ -28,7 +29,7 @@ namespace pricenerds3D
         public void InitializeSkeleton()
         {
             skeleton = new P3D_Skeleton((UInt32)_sampleHierarchy.CountAllChildren());
-            P3D_SkeletonHelpers.CreateSkeletonFromHierarchy(_sampleHierarchy, skeleton);
+            P3D_SkeletonHelpers.DebugInitSkeletonFromHierarchy(_sampleHierarchy, skeleton);
         }
 
         // this will have to be in a custom editor that reads from some kind of data file

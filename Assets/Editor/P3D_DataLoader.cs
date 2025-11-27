@@ -5,63 +5,14 @@ using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
 
+// Written by Seth Riddensdale
 namespace pricenerds3D
 {
-    // Based on Animal3D by Dan Buckstein
-
-    // this data container will be filled with all the data we load from the HTR file
-    public class P3D_HTRDataContainer
-    {
-        public uint numSegments;
-        public uint totalFrames;
-        public uint frameRate;
-
-        public List<string> segmentNames;
-        public Dictionary<string, string> segmentHierarchy;
-        public Dictionary<string, Vector3> basePosePosition;
-        public Dictionary<string, Quaternion> basePoseRotation;
-        public List<P3D_HTRAnimationDataContainer> animationData;
-
-        public P3D_HTRDataContainer()
-        {
-            segmentHierarchy = new();
-            basePosePosition = new();
-            basePoseRotation = new();
-            animationData = new();
-            segmentNames = new();
-        }
-    }
-
-    // load each animation into seperate scriptable object data
-    public class P3D_HTRAnimationDataContainer
-    {
-        public uint numFrames;
-        public string animationName;
-
-        public Dictionary<string, Vector3>[] position;
-        public Dictionary<string, Quaternion>[] rotation;
-
-        public P3D_HTRAnimationDataContainer(string animationName, uint numFrames)
-        {
-            this.numFrames = numFrames;
-            this.animationName = animationName;
-
-            position = new Dictionary<string, Vector3>[numFrames];
-            rotation = new Dictionary<string, Quaternion>[numFrames];
-
-            // initialize each dictionary
-            for (int i = 0; i < numFrames; i++)
-            {
-                position[i] = new Dictionary<string, Vector3>();
-                rotation[i] = new Dictionary<string, Quaternion>();
-            }
-        }
-    }
-
-    // algorithm
-    // 1. new animation? check how many frames are in the animation
-    // 2. fill in position and rotation for each joint
-
+    /// <summary>
+    /// The data loader is split into two steps:
+    /// - LoadHTRData() - Loading HTR data and filling temporary data structures with any important information
+    /// - ProcessHTRData() - Processing HTR data, using the temporary data structures to create final structures to be used by the programmer
+    /// </summary>
     public static class P3D_DataLoader
     {
         #region Enum / String definitions
@@ -91,6 +42,8 @@ namespace pricenerds3D
             H_ScaleFactor
         }
 
+        // An ordered string array that corresponds to each EHTRSection enum value
+        // Empty "" in this array are sections that our loader doesn't need to read from
         private static string[] sections = new string[] { 
             "",
             "Header", 
@@ -100,6 +53,7 @@ namespace pricenerds3D
             "EndOfFile" 
         };
 
+        // An ordered string array that corresponds to each EHTRHeaderComponents enum value
         private static string[] headerComponents = new string[] { 
             "FileType", 
             "DataType", 
@@ -116,7 +70,11 @@ namespace pricenerds3D
         };
         #endregion
 
-        public static bool LoadHTRData(out P3D_HTRDataContainer data, string filePath)
+        /// <summary>
+        /// This is a static helper function that attempts to load our HTR data from the specified file path. 
+        /// The function spits out a P3D_HTRDataContainer, returning true if it the loading succeeded and false if something went wrong
+        /// </summary>
+        public static bool TryLoadHTRData(out P3D_HTRDataContainer data, string filePath)
         {
             data = new P3D_HTRDataContainer();
 
@@ -124,10 +82,9 @@ namespace pricenerds3D
             int segmentCounter = 0;
             int commentCounter = 0; // this will keep track if we are on the first / end comment for animation names
             string currentSegment = "";
-
             EHTRSection currentSection = EHTRSection.HTR_File;
 
-            // does the file exist?
+            // check if the file exists first
             if (!File.Exists(filePath))
             {
                 Debug.LogError($"HTR file not found: {filePath}");
@@ -141,27 +98,30 @@ namespace pricenerds3D
             for(int i = 0; i < fileLines.Length; i++)
             {
                 string rawLine = fileLines[i];
-                string line = rawLine.Trim(); // trims any white space from the line
+                string line = rawLine.Trim(); // remove white space
+
+                // display the progress with a loading bar to show the user if its taking a while
                 float progress = (float)i / fileLines.Length;
                 EditorUtility.DisplayProgressBar($"Reading HTR File", $"Parsed {i}/{fileLines.Length} lines  ", progress);
 
+                // if our current line is a comment, we may be on the start / end of an animation declaration
                 if (line[0] == '#')
                 {
-                    string name = line.Substring(1).Trim();
-
-                    // is this starting a new animation?
+                    // get the name of the animation
+                    // is this the start of a new animation?
                     if (commentCounter == 0)
                     {
-                        commentCounter = 1;
+                        commentCounter = 1; // the comment counter will be 1, which means next time we hit a #, we know that we're at the end of the animation
 
-                        // the next section will be a node pose
+                        // this logic takes place BEFORE we check which section we're in, so we need to ensure
+                        // that we are either in the HTR_BasePose section or the HTR_NodePose section
                         if (currentSection == EHTRSection.HTR_BasePose || currentSection == EHTRSection.HTR_NodePose)
                         {
-                            uint indexModifier = 2; // we start at 2 because #, and [
+                            uint indexModifier = 2; // we start at 2 because the first line is the comment, and the second line is the segment name
                             uint frameCounter = 0;
                             string frameCountPreviewLine = fileLines[i + indexModifier];
 
-                            // go until end of animation
+                            // determine how many frames are in the current animation
                             while (frameCountPreviewLine[0] != '[')
                             {
                                 // iterate counter
@@ -172,6 +132,7 @@ namespace pricenerds3D
                                 frameCounter++;
                             }
 
+                            // get the animation name
                             string animationName = line.Substring(1, line.Length - 1).Trim(' ');
                             P3D_HTRAnimationDataContainer animData = new P3D_HTRAnimationDataContainer(animationName, frameCounter);
                             data.animationData.Add(animData);
