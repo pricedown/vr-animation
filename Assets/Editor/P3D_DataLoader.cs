@@ -4,13 +4,14 @@ using Debug = UnityEngine.Debug;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Linq;
+using static UnityEngine.Analytics.IAnalytic;
 
 namespace pricenerds3D
 {
     // Based on Animal3D by Dan Buckstein
 
     // this data container will be filled with all the data we load from the HTR file
-    public struct P3D_HTRDataContainer
+    public class P3D_HTRDataContainer
     {
         public uint numSegments;
         public uint totalFrames;
@@ -20,18 +21,41 @@ namespace pricenerds3D
         public Dictionary<string, string> segmentHierarchy;
         public Dictionary<string, Vector3> basePosePosition;
         public Dictionary<string, Quaternion> basePoseRotation;
-
         public List<P3D_HTRAnimationDataContainer> animationData;
+
+        public P3D_HTRDataContainer()
+        {
+            segmentHierarchy = new();
+            basePosePosition = new();
+            basePoseRotation = new();
+            animationData = new();
+        }
     }
 
     // load each animation into seperate scriptable object data
-    public struct P3D_HTRAnimationDataContainer
+    public class P3D_HTRAnimationDataContainer
     {
         public uint numFrames;
         public string animationName;
 
         public Dictionary<string, Vector3>[] position;
         public Dictionary<string, Quaternion>[] rotation;
+
+        public P3D_HTRAnimationDataContainer(string animationName, uint numFrames)
+        {
+            this.numFrames = numFrames;
+            this.animationName = animationName;
+
+            position = new Dictionary<string, Vector3>[numFrames];
+            rotation = new Dictionary<string, Quaternion>[numFrames];
+
+            // initialize each dictionary
+            for (int i = 0; i < numFrames; i++)
+            {
+                position[i] = new Dictionary<string, Vector3>();
+                rotation[i] = new Dictionary<string, Quaternion>();
+            }
+        }
     }
 
     // algorithm
@@ -95,16 +119,10 @@ namespace pricenerds3D
         public static bool LoadHTRData(out P3D_HTRDataContainer data, string filePath)
         {
             data = new P3D_HTRDataContainer();
-            data.segmentHierarchy = new();
-            data.basePosePosition = new();
-            data.basePoseRotation = new();
-            data.animationData = new();
 
             // counters / helpers
             int segmentCounter = 0;
             int commentCounter = 0; // this will keep track if we are on the first / end comment for animation names
-            int currentAnimationIndex = -1;
-            int currentFrameIndex = 0;
             string currentSegment = "";
 
             EHTRSection currentSection = EHTRSection.HTR_File;
@@ -124,29 +142,45 @@ namespace pricenerds3D
             {
                 string rawLine = fileLines[i];
                 string line = rawLine.Trim(); // trims any white space from the line
-
                 float progress = (float)i / fileLines.Length;
                 EditorUtility.DisplayProgressBar($"Reading HTR File", $"Parsed {i}/{fileLines.Length} lines  ", progress);
 
-                // Beginning of new animation
-                if (line[0] == '#' && commentCounter == 0)
+                if (line[0] == '#')
                 {
-                    // record new animation
-                    string animationName = line.Substring(1, line.Length - 1).Trim(' ');
-                    Debug.Log(animationName);
-                    commentCounter++;
+                    string name = line.Substring(1).Trim();
 
-                    data.animationData.Add(new P3D_HTRAnimationDataContainer() { animationName = animationName });
+                    // is this starting a new animation?
+                    if (commentCounter == 0)
+                    {
+                        commentCounter = 1;
 
-                    continue;
-                }
-                // End of last animation
-                else if (line[0] == '#')
-                {
-                    // reset comment counter, we've reached the end of the animation
-                    commentCounter = 0;
-                    currentAnimationIndex++;
-                    currentFrameIndex = 0;
+                        // the next section will be a node pose
+                        if (currentSection == EHTRSection.HTR_BasePose || currentSection == EHTRSection.HTR_NodePose)
+                        {
+                            uint indexModifier = 2; // we start at 2 because #, and [
+                            uint frameCounter = 0;
+                            string frameCountPreviewLine = fileLines[i + indexModifier];
+
+                            // go until end of animation
+                            while (frameCountPreviewLine[0] != '[')
+                            {
+                                // iterate counter
+                                indexModifier++;
+                                frameCountPreviewLine = fileLines[i + indexModifier];
+
+                                // iterate frames counted
+                                frameCounter++;
+                            }
+
+                            string animationName = line.Substring(1, line.Length - 1).Trim(' ');
+                            P3D_HTRAnimationDataContainer animData = new P3D_HTRAnimationDataContainer(animationName, frameCounter);
+                            data.animationData.Add(animData);
+                        }
+                    }
+                    else
+                    {
+                        commentCounter = 0;
+                    }
 
                     continue;
                 }
@@ -216,7 +250,7 @@ namespace pricenerds3D
                     segmentCounter++;
                 }
 
-                // Reads all base pose data (each segments default position and orientatikon relative to the parent)
+                // reads all base pose data (each segments default position and orientation relative to the parent)
                 // Segment      Tx Ty Tz    Rx Ry Rz Rw
                 else if (currentSection == EHTRSection.HTR_BasePose)
                 {
@@ -236,11 +270,11 @@ namespace pricenerds3D
                         float.Parse(baseStrArr[7])));
                 }
 
+                // read each nose
                 // Frame num     Tx Ty Tz    Rx Ry Rz Rw
                 else if (currentSection == EHTRSection.HTR_NodePose)
                 {
                     string[] nodeStrArr = line.Split('\t', ' ');
-
                     uint frameNum = uint.Parse(nodeStrArr[0]);
 
                     Vector3 position = new Vector3(
@@ -254,11 +288,8 @@ namespace pricenerds3D
                         float.Parse(nodeStrArr[6]),
                         float.Parse(nodeStrArr[7]));
 
-                    data.animationData[currentAnimationIndex].position[currentFrameIndex].Add(currentSegment, position);
-                    data.animationData[currentAnimationIndex].rotation[currentFrameIndex].Add(currentSegment, rotation);
-
-                    // untested
-                    currentFrameIndex++;
+                    data.animationData[data.animationData.Count - 1].position[frameNum - 1].Add(currentSegment, position);
+                    data.animationData[data.animationData.Count - 1].rotation[frameNum - 1].Add(currentSegment, rotation);
                 }
             }
             EditorUtility.ClearProgressBar();
@@ -269,6 +300,17 @@ namespace pricenerds3D
         {
             poses = null;
             skeleton = null;
+
+            Debug.Log("Processing Step");
+            Debug.Log($"Animation count: {data.animationData.Count}");
+
+            for (int i = 0; i < data.animationData.Count; i++) 
+            {
+                Debug.Log($"Animation name: {data.animationData[i].animationName}");
+                Debug.Log($"Frame count: {data.animationData[i].numFrames}");
+                Debug.Log($"Positions count: {data.animationData[i].position.Length}");
+                Debug.Log($"Rotations count: {data.animationData[i].rotation.Length}");
+            }
         }
     }
 }
