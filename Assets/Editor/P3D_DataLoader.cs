@@ -132,7 +132,7 @@ namespace pricenerds3D
                                 frameCounter++;
                             }
 
-                            // get the animation name
+                            // Create new animation data and store it in the container
                             string animationName = line.Substring(1, line.Length - 1).Trim(' ');
                             P3D_HTRAnimationDataContainer animData = new P3D_HTRAnimationDataContainer(animationName, frameCounter);
                             data.animationData.Add(animData);
@@ -140,18 +140,20 @@ namespace pricenerds3D
                     }
                     else
                     {
+                        // Reset the comment counter to prepare to handle a new animation
                         commentCounter = 0;
                     }
 
                     continue;
                 }
 
-                // line introduces a new section
+                // this line introduces a new section
                 if (line[0] == '[')
                 {
-                    // remove square brackets
+                    // remove square brackets from string
                     string sectionName = line.Substring(1, line.Length - 2);
 
+                    // determine which section we are currently on
                     if (sectionName == sections[(int)EHTRSection.HTR_Header])
                         currentSection = EHTRSection.HTR_Header;
                     else if (sectionName == sections[(int)EHTRSection.HTR_Hierarchy])
@@ -159,10 +161,7 @@ namespace pricenerds3D
                     else if (sectionName == sections[(int)EHTRSection.HTR_BasePose])
                         currentSection = EHTRSection.HTR_BasePose;
                     else if (sectionName == sections[(int)EHTRSection.HTR_EOF])
-                    {
-                        // might need to do something special here
                         currentSection = EHTRSection.HTR_EOF;
-                    }
                     // we'll need to read from our segment names here
                     else if (data.segmentNames != null && data.segmentNames.Contains(sectionName))
                     {
@@ -171,7 +170,7 @@ namespace pricenerds3D
                         currentSegment = sectionName;
                     }
 
-                    // skip if we're on a section
+                    // skip to the next line
                     continue;
                 }
 
@@ -182,21 +181,13 @@ namespace pricenerds3D
 
                     // Get segment count
                     if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumSegments])
-                    {
                         data.numSegments = uint.Parse(headerStrArr[1]);
-                    }
-
                     // Get frame count
-                    else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumFrames])
-                    {
+                    else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_NumFrames]) 
                         data.totalFrames = uint.Parse(headerStrArr[1]);
-                    }
-
                     // Get frame rate
                     else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_DataFrameRate])
-                    {
                         data.frameRate = uint.Parse(headerStrArr[1]);
-                    }
                 }
 
                 // Add all segment hierarchy relationships in a dictionary to be processed later
@@ -252,24 +243,29 @@ namespace pricenerds3D
                     data.animationData[data.animationData.Count - 1].rotation[frameNum - 1].Add(currentSegment, rotation);
                 }
             }
+
             EditorUtility.ClearProgressBar();
             return true;
         }
 
-        public static void ProcessHTRData(P3D_HTRDataContainer data, out P3D_ClipData[] clips, out P3D_Skeleton skeleton)
+        /// <summary>
+        /// This function is responsible for taking the data container from the loaded HTR file and actually processing it
+        /// </summary>
+        public static void ProcessHTRData(P3D_HTRDataContainer data, out P3D_ClipData[] clips, out P3D_Rig rig)
         {
             // initialize data
             clips = new P3D_ClipData[data.animationData.Count];
-            skeleton = new P3D_Skeleton((uint)data.segmentHierarchy.Count);
-
-            BuildHierarchy(data.segmentNames, data.segmentHierarchy, skeleton);
+            rig = new P3D_Rig((uint)data.segmentHierarchy.Count);
+            BuildHierarchy(data.segmentNames, data.segmentHierarchy, rig);
 
             for (int i = 0; i < data.animationData.Count; i++) 
             {
                 // process each pose
-               
+
                 // create new clip
-                clips[i] = new P3D_ClipData(data.animationData[i].animationName);
+                P3D_ClipData clipData = ScriptableObject.CreateInstance<P3D_ClipData>();
+                clipData.clipName = data.animationData[i].animationName;
+                clips[i] = clipData;
 
                 Debug.Log($"Animation name: {data.animationData[i].animationName}");
                 Debug.Log($"Frame count: {data.animationData[i].numFrames}");
@@ -278,11 +274,14 @@ namespace pricenerds3D
             }
         }
 
-        private static void BuildHierarchy(List<string> segmentNames, Dictionary<string, string> segmentHierarchy, P3D_Skeleton skeleton)
+        /// <summary>
+        /// Helper function that builds a hierarchy from the string list and dictionary harvested from the HTR file. creates a rig
+        /// </summary>
+        private static void BuildHierarchy(List<string> segmentNames, Dictionary<string, string> segmentHierarchy, P3D_Rig rig)
         {
             for (int i = 0; i < segmentNames.Count; i++)
             {
-                skeleton.m_joints[i].m_name = segmentNames[i];
+                rig.m_joints[i].m_name = segmentNames[i];
                 sbyte parentIndex;
 
                 // this would be the root, which has no parent index
@@ -290,7 +289,7 @@ namespace pricenerds3D
                 // otherwise, find the index of the parent in the segment names
                 else parentIndex = (sbyte)segmentNames.IndexOf(segmentHierarchy[segmentNames[i]]);
 
-                skeleton.m_joints[i].m_parentIndex = parentIndex;
+                rig.m_joints[i].m_parentIndex = parentIndex;
             }
         }
     }

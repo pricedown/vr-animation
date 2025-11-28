@@ -28,7 +28,7 @@ namespace pricenerds3D
         {
             GetFilePath();
 
-            if (hasSelectedFilePath && GUILayout.Button("Build Skeleton"))
+            if (hasSelectedFilePath && GUILayout.Button("Build Rig"))
             {
                 OnBuildPressed();
             }
@@ -43,12 +43,12 @@ namespace pricenerds3D
         private void OnBuildPressed()
         {
             string savePath = EditorUtility.SaveFilePanel("Select Directory", "Assets", System.IO.Path.GetFileNameWithoutExtension(currentSelectedFilePath), "asset");
-            if (!TryGetSkeletonGenerationPath(savePath, out string path)) return;
+            if (!TryGetRigGenerationPath(savePath, out string path)) return;
             if (!P3D_DataLoader.TryLoadHTRData(out P3D_HTRDataContainer data, currentSelectedFilePath)) return;
 
             // process data and send it to the generation step
-            P3D_DataLoader.ProcessHTRData(data, out P3D_ClipData[] clipData, out P3D_Skeleton skeletonData);
-            GenerateAnimationFiles(path, clipData, skeletonData);
+            P3D_DataLoader.ProcessHTRData(data, out P3D_ClipData[] clipData, out P3D_Rig rigData);
+            GenerateAnimationFiles(path, clipData, rigData);
 
             Debug.Log($"{SAVE_SUCCESS_LOG}");
         }
@@ -89,7 +89,7 @@ namespace pricenerds3D
         }
 
         // This function determines a relative path to the inPath. UnityEditor doesn't like full paths, it wants a path relative to the project folder
-        private static bool TryGetSkeletonGenerationPath(string inPath, out string savePath)
+        private static bool TryGetRigGenerationPath(string inPath, out string savePath)
         {
             string projectPath = Application.dataPath;
             savePath = inPath;
@@ -113,36 +113,36 @@ namespace pricenerds3D
             return false;
         }
 
-        // Helper function that generates a skeleton data object
-        private static void GenerateAnimationFiles(string path, P3D_ClipData[] clipData, P3D_Skeleton skeletonData)
+        // Helper function that generates a rig data object
+        private static void GenerateAnimationFiles(string path, P3D_ClipData[] clipData, P3D_Rig rigData)
         {
-            // create asset instance to written to the disk
-            P3D_GeneratedSkeletonAsset skeletonAsset = CreateInstance<P3D_GeneratedSkeletonAsset>();
-            skeletonAsset.name = System.IO.Path.GetFileName(path);
-            skeletonAsset.m_generatedSkeleton = skeletonData;
+            string pathRaw = System.IO.Path.GetDirectoryName(path);
 
-            // create the file
-            AssetDatabase.CreateAsset(skeletonAsset, path);
+            // create all assets for each clip and save them
+            for (int i = 0; i < clipData.Length; i++)
+            {
+                AssetDatabase.CreateAsset(clipData[i], $"{pathRaw}/{clipData[i].clipName}.asset");
+            }
+
+            // save, update project window, and set object selection
             AssetDatabase.SaveAssets();
-
-            // update the project window
             EditorUtility.FocusProjectWindow();
-            Selection.activeObject = skeletonAsset;
+            Selection.objects = clipData;
 
             string nameWithoutExtention = System.IO.Path.GetFileNameWithoutExtension(path);
-            string localPath = System.IO.Path.GetDirectoryName(path) + "/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".prefab";
+            string prefabPath = pathRaw + "/" + System.IO.Path.GetFileNameWithoutExtension(path) + ".prefab";
 
             // create prefab
-            GameObject blueprint = CreateSkeletonPrefabBlueprint(nameWithoutExtention, skeletonAsset);
-            GameObject prefab = PrefabUtility.SaveAsPrefabAsset(blueprint, localPath, out bool success);
+            GameObject blueprint = CreateRigPrefabBlueprint(nameWithoutExtention, rigData);
+            GameObject prefab = PrefabUtility.SaveAsPrefabAsset(blueprint, prefabPath, out bool success);
             DestroyImmediate(blueprint);
 
-            if (!success) Debug.LogError("Failed to create prefab!");
+            //if (!success) Debug.LogError("Failed to create prefab!");
 
             Debug.LogWarning("poseData is an unused parameter that is not set yet, please do that !!!!!");
         }
 
-        private static GameObject CreateSkeletonPrefabBlueprint(string name, P3D_GeneratedSkeletonAsset data)
+        private static GameObject CreateRigPrefabBlueprint(string name, P3D_Rig data)
         {
             // create a new gameobject
             GameObject blueprint = new GameObject();
@@ -150,7 +150,7 @@ namespace pricenerds3D
 
             // add a rig component
             P3D_RigInstance rig = blueprint.AddComponent<P3D_RigInstance>();
-            rig.data = data;
+            rig.rig = data;
 
             return blueprint;
         }

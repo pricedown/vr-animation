@@ -13,7 +13,7 @@ namespace pricenerds3D
     public struct P3D_Joint
     {
         public string m_name;                   // readable human name
-        public sbyte m_parentIndex;             // index of the parent in the skeleton (-1 if root)
+        public sbyte m_parentIndex;             // index of the parent in the rig (-1 if root)
         public Vector3 m_localPosition;
         public Quaternion m_localRotation;
         public Vector3 m_localScale;
@@ -22,15 +22,15 @@ namespace pricenerds3D
     }
 
     /// <summary>
-    /// The skeleton class is a data structure that holds all of our joints.
-    /// This would essentially act as our "base pose" that describes the initial state of the skeleton before applying any affine transformations to it
+    /// The rig class is a data structure that holds all of our joints.
+    /// This would essentially act as our "base pose" that describes the initial state of the rig before applying any affine transformations to it
     /// </summary>
-    public class P3D_Skeleton
+    public class P3D_Rig
     {
-        public uint m_jointCount;             // number of joints
+        public uint m_jointCount;               // number of joints
         public P3D_Joint[] m_joints;            // array of joints
 
-        public P3D_Skeleton(uint jointCount)
+        public P3D_Rig(uint jointCount)
         {
             m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];
@@ -38,37 +38,37 @@ namespace pricenerds3D
     }
 
     /// <summary>
-    /// The P3D_SkeletonPose contains a reference to the skeleton, along with all the local / world space poses of each joint
+    /// The P3D_RigPose contains a reference to the rig, along with all the local / world space poses of each joint
     /// Contains an array of P3D_JointPoses that describe the local space transformations
     /// Contains an array of matrices that describe how the local space transformations are described in world space
     /// </summary>
-    public class P3D_SkeletonPose
+    public class P3D_RigPose
     {
-        public P3D_Skeleton m_skeleton;
+        public P3D_Rig m_rig;
         public P3D_JointPose[] m_localPose;
         public Matrix4x4[] m_worldSpace;
 
         // Default constructor
         // (NOTE: you do need to ensure that m_localPose and m_worldSpace pose are initialized if you use this)
-        public P3D_SkeletonPose() { }
+        public P3D_RigPose() { }
 
-        // This constructor will take in a skeleton and automatically calculate local and world space pose data
-        public P3D_SkeletonPose(P3D_Skeleton skeleton)
+        // This constructor will take in a rig and automatically calculate local and world space pose data
+        public P3D_RigPose(P3D_Rig rig)
         {
-            m_skeleton = skeleton;
-            m_localPose = new P3D_JointPose[m_skeleton.m_jointCount];
-            m_worldSpace = new Matrix4x4[m_skeleton.m_jointCount];
+            m_rig = rig;
+            m_localPose = new P3D_JointPose[m_rig.m_jointCount];
+            m_worldSpace = new Matrix4x4[m_rig.m_jointCount];
 
             // Forward kinematics solver
-            for (int i = 0; i < m_skeleton.m_jointCount; i++)
+            for (int i = 0; i < m_rig.m_jointCount; i++)
             {
-                // 1. initialize local pose values based on input skeleton
-                m_localPose[i].m_jointTranslation = skeleton.m_joints[i].m_localPosition;
-                m_localPose[i].m_jointRotation = skeleton.m_joints[i].m_localRotation;
-                m_localPose[i].m_jointScale = skeleton.m_joints[i].m_localScale;
+                // 1. initialize local pose values based on input rig
+                m_localPose[i].m_jointTranslation = rig.m_joints[i].m_localPosition;
+                m_localPose[i].m_jointRotation = rig.m_joints[i].m_localRotation;
+                m_localPose[i].m_jointScale = rig.m_joints[i].m_localScale;
 
                 // 2. calculate world space pose
-                P3D_Joint joint = m_skeleton.m_joints[i];
+                P3D_Joint joint = m_rig.m_joints[i];
 
                 Matrix4x4 localPoseMatrix = Matrix4x4.TRS(
                     m_localPose[i].m_jointTranslation,

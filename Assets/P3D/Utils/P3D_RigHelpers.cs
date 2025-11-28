@@ -3,12 +3,12 @@ using UnityEngine;
 // Written by Seth Riddensdale
 namespace pricenerds3D
 {
-    public static class P3D_SkeletonHelpers
+    public static class P3D_RigHelpers
     {
         #region Gizmos
         /// <summary>
         /// This is a static helper function draws a gizmo representing a single bone from provided start and end world space positions
-        /// You can use DrawSkeletonPoseGizmo() to draw the entire skeleton
+        /// You can use DrawRigPoseGizmo() to draw the entire Rig
         /// </summary>
         public static void DrawBoneGizmo(Vector3 start, Vector3 end)
         {
@@ -70,11 +70,11 @@ namespace pricenerds3D
         /// This is a helper function that draws bone gizmos for every bone in the hierarchy
         /// </summary>
         /// <param name="pose"></param>
-        public static void DrawSkeletonPoseGizmo(P3D_SkeletonPose pose)
+        public static void DrawRigPoseGizmo(P3D_RigPose pose)
         {
-            for (int i = 0; i < pose.m_skeleton.m_jointCount; i++)
+            for (int i = 0; i < pose.m_rig.m_jointCount; i++)
             {
-                sbyte parentIndex = pose.m_skeleton.m_joints[i].m_parentIndex;
+                sbyte parentIndex = pose.m_rig.m_joints[i].m_parentIndex;
 
                 // If this bone is the root, the parent index will be -1
                 if (parentIndex == -1) continue;
@@ -93,32 +93,32 @@ namespace pricenerds3D
 
         #region Debug Helpers
         /// <summary>
-        /// This function is responsible for recursively creating a skeleton from a Unity Transform hierarchy
+        /// This function is responsible for recursively creating a rig from a Unity Transform hierarchy
         /// </summary>
-        public static void DebugInitSkeletonFromHierarchy(Transform hierarchyParent, P3D_Skeleton skeleton)
+        public static void DebugInitRigFromHierarchy(Transform hierarchyParent, P3D_Rig rig)
         {
             sbyte currentIndex = 0;
 
-            DebugInitSkeletonFromHierarchyRecursive(hierarchyParent.GetChild(0), ref currentIndex, -1, skeleton);
+            DebugInitRigFromHierarchyRecursive(hierarchyParent.GetChild(0), ref currentIndex, -1, rig);
         }
 
         /// <summary>
         /// Helper function that manages the recursion of hierarchy creation
         /// </summary>
-        private static void DebugInitSkeletonFromHierarchyRecursive(Transform current, ref sbyte currentIndex, sbyte parentIndex, P3D_Skeleton skeleton)
+        private static void DebugInitRigFromHierarchyRecursive(Transform current, ref sbyte currentIndex, sbyte parentIndex, P3D_Rig rig)
         {
             // keep track of the current index to send to children to use as the parentIndex
             sbyte self = currentIndex;
-            skeleton.m_joints[self] = DebugInitJointFromTransform(current, parentIndex);
+            rig.m_joints[self] = DebugInitJointFromTransform(current, parentIndex);
 
             // keeps track of where we are in the array
             currentIndex++;
 
-            // Recursive step to continue filling out the skeleton
+            // Recursive step to continue filling out the rig
             for (int i = 0; i < current.childCount; i++)
             {
                 Transform child = current.GetChild(i);
-                DebugInitSkeletonFromHierarchyRecursive(child, ref currentIndex, self, skeleton);
+                DebugInitRigFromHierarchyRecursive(child, ref currentIndex, self, rig);
             }
         }
 

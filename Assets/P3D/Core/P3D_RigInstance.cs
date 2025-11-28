@@ -10,6 +10,6 @@ namespace pricenerds3D
     /// </summary>
     public class P3D_RigInstance : MonoBehaviour
     {
-        public P3D_GeneratedSkeletonAsset data;
+        public P3D_Rig rig;
     }
 }
