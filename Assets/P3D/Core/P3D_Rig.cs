@@ -14,8 +14,8 @@ namespace pricenerds3D
     public class P3D_Joint
     {
         public string m_name;                   // readable human name
-        public sbyte m_parentIndex;             // index of the parent in the rig (-1 if root)
-        public sbyte m_jointIndex;              // index of self in the rig
+        public int m_parentIndex;             // index of the parent in the rig (-1 if root)
+        public int m_jointIndex;              // index of self in the rig
         public Vector3 m_localPosition;
         public Quaternion m_localRotation;
         public Vector3 m_localScale;
@@ -76,15 +76,25 @@ namespace pricenerds3D
             m_localPose = new P3D_JointPose[m_rig.m_jointCount];
             m_worldSpace = new Matrix4x4[m_rig.m_jointCount];
 
-            // Forward kinematics solver
+            // initialize with local pose values
             for (int i = 0; i < m_rig.m_jointCount; i++)
             {
-                // 1. initialize local pose values based on input rig
                 m_localPose[i].m_jointTranslation = rig.m_joints[i].m_localPosition;
                 m_localPose[i].m_jointRotation = rig.m_joints[i].m_localRotation;
                 m_localPose[i].m_jointScale = rig.m_joints[i].m_localScale;
+            }
 
-                // 2. calculate world space pose
+            // run FK algorithm
+            SolveFK();
+        }
+
+        /// <summary>
+        /// Computes local matrix to use for calculating world space matrices
+        /// </summary>
+        public void SolveFK()
+        {
+            for(int i = 0; i < m_rig.m_jointCount; i++)
+            {
                 P3D_Joint joint = m_rig.m_joints[i];
 
                 Matrix4x4 localPoseMatrix = Matrix4x4.TRS(
@@ -92,9 +102,7 @@ namespace pricenerds3D
                     m_localPose[i].m_jointRotation,
                     m_localPose[i].m_jointScale);
 
-                // if we don't have a parent, we are the root
                 if (joint.m_parentIndex == -1) m_worldSpace[i] = localPoseMatrix;
-                // otherwise, compute world space of local bone 
                 else m_worldSpace[i] = m_worldSpace[joint.m_parentIndex] * localPoseMatrix;
             }
         }
@@ -110,5 +118,12 @@ namespace pricenerds3D
         public Quaternion m_jointRotation;
         public Vector3 m_jointTranslation;
         public Vector3 m_jointScale;
+
+        public P3D_JointPose(Vector3 translation, Quaternion rotation, Vector3 scale)
+        {
+            m_jointTranslation = translation;
+            m_jointRotation = rotation;
+            m_jointScale = scale;
+        }
     }
 }

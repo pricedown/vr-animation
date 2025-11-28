@@ -8,55 +8,60 @@ namespace pricenerds3D
     /// </summary>
     public class P3D_PoleIKSolver : MonoBehaviour
     {
-        public enum EPoleIKSolution
-        {
-            Geometric,
-            FABRIK
-        }
-
         [Header("References")]
         [SerializeField] 
         private P3D_RigDebug _rigInstance; // replace with P3D_RigInstance when ready
 
         [Header("Pole IK Settings")]
-        [SerializeField]
-        private EPoleIKSolution _poleSolution;
         [SerializeField] 
         private int _jointsAffected;
         [SerializeField, Tooltip("The chain creator will start from this joint and work backwards to the parent joints to build the chain")] 
-        private string _jointPoleEndAffector;
+        private string _jointEndAffected;
+        [SerializeField]
+        private Transform _endEffectorTarget;
         [SerializeField] 
         private Transform _poleTargetEffector;
         [SerializeField, Range(0, 1)] 
         private float _weight;
 
         private P3D_Joint[] jointIKChain;
+        private Vector3[] solverPositions;
         private float[] boneLengths;
         private float targetDistance;
         private float totalChainLength;
 
         private void Start()
         {
+            solverPositions = new Vector3[_jointsAffected];
+
+            // its important that we do this in the start method because the rig is built in the Awake() method
             InitializeChain();
             CalculateBoneLengths();
         }
-
+        
+        /// <summary>
+        /// This function initializes the chain, starting from the specified end affector and moving up the chain by the specified _jointsAffected
+        /// (FUTURE) - we need some kind of error checking to ensure we dont choose too many bones to affect
+        /// </summary>
         private void InitializeChain()
         {
             // initialize chain
             jointIKChain = new P3D_Joint[_jointsAffected];
-            jointIKChain[0] = _rigInstance.basePose.m_rig.GetJointFromName(_jointPoleEndAffector); // end effector
+            jointIKChain[0] = _rigInstance.basePose.m_rig.GetJointFromName(_jointEndAffected); // set end affector first
 
             // add all joints to the chain, working up the hierarchy from the end affector
             for (int i = 1; i < _jointsAffected; i++)
             {
-                sbyte parentIndex = jointIKChain[i - 1].m_parentIndex;
+                int parentIndex = jointIKChain[i - 1].m_parentIndex;
 
                 // IMPORTANT: not sure if we use base pose here !! may change later
                 jointIKChain[i] = _rigInstance.basePose.m_rig.m_joints[parentIndex];
             }
         }
 
+        /// <summary>
+        /// Takes the jointIKChain array we initialized and calculates the distance between them
+        /// </summary>
         private void CalculateBoneLengths()
         {
             boneLengths = new float[_jointsAffected];
@@ -76,15 +81,7 @@ namespace pricenerds3D
 
         private void Update()
         {
-            switch (_poleSolution)
-            {
-                case EPoleIKSolution.FABRIK:
-                    FABRIK_SolveIK();
-                    break;
-                default:
-                    Debug.LogWarning($"No IK solution implemented for {_poleSolution}");
-                    break;
-            }
+            FABRIK_SolveIK();
         }
 
         #region FABRIK
@@ -100,15 +97,16 @@ namespace pricenerds3D
 
         private void FABRIK_SolveIK()
         {
-            // 1. get joint positions
+            if (_weight == 0.0f) return;
 
-            // 2. calculate distance from the root to the IK target
+            // get initial world space positions
+            for (int i = 0; i < _jointsAffected; i++)
+            {
+                solverPositions[i] = _rigInstance.basePose.m_worldSpace[jointIKChain[i].m_jointIndex].MultiplyPoint3x4(Vector3.zero);
+            }
 
-            // 3. check if the target is reachable
-
-            // 4. apply pole constraint
-
-            // 
+            FABRIK_UpdateForward();
+            FABRIK_UpdateBackward();
         }
         #endregion
     }

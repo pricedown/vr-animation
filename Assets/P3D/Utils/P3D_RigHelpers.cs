@@ -74,7 +74,7 @@ namespace pricenerds3D
         {
             for (int i = 0; i < pose.m_rig.m_jointCount; i++)
             {
-                sbyte parentIndex = pose.m_rig.m_joints[i].m_parentIndex;
+                int parentIndex = pose.m_rig.m_joints[i].m_parentIndex;
 
                 // If this bone is the root, the parent index will be -1
                 if (parentIndex == -1) continue;
@@ -97,7 +97,7 @@ namespace pricenerds3D
         /// </summary>
         public static void DebugInitRigFromHierarchy(Transform hierarchyParent, P3D_Rig rig)
         {
-            sbyte currentIndex = 0;
+            int currentIndex = 0;
 
             DebugInitRigFromHierarchyRecursive(hierarchyParent.GetChild(0), ref currentIndex, -1, rig);
         }
@@ -105,10 +105,10 @@ namespace pricenerds3D
         /// <summary>
         /// Helper function that manages the recursion of hierarchy creation
         /// </summary>
-        private static void DebugInitRigFromHierarchyRecursive(Transform current, ref sbyte currentIndex, sbyte parentIndex, P3D_Rig rig)
+        private static void DebugInitRigFromHierarchyRecursive(Transform current, ref int currentIndex, int parentIndex, P3D_Rig rig)
         {
             // keep track of the current index to send to children to use as the parentIndex
-            sbyte self = currentIndex;
+            int self = currentIndex;
             rig.m_joints[self] = DebugInitJointFromTransform(current, parentIndex, currentIndex);
 
             // keeps track of where we are in the array
@@ -125,7 +125,7 @@ namespace pricenerds3D
         /// <summary>
         /// Helper function that creates a P3D_Joint based on a passed GameObject
         /// </summary>
-        public static P3D_Joint DebugInitJointFromTransform(Transform transform, sbyte parentIndex, sbyte selfIndex)
+        public static P3D_Joint DebugInitJointFromTransform(Transform transform, int parentIndex, int selfIndex)
         {
             P3D_Joint joint = new P3D_Joint();
 

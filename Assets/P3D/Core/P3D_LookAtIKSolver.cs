@@ -17,19 +17,17 @@ namespace pricenerds3D
         [SerializeField] 
         private string _lookAtAffectedName;
 
-        private void Awake()
-        {
-            
-        }
-
         private void Update()
         {
-            SolveIK();   
+            SolveIK();  
         }
 
         private void SolveIK()
         {
-
+            // 1. world rotation of joint
+            // 2. direction in world space
+            // 3. find rotation delta
+            // apply in joint local space
         }
     }
 }
