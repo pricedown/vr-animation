@@ -6,9 +6,6 @@ namespace pricenerds3D
 {
     public static class P3D_Kinematics
     {
-        public static void SolveInverseKinematics()
-        {
 
-        }
     }
 }

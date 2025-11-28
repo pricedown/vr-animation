@@ -10,6 +10,7 @@ namespace pricenerds3D
     /// P3D_Joint(s) contain all local space orientation data relative to the parent
     /// (P3D_Joint is our replacement for a3_HierarchyNodes)
     /// </summary>
+    [Serializable]
     public struct P3D_Joint
     {
         public string m_name;                   // readable human name
@@ -25,6 +26,7 @@ namespace pricenerds3D
     /// The rig class is a data structure that holds all of our joints.
     /// This would essentially act as our "base pose" that describes the initial state of the rig before applying any affine transformations to it
     /// </summary>
+    [Serializable]
     public class P3D_Rig
     {
         public uint m_jointCount;               // number of joints
@@ -42,6 +44,7 @@ namespace pricenerds3D
     /// Contains an array of P3D_JointPoses that describe the local space transformations
     /// Contains an array of matrices that describe how the local space transformations are described in world space
     /// </summary>
+    [Serializable]
     public class P3D_RigPose
     {
         public P3D_Rig m_rig;
@@ -87,6 +90,7 @@ namespace pricenerds3D
     /// P3D_JointPose describes an affine, local transformation
     /// - (This is essentially our a3_SpatialPose)
     /// </summary>
+    [Serializable]
     public struct P3D_JointPose // a joint pose is an affine transformation
     {
         public Quaternion m_jointRotation;
