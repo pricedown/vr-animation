@@ -1713,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 1211918588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.5, z: -1}
+  m_LocalPosition: {x: -0.5, y: 1.5, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2170,6 +2170,37 @@ Transform:
   - {fileID: 1075676422}
   m_Father: {fileID: 1804111828}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1767009407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767009408}
+  m_Layer: 0
+  m_Name: L_Elbow Pole Constraint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767009408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767009407}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1.5, z: 0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772672285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,15 +2558,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _sampleHierarchy: {fileID: 1956459069}
+  _testAnimation: {fileID: 11400000, guid: 05cd854638b67004ba648e816f8d3252, type: 2}
   _gizmosEnabled: 1
   _boneColor: {r: 0, g: 0.003310442, b: 1, a: 1}
   rig:
     m_jointCount: 0
     m_joints: []
-  basePose:
+    m_basePose:
+      m_rig:
+        m_jointCount: 0
+        m_joints: []
+        m_basePose:
+          m_rig:
+            m_jointCount: 0
+            m_joints: []
+            m_basePose:
+              m_rig:
+                m_jointCount: 0
+                m_joints: []
+                m_basePose:
+                  m_rig:
+                    m_jointCount: 0
+                    m_joints: []
+                    m_basePose:
+                      m_rig:
+                        m_jointCount: 0
+                      m_localPose: []
+                      m_worldSpace: []
+                  m_localPose: []
+                  m_worldSpace: []
+              m_localPose: []
+              m_worldSpace: []
+          m_localPose: []
+          m_worldSpace: []
+      m_localPose: []
+      m_worldSpace: []
+  deltaPose:
     m_rig:
       m_jointCount: 0
       m_joints: []
+      m_basePose:
+        m_rig:
+          m_jointCount: 0
+          m_joints: []
+          m_basePose:
+            m_rig:
+              m_jointCount: 0
+              m_joints: []
+              m_basePose:
+                m_rig:
+                  m_jointCount: 0
+                  m_joints: []
+                  m_basePose:
+                    m_rig:
+                      m_jointCount: 0
+                      m_joints: []
+                    m_localPose: []
+                    m_worldSpace: []
+                m_localPose: []
+                m_worldSpace: []
+            m_localPose: []
+            m_worldSpace: []
+        m_localPose: []
+        m_worldSpace: []
     m_localPose: []
     m_worldSpace: []
 --- !u!4 &1956459069
@@ -2561,16 +2646,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956459067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b39a0bb470b493c48afba22a14a40c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_PoleIKSolver
   _rigInstance: {fileID: 1956459068}
-  _poleSolution: 1
   _jointsAffected: 3
-  _jointPoleEndAffector: LeftHand
-  _poleTargetEffector: {fileID: 1211918589}
+  _jointEndAffected: LeftHand
+  _endEffectorTarget: {fileID: 1211918589}
+  _poleTargetEffector: {fileID: 1767009408}
   _weight: 1
 --- !u!114 &1956459071
 MonoBehaviour:
@@ -2579,7 +2664,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956459067}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73d7a26179c2d404bb0ffa4637279936, type: 3}
   m_Name: 
@@ -5325,5 +5410,6 @@ SceneRoots:
   - {fileID: 1956459069}
   - {fileID: 1095759755}
   - {fileID: 1211918589}
+  - {fileID: 1767009408}
   - {fileID: 2084157499}
   - {fileID: 769851051}

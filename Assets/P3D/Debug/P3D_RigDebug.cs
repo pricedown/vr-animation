@@ -8,6 +8,8 @@ namespace pricenerds3D
     {
         [SerializeField]
         private Transform _sampleHierarchy;
+        [SerializeField]
+        private P3D_ClipData _testAnimation;
 
         [Header("Gizmos")]
         [SerializeField]
@@ -23,6 +25,7 @@ namespace pricenerds3D
             // this rig should be created at import instead of now. just putting it here for now   
             InitializeRig();
             rig.InitializeBasePose();
+            deltaPose = new P3D_RigPose(rig);
         }
 
         // This is essentially a backwards way of creating a rig. We already have the rig using GameObjects for testing purposes. We have to replace this later with a custom importer
@@ -43,7 +46,7 @@ namespace pricenerds3D
             }
 
             Gizmos.color = _boneColor;
-            P3D_RigHelpers.DrawRigPoseGizmo(rig.m_basePose);
+            P3D_RigHelpers.DrawRigPoseGizmo(deltaPose);
         }
     }
 }

@@ -38,6 +38,12 @@ namespace pricenerds3D
         {
             m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];
+
+            // we need to ensure all joints are initialized
+            for (int i = 0; i < m_jointCount; i++)
+            {
+                m_joints[i] = new P3D_Joint();
+            }
         }
 
         public void InitializeBasePose()
@@ -59,6 +65,9 @@ namespace pricenerds3D
             }
         }
 
+        /// <summary>
+        /// Helper function that retrieves a joint with the given name
+        /// </summary>
         public P3D_Joint GetJointFromName(string name)
         {
             for(int i = 0; i < m_jointCount; i++)
