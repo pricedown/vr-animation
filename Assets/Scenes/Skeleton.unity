@@ -991,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: xbot_joints
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3f5f6a79cfa05214ca7edb1876fd067f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8997262446171810114, guid: 3f5f6a79cfa05214ca7edb1876fd067f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1558,6 +1562,37 @@ Transform:
   - {fileID: 771890064}
   m_Father: {fileID: 1772672286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1095759754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095759755}
+  m_Layer: 0
+  m_Name: LookAt Effector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1095759755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095759754}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.75, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099291053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1687,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1775417737}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1211918588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211918589}
+  m_Layer: 0
+  m_Name: L_Wrist Effector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1211918589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211918588}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1.5, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251396895
 GameObject:
@@ -2439,6 +2505,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1956459069}
   - component: {fileID: 1956459068}
+  - component: {fileID: 1956459071}
+  - component: {fileID: 1956459070}
   m_Layer: 0
   m_Name: Empty Rig
   m_TagString: Untagged
@@ -2461,6 +2529,15 @@ MonoBehaviour:
   _sampleHierarchy: {fileID: 1956459069}
   _gizmosEnabled: 1
   _boneColor: {r: 0, g: 0.003310442, b: 1, a: 1}
+  rig:
+    m_jointCount: 0
+    m_joints: []
+  basePose:
+    m_rig:
+      m_jointCount: 0
+      m_joints: []
+    m_localPose: []
+    m_worldSpace: []
 --- !u!4 &1956459069
 Transform:
   m_ObjectHideFlags: 0
@@ -2477,6 +2554,39 @@ Transform:
   - {fileID: 1782428520}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956459070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956459067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39a0bb470b493c48afba22a14a40c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_PoleIKSolver
+  _rigInstance: {fileID: 1956459068}
+  _poleSolution: 1
+  _jointsAffected: 3
+  _jointPoleEndAffector: LeftHand
+  _poleTargetEffector: {fileID: 1211918589}
+  _weight: 1
+--- !u!114 &1956459071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956459067}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d7a26179c2d404bb0ffa4637279936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _rigInstance: {fileID: 1956459068}
+  _lookAtEffector: {fileID: 1095759755}
+  _lookAtAffectedName: Neck
 --- !u!1 &1970940330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,6 +2785,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 746211bf5d5607a40abf8648b9422f29, type: 3}
       propertyPath: m_Name
       value: xbot_surface
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 746211bf5d5607a40abf8648b9422f29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5209,5 +5323,7 @@ SceneRoots:
   - {fileID: 771497575}
   - {fileID: 2913508722360189247}
   - {fileID: 1956459069}
+  - {fileID: 1095759755}
+  - {fileID: 1211918589}
   - {fileID: 2084157499}
   - {fileID: 769851051}

@@ -109,7 +109,7 @@ namespace pricenerds3D
         {
             // keep track of the current index to send to children to use as the parentIndex
             sbyte self = currentIndex;
-            rig.m_joints[self] = DebugInitJointFromTransform(current, parentIndex);
+            rig.m_joints[self] = DebugInitJointFromTransform(current, parentIndex, currentIndex);
 
             // keeps track of where we are in the array
             currentIndex++;
@@ -125,11 +125,12 @@ namespace pricenerds3D
         /// <summary>
         /// Helper function that creates a P3D_Joint based on a passed GameObject
         /// </summary>
-        public static P3D_Joint DebugInitJointFromTransform(Transform transform, sbyte parentIndex)
+        public static P3D_Joint DebugInitJointFromTransform(Transform transform, sbyte parentIndex, sbyte selfIndex)
         {
             P3D_Joint joint = new P3D_Joint();
 
             joint.m_name = transform.name;
+            joint.m_jointIndex = selfIndex;
             joint.m_parentIndex = parentIndex;
             joint.m_localPosition = transform.transform.localPosition;
             joint.m_localRotation = transform.transform.localRotation;

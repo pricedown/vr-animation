@@ -11,10 +11,11 @@ namespace pricenerds3D
     /// (P3D_Joint is our replacement for a3_HierarchyNodes)
     /// </summary>
     [Serializable]
-    public struct P3D_Joint
+    public class P3D_Joint
     {
         public string m_name;                   // readable human name
         public sbyte m_parentIndex;             // index of the parent in the rig (-1 if root)
+        public sbyte m_jointIndex;              // index of self in the rig
         public Vector3 m_localPosition;
         public Quaternion m_localRotation;
         public Vector3 m_localScale;
@@ -36,6 +37,19 @@ namespace pricenerds3D
         {
             m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];
+        }
+
+        public P3D_Joint GetJointFromName(string name)
+        {
+            for(int i = 0; i < m_jointCount; i++)
+            {
+                if(name == m_joints[i].m_name)
+                {
+                    return m_joints[i];
+                }
+            }
+
+            return null;
         }
     }
 

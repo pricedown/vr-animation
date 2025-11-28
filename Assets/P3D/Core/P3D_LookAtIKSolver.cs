@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace pricenerds3D
 {
+    /// <summary>
+    /// The LookAtIK solver is based on the animal3D implementation we completed in class
+    /// </summary>
     public class P3D_LookAtIKSolver : MonoBehaviour
     {
         [Header("References")]
@@ -13,5 +16,20 @@ namespace pricenerds3D
         private Transform _lookAtEffector;
         [SerializeField] 
         private string _lookAtAffectedName;
+
+        private void Awake()
+        {
+            
+        }
+
+        private void Update()
+        {
+            SolveIK();   
+        }
+
+        private void SolveIK()
+        {
+
+        }
     }
 }
