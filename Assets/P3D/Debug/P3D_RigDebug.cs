@@ -16,19 +16,19 @@ namespace pricenerds3D
         private Color _boneColor = Color.blue;
 
         public P3D_Rig rig;
-        public P3D_RigPose basePose;
+        public P3D_RigPose deltaPose;
 
         private void OnEnable()
         {
             // this rig should be created at import instead of now. just putting it here for now   
             InitializeRig();
-            basePose = new P3D_RigPose(rig);
+            rig.InitializeBasePose();
         }
 
         // This is essentially a backwards way of creating a rig. We already have the rig using GameObjects for testing purposes. We have to replace this later with a custom importer
         public void InitializeRig()
         {
-            rig = new P3D_Rig((UInt32)_sampleHierarchy.CountAllChildren());
+            rig = new P3D_Rig((uint)_sampleHierarchy.CountAllChildren());
             P3D_RigHelpers.DebugInitRigFromHierarchy(_sampleHierarchy, rig);
         }
 
@@ -43,7 +43,7 @@ namespace pricenerds3D
             }
 
             Gizmos.color = _boneColor;
-            P3D_RigHelpers.DrawRigPoseGizmo(basePose);
+            P3D_RigHelpers.DrawRigPoseGizmo(rig.m_basePose);
         }
     }
 }

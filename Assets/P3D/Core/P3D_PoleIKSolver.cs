@@ -47,7 +47,7 @@ namespace pricenerds3D
         {
             // initialize chain
             jointIKChain = new P3D_Joint[_jointsAffected];
-            jointIKChain[0] = _rigInstance.basePose.m_rig.GetJointFromName(_jointEndAffected); // set end affector first
+            jointIKChain[0] = _rigInstance.rig.m_basePose.m_rig.GetJointFromName(_jointEndAffected); // set end affector first
 
             // add all joints to the chain, working up the hierarchy from the end affector
             for (int i = 1; i < _jointsAffected; i++)
@@ -55,7 +55,7 @@ namespace pricenerds3D
                 int parentIndex = jointIKChain[i - 1].m_parentIndex;
 
                 // IMPORTANT: not sure if we use base pose here !! may change later
-                jointIKChain[i] = _rigInstance.basePose.m_rig.m_joints[parentIndex];
+                jointIKChain[i] = _rigInstance.rig.m_basePose.m_rig.m_joints[parentIndex];
             }
         }
 
@@ -69,8 +69,8 @@ namespace pricenerds3D
             for(int i = 0; i < _jointsAffected; i++)
             {
                 // get self to end positions in world space
-                Vector3 start = _rigInstance.basePose.m_worldSpace[jointIKChain[i].m_jointIndex].MultiplyPoint3x4(Vector3.zero);
-                Vector3 end = _rigInstance.basePose.m_worldSpace[jointIKChain[i].m_parentIndex].MultiplyPoint3x4(Vector3.zero);
+                Vector3 start = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i].m_jointIndex].MultiplyPoint3x4(Vector3.zero);
+                Vector3 end = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i].m_parentIndex].MultiplyPoint3x4(Vector3.zero);
 
                 // calculate length
                 float length = Vector3.Distance(start, end);
@@ -102,7 +102,7 @@ namespace pricenerds3D
             // get initial world space positions
             for (int i = 0; i < _jointsAffected; i++)
             {
-                solverPositions[i] = _rigInstance.basePose.m_worldSpace[jointIKChain[i].m_jointIndex].MultiplyPoint3x4(Vector3.zero);
+                solverPositions[i] = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i].m_jointIndex].MultiplyPoint3x4(Vector3.zero);
             }
 
             FABRIK_UpdateForward();

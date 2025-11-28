@@ -32,11 +32,31 @@ namespace pricenerds3D
     {
         public uint m_jointCount;               // number of joints
         public P3D_Joint[] m_joints;            // array of joints
+        public P3D_RigPose m_basePose;
 
         public P3D_Rig(uint jointCount)
         {
             m_jointCount = jointCount;
             m_joints = new P3D_Joint[jointCount];
+        }
+
+        public void InitializeBasePose()
+        {
+            // create base pose and set bind matrices
+            m_basePose = new P3D_RigPose(this);
+            ComputeBindMatrices();
+        }
+
+        /// <summary>
+        /// This should be done only once on initialization. put this in rig instance when ready
+        /// </summary>
+        public void ComputeBindMatrices()
+        {
+            for (int i = 0; i < m_jointCount; i++)
+            {
+                m_joints[i].m_bindMatrix = m_basePose.m_worldSpace[i];
+                m_joints[i].m_bindMatrixInverse = m_basePose.m_worldSpace[i].inverse;
+            }
         }
 
         public P3D_Joint GetJointFromName(string name)
@@ -61,9 +81,9 @@ namespace pricenerds3D
     [Serializable]
     public class P3D_RigPose
     {
-        public P3D_Rig m_rig;
-        public P3D_JointPose[] m_localPose;
-        public Matrix4x4[] m_worldSpace;
+        public P3D_Rig m_rig; // do not modify the joint positions here. we read from this
+        public P3D_JointPose[] m_localPose; // these we modify
+        public Matrix4x4[] m_worldSpace; // this is calculated in our FK algorithm
 
         // Default constructor
         // (NOTE: you do need to ensure that m_localPose and m_worldSpace pose are initialized if you use this)
@@ -86,6 +106,16 @@ namespace pricenerds3D
 
             // run FK algorithm
             SolveFK();
+        }
+
+        public void CopyLocalPose(P3D_RigPose otherPose)
+        {
+            for (int i = 0; i < m_rig.m_jointCount; i++)
+            {
+                m_localPose[i].m_jointTranslation = otherPose.m_localPose[i].m_jointTranslation;
+                m_localPose[i].m_jointRotation = otherPose.m_localPose[i].m_jointRotation;
+                m_localPose[i].m_jointScale = otherPose.m_localPose[i].m_jointScale;
+            }
         }
 
         /// <summary>
