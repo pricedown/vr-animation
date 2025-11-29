@@ -8,6 +8,8 @@ namespace pricenerds3D
     /// This is a sub-container that we use to keep track of each animation processed by the HTR file
     /// This is not the final representation of the data, we just use this to populate with raw HTR data to be sent to a useful structure like a scriptable object
     /// </summary>
+    /// 
+
     public class P3D_HTRAnimationDataContainer
     {
         public uint numFrames;

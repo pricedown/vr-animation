@@ -35,6 +35,16 @@ namespace pricenerds3D
             P3D_RigHelpers.DebugInitRigFromHierarchy(_sampleHierarchy, rig);
         }
 
+        private void Update()
+        {
+            UpdateTestClip(_testAnimation);
+        }
+
+        private void UpdateTestClip(P3D_ClipData clipData)
+        {
+            
+        }
+
         // this will have to be in a custom editor that reads from some kind of data file
         public void OnDrawGizmos()
         {

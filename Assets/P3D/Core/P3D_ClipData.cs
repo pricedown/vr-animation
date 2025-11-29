@@ -12,5 +12,39 @@ namespace pricenerds3D
     public class P3D_ClipData : ScriptableObject
     {
         public string clipName;
+        public P3D_Clip clip;
+    }
+
+    [Serializable]
+    public class P3D_Clip
+    {
+        public Keyframe[] keyframes { get; private set; }
+        public float durationSeconds { get; private set; }
+
+        public P3D_Clip()
+        {
+            // construct keyframes from data, 
+        }
+
+        public void AddKeyframe(string key)
+        {
+
+        }
+    }
+
+    public struct P3D_Keyframe
+    {
+        P3D_Sample[] samples;
+
+        int index;
+        uint sampleIndex0;
+        uint sampleIndex1;
+        float duration;
+    }
+
+    public class P3D_Sample
+    {
+        int index;
+        float timeSeconds;
     }
 }
