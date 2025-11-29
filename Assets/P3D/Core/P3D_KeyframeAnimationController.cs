@@ -50,36 +50,4 @@ namespace pricenerds3D
         Skip,
         Overstep
     }
-
-    public class P3D_ClipPool
-    {
-        P3D_Clip[] clip;
-    }
-
-    public class P3D_Clip
-    {
-        Keyframe[] keyframe;
-
-        int index;
-        int keyframeIndexFirst;
-        int keyframeIndexLast;
-        int keyframeDirection; // either 1 or -1
-        float durationSeconds;
-    }
-
-    public class P3D_Keyframe
-    {
-        P3D_Sample[] samples;
-
-        int index;
-        uint sampleIndex0;
-        uint sampleIndex1;
-        float duration;
-    }
-
-    public class P3D_Sample
-    {
-        int index;
-        float timeSeconds;
-    }
 }

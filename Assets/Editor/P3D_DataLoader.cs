@@ -3,7 +3,7 @@ using System.IO;
 using Debug = UnityEngine.Debug;
 using UnityEditor;
 using System.Collections.Generic;
-using System.Linq;
+using System;
 
 // Written by Seth Riddensdale
 namespace pricenerds3D
@@ -255,7 +255,7 @@ namespace pricenerds3D
         {
             // initialize data
             clips = new P3D_ClipData[data.animationData.Count];
-            rig = new P3D_Rig((uint)data.segmentHierarchy.Count);
+            rig = new P3D_Rig((UInt32)data.segmentHierarchy.Count);
             BuildHierarchy(data.segmentNames, data.segmentHierarchy, rig);
 
             for (int i = 0; i < data.animationData.Count; i++) 
@@ -282,12 +282,12 @@ namespace pricenerds3D
             for (int i = 0; i < segmentNames.Count; i++)
             {
                 rig.m_joints[i].m_name = segmentNames[i];
-                sbyte parentIndex;
+                int parentIndex;
 
                 // this would be the root, which has no parent index
                 if (segmentHierarchy[segmentNames[i]] == "GLOBAL") parentIndex = -1;
                 // otherwise, find the index of the parent in the segment names
-                else parentIndex = (sbyte)segmentNames.IndexOf(segmentHierarchy[segmentNames[i]]);
+                else parentIndex = segmentNames.IndexOf(segmentHierarchy[segmentNames[i]]);
 
                 rig.m_joints[i].m_parentIndex = parentIndex;
             }
