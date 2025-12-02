@@ -49,10 +49,10 @@ MonoBehaviour:
     m_joints:
     - m_name: Hips
       m_parentIndex: -1
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -89,10 +89,10 @@ MonoBehaviour:
         e33: 0
     - m_name: Spine
       m_parentIndex: 0
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -129,10 +129,10 @@ MonoBehaviour:
         e33: 0
     - m_name: Spine1
       m_parentIndex: 1
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -169,10 +169,10 @@ MonoBehaviour:
         e33: 0
     - m_name: Spine2
       m_parentIndex: 2
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -209,10 +209,10 @@ MonoBehaviour:
         e33: 0
     - m_name: Neck
       m_parentIndex: 3
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -249,10 +249,10 @@ MonoBehaviour:
         e33: 0
     - m_name: Head
       m_parentIndex: 4
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -289,10 +289,10 @@ MonoBehaviour:
         e33: 0
     - m_name: HeadTop_End
       m_parentIndex: 5
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -329,10 +329,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftEye
       m_parentIndex: 5
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -369,10 +369,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightEye
       m_parentIndex: 5
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -409,10 +409,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftShoulder
       m_parentIndex: 3
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -449,10 +449,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftArm
       m_parentIndex: 9
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -489,10 +489,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftForeArm
       m_parentIndex: 10
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -529,10 +529,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHand
       m_parentIndex: 11
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -569,10 +569,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandThumb1
       m_parentIndex: 12
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -609,10 +609,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandThumb2
       m_parentIndex: 13
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -649,10 +649,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandThumb3
       m_parentIndex: 14
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -689,10 +689,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandThumb4
       m_parentIndex: 15
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -729,10 +729,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandIndex1
       m_parentIndex: 12
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -769,10 +769,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandIndex2
       m_parentIndex: 17
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -809,10 +809,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandIndex3
       m_parentIndex: 18
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -849,10 +849,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandIndex4
       m_parentIndex: 19
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -889,10 +889,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandMiddle1
       m_parentIndex: 12
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -929,10 +929,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandMiddle2
       m_parentIndex: 21
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -969,10 +969,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandMiddle3
       m_parentIndex: 22
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1009,10 +1009,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandMiddle4
       m_parentIndex: 23
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1049,10 +1049,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandRing1
       m_parentIndex: 12
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1089,10 +1089,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandRing2
       m_parentIndex: 25
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1129,10 +1129,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandRing3
       m_parentIndex: 26
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1169,10 +1169,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandRing4
       m_parentIndex: 27
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1209,10 +1209,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandPinky1
       m_parentIndex: 12
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1249,10 +1249,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandPinky2
       m_parentIndex: 29
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1289,10 +1289,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandPinky3
       m_parentIndex: 30
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1329,10 +1329,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftHandPinky4
       m_parentIndex: 31
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1369,10 +1369,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightShoulder
       m_parentIndex: 3
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1409,10 +1409,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightArm
       m_parentIndex: 33
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1449,10 +1449,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightForeArm
       m_parentIndex: 34
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1489,10 +1489,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHand
       m_parentIndex: 35
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1529,10 +1529,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandPinky1
       m_parentIndex: 36
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1569,10 +1569,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandPinky2
       m_parentIndex: 37
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1609,10 +1609,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandPinky3
       m_parentIndex: 38
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1649,10 +1649,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandPinky4
       m_parentIndex: 39
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1689,10 +1689,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandRing1
       m_parentIndex: 36
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1729,10 +1729,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandRing2
       m_parentIndex: 41
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1769,10 +1769,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandRing3
       m_parentIndex: 42
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1809,10 +1809,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandRing4
       m_parentIndex: 43
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1849,10 +1849,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandMiddle1
       m_parentIndex: 36
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1889,10 +1889,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandMiddle2
       m_parentIndex: 45
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1929,10 +1929,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandMiddle3
       m_parentIndex: 46
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -1969,10 +1969,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandMiddle4
       m_parentIndex: 47
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2009,10 +2009,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandIndex1
       m_parentIndex: 36
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2049,10 +2049,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandIndex2
       m_parentIndex: 49
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2089,10 +2089,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandIndex3
       m_parentIndex: 50
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2129,10 +2129,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandIndex4
       m_parentIndex: 51
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2169,10 +2169,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandThumb1
       m_parentIndex: 36
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2209,10 +2209,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandThumb2
       m_parentIndex: 53
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2249,10 +2249,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandThumb3
       m_parentIndex: 54
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2289,10 +2289,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightHandThumb4
       m_parentIndex: 55
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2329,10 +2329,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftUpLeg
       m_parentIndex: 0
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2369,10 +2369,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftLeg
       m_parentIndex: 57
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2409,10 +2409,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftFoot
       m_parentIndex: 58
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2449,10 +2449,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftToeBase
       m_parentIndex: 59
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2489,10 +2489,10 @@ MonoBehaviour:
         e33: 0
     - m_name: LeftToe_End
       m_parentIndex: 60
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2529,10 +2529,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightUpLeg
       m_parentIndex: 0
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2569,10 +2569,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightLeg
       m_parentIndex: 62
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2609,10 +2609,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightFoot
       m_parentIndex: 63
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2649,10 +2649,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightToeBase
       m_parentIndex: 64
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0
@@ -2689,10 +2689,10 @@ MonoBehaviour:
         e33: 0
     - m_name: RightToe_End
       m_parentIndex: 65
-      m_jointIndex: 0
+      m_jointIndex: -1
       m_localPosition: {x: 0, y: 0, z: 0}
-      m_localRotation: {x: 0, y: 0, z: 0, w: 0}
-      m_localScale: {x: 0, y: 0, z: 0}
+      m_localRotation: {x: 0, y: 0, z: 0, w: 1}
+      m_localScale: {x: 1, y: 1, z: 1}
       m_bindMatrix:
         e00: 0
         e01: 0

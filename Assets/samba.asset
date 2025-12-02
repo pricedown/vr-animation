@@ -13,3 +13,4014 @@ MonoBehaviour:
   m_Name: samba
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_ClipData
   clipName: samba
+  clip:
+    _keyframes:
+    - index: 0
+      sampleIndex0: 0
+      sampleIndex1: 1
+      duration: 0
+    - index: 1
+      sampleIndex0: 1
+      sampleIndex1: 2
+      duration: 0
+    - index: 2
+      sampleIndex0: 2
+      sampleIndex1: 3
+      duration: 0
+    - index: 3
+      sampleIndex0: 3
+      sampleIndex1: 4
+      duration: 0
+    - index: 4
+      sampleIndex0: 4
+      sampleIndex1: 5
+      duration: 0
+    - index: 5
+      sampleIndex0: 5
+      sampleIndex1: 6
+      duration: 0
+    - index: 6
+      sampleIndex0: 6
+      sampleIndex1: 7
+      duration: 0
+    - index: 7
+      sampleIndex0: 7
+      sampleIndex1: 8
+      duration: 0
+    - index: 8
+      sampleIndex0: 8
+      sampleIndex1: 9
+      duration: 0
+    - index: 9
+      sampleIndex0: 9
+      sampleIndex1: 10
+      duration: 0
+    - index: 10
+      sampleIndex0: 10
+      sampleIndex1: 11
+      duration: 0
+    - index: 11
+      sampleIndex0: 11
+      sampleIndex1: 12
+      duration: 0
+    - index: 12
+      sampleIndex0: 12
+      sampleIndex1: 13
+      duration: 0
+    - index: 13
+      sampleIndex0: 13
+      sampleIndex1: 14
+      duration: 0
+    - index: 14
+      sampleIndex0: 14
+      sampleIndex1: 15
+      duration: 0
+    - index: 15
+      sampleIndex0: 15
+      sampleIndex1: 16
+      duration: 0
+    - index: 16
+      sampleIndex0: 16
+      sampleIndex1: 17
+      duration: 0
+    - index: 17
+      sampleIndex0: 17
+      sampleIndex1: 18
+      duration: 0
+    - index: 18
+      sampleIndex0: 18
+      sampleIndex1: 19
+      duration: 0
+    - index: 19
+      sampleIndex0: 19
+      sampleIndex1: 20
+      duration: 0
+    - index: 20
+      sampleIndex0: 20
+      sampleIndex1: 21
+      duration: 0
+    - index: 21
+      sampleIndex0: 21
+      sampleIndex1: 22
+      duration: 0
+    - index: 22
+      sampleIndex0: 22
+      sampleIndex1: 23
+      duration: 0
+    - index: 23
+      sampleIndex0: 23
+      sampleIndex1: 24
+      duration: 0
+    - index: 24
+      sampleIndex0: 24
+      sampleIndex1: 25
+      duration: 0
+    - index: 25
+      sampleIndex0: 25
+      sampleIndex1: 26
+      duration: 0
+    - index: 26
+      sampleIndex0: 26
+      sampleIndex1: 27
+      duration: 0
+    - index: 27
+      sampleIndex0: 27
+      sampleIndex1: 28
+      duration: 0
+    - index: 28
+      sampleIndex0: 28
+      sampleIndex1: 29
+      duration: 0
+    - index: 29
+      sampleIndex0: 29
+      sampleIndex1: 30
+      duration: 0
+    - index: 30
+      sampleIndex0: 30
+      sampleIndex1: 31
+      duration: 0
+    - index: 31
+      sampleIndex0: 31
+      sampleIndex1: 32
+      duration: 0
+    - index: 32
+      sampleIndex0: 32
+      sampleIndex1: 33
+      duration: 0
+    - index: 33
+      sampleIndex0: 33
+      sampleIndex1: 34
+      duration: 0
+    - index: 34
+      sampleIndex0: 34
+      sampleIndex1: 35
+      duration: 0
+    - index: 35
+      sampleIndex0: 35
+      sampleIndex1: 36
+      duration: 0
+    - index: 36
+      sampleIndex0: 36
+      sampleIndex1: 37
+      duration: 0
+    - index: 37
+      sampleIndex0: 37
+      sampleIndex1: 38
+      duration: 0
+    - index: 38
+      sampleIndex0: 38
+      sampleIndex1: 39
+      duration: 0
+    - index: 39
+      sampleIndex0: 39
+      sampleIndex1: 40
+      duration: 0
+    - index: 40
+      sampleIndex0: 40
+      sampleIndex1: 41
+      duration: 0
+    - index: 41
+      sampleIndex0: 41
+      sampleIndex1: 42
+      duration: 0
+    - index: 42
+      sampleIndex0: 42
+      sampleIndex1: 43
+      duration: 0
+    - index: 43
+      sampleIndex0: 43
+      sampleIndex1: 44
+      duration: 0
+    - index: 44
+      sampleIndex0: 44
+      sampleIndex1: 45
+      duration: 0
+    - index: 45
+      sampleIndex0: 45
+      sampleIndex1: 46
+      duration: 0
+    - index: 46
+      sampleIndex0: 46
+      sampleIndex1: 47
+      duration: 0
+    - index: 47
+      sampleIndex0: 47
+      sampleIndex1: 48
+      duration: 0
+    - index: 48
+      sampleIndex0: 48
+      sampleIndex1: 49
+      duration: 0
+    - index: 49
+      sampleIndex0: 49
+      sampleIndex1: 50
+      duration: 0
+    - index: 50
+      sampleIndex0: 50
+      sampleIndex1: 51
+      duration: 0
+    - index: 51
+      sampleIndex0: 51
+      sampleIndex1: 52
+      duration: 0
+    - index: 52
+      sampleIndex0: 52
+      sampleIndex1: 53
+      duration: 0
+    - index: 53
+      sampleIndex0: 53
+      sampleIndex1: 54
+      duration: 0
+    - index: 54
+      sampleIndex0: 54
+      sampleIndex1: 55
+      duration: 0
+    - index: 55
+      sampleIndex0: 55
+      sampleIndex1: 56
+      duration: 0
+    - index: 56
+      sampleIndex0: 56
+      sampleIndex1: 57
+      duration: 0
+    - index: 57
+      sampleIndex0: 57
+      sampleIndex1: 58
+      duration: 0
+    - index: 58
+      sampleIndex0: 58
+      sampleIndex1: 59
+      duration: 0
+    - index: 59
+      sampleIndex0: 59
+      sampleIndex1: 60
+      duration: 0
+    - index: 60
+      sampleIndex0: 60
+      sampleIndex1: 61
+      duration: 0
+    - index: 61
+      sampleIndex0: 61
+      sampleIndex1: 62
+      duration: 0
+    - index: 62
+      sampleIndex0: 62
+      sampleIndex1: 63
+      duration: 0
+    - index: 63
+      sampleIndex0: 63
+      sampleIndex1: 64
+      duration: 0
+    - index: 64
+      sampleIndex0: 64
+      sampleIndex1: 65
+      duration: 0
+    - index: 65
+      sampleIndex0: 65
+      sampleIndex1: 66
+      duration: 0
+    - index: 66
+      sampleIndex0: 66
+      sampleIndex1: 67
+      duration: 0
+    - index: 67
+      sampleIndex0: 67
+      sampleIndex1: 68
+      duration: 0
+    - index: 68
+      sampleIndex0: 68
+      sampleIndex1: 69
+      duration: 0
+    - index: 69
+      sampleIndex0: 69
+      sampleIndex1: 70
+      duration: 0
+    - index: 70
+      sampleIndex0: 70
+      sampleIndex1: 71
+      duration: 0
+    - index: 71
+      sampleIndex0: 71
+      sampleIndex1: 72
+      duration: 0
+    - index: 72
+      sampleIndex0: 72
+      sampleIndex1: 73
+      duration: 0
+    - index: 73
+      sampleIndex0: 73
+      sampleIndex1: 74
+      duration: 0
+    - index: 74
+      sampleIndex0: 74
+      sampleIndex1: 75
+      duration: 0
+    - index: 75
+      sampleIndex0: 75
+      sampleIndex1: 76
+      duration: 0
+    - index: 76
+      sampleIndex0: 76
+      sampleIndex1: 77
+      duration: 0
+    - index: 77
+      sampleIndex0: 77
+      sampleIndex1: 78
+      duration: 0
+    - index: 78
+      sampleIndex0: 78
+      sampleIndex1: 79
+      duration: 0
+    - index: 79
+      sampleIndex0: 79
+      sampleIndex1: 80
+      duration: 0
+    - index: 80
+      sampleIndex0: 80
+      sampleIndex1: 81
+      duration: 0
+    - index: 81
+      sampleIndex0: 81
+      sampleIndex1: 82
+      duration: 0
+    - index: 82
+      sampleIndex0: 82
+      sampleIndex1: 83
+      duration: 0
+    - index: 83
+      sampleIndex0: 83
+      sampleIndex1: 84
+      duration: 0
+    - index: 84
+      sampleIndex0: 84
+      sampleIndex1: 85
+      duration: 0
+    - index: 85
+      sampleIndex0: 85
+      sampleIndex1: 86
+      duration: 0
+    - index: 86
+      sampleIndex0: 86
+      sampleIndex1: 87
+      duration: 0
+    - index: 87
+      sampleIndex0: 87
+      sampleIndex1: 88
+      duration: 0
+    - index: 88
+      sampleIndex0: 88
+      sampleIndex1: 89
+      duration: 0
+    - index: 89
+      sampleIndex0: 89
+      sampleIndex1: 90
+      duration: 0
+    - index: 90
+      sampleIndex0: 90
+      sampleIndex1: 91
+      duration: 0
+    - index: 91
+      sampleIndex0: 91
+      sampleIndex1: 92
+      duration: 0
+    - index: 92
+      sampleIndex0: 92
+      sampleIndex1: 93
+      duration: 0
+    - index: 93
+      sampleIndex0: 93
+      sampleIndex1: 94
+      duration: 0
+    - index: 94
+      sampleIndex0: 94
+      sampleIndex1: 95
+      duration: 0
+    - index: 95
+      sampleIndex0: 95
+      sampleIndex1: 96
+      duration: 0
+    - index: 96
+      sampleIndex0: 96
+      sampleIndex1: 97
+      duration: 0
+    - index: 97
+      sampleIndex0: 97
+      sampleIndex1: 98
+      duration: 0
+    - index: 98
+      sampleIndex0: 98
+      sampleIndex1: 99
+      duration: 0
+    - index: 99
+      sampleIndex0: 99
+      sampleIndex1: 100
+      duration: 0
+    - index: 100
+      sampleIndex0: 100
+      sampleIndex1: 101
+      duration: 0
+    - index: 101
+      sampleIndex0: 101
+      sampleIndex1: 102
+      duration: 0
+    - index: 102
+      sampleIndex0: 102
+      sampleIndex1: 103
+      duration: 0
+    - index: 103
+      sampleIndex0: 103
+      sampleIndex1: 104
+      duration: 0
+    - index: 104
+      sampleIndex0: 104
+      sampleIndex1: 105
+      duration: 0
+    - index: 105
+      sampleIndex0: 105
+      sampleIndex1: 106
+      duration: 0
+    - index: 106
+      sampleIndex0: 106
+      sampleIndex1: 107
+      duration: 0
+    - index: 107
+      sampleIndex0: 107
+      sampleIndex1: 108
+      duration: 0
+    - index: 108
+      sampleIndex0: 108
+      sampleIndex1: 109
+      duration: 0
+    - index: 109
+      sampleIndex0: 109
+      sampleIndex1: 110
+      duration: 0
+    - index: 110
+      sampleIndex0: 110
+      sampleIndex1: 111
+      duration: 0
+    - index: 111
+      sampleIndex0: 111
+      sampleIndex1: 112
+      duration: 0
+    - index: 112
+      sampleIndex0: 112
+      sampleIndex1: 113
+      duration: 0
+    - index: 113
+      sampleIndex0: 113
+      sampleIndex1: 114
+      duration: 0
+    - index: 114
+      sampleIndex0: 114
+      sampleIndex1: 115
+      duration: 0
+    - index: 115
+      sampleIndex0: 115
+      sampleIndex1: 116
+      duration: 0
+    - index: 116
+      sampleIndex0: 116
+      sampleIndex1: 117
+      duration: 0
+    - index: 117
+      sampleIndex0: 117
+      sampleIndex1: 118
+      duration: 0
+    - index: 118
+      sampleIndex0: 118
+      sampleIndex1: 119
+      duration: 0
+    - index: 119
+      sampleIndex0: 119
+      sampleIndex1: 120
+      duration: 0
+    - index: 120
+      sampleIndex0: 120
+      sampleIndex1: 121
+      duration: 0
+    - index: 121
+      sampleIndex0: 121
+      sampleIndex1: 122
+      duration: 0
+    - index: 122
+      sampleIndex0: 122
+      sampleIndex1: 123
+      duration: 0
+    - index: 123
+      sampleIndex0: 123
+      sampleIndex1: 124
+      duration: 0
+    - index: 124
+      sampleIndex0: 124
+      sampleIndex1: 125
+      duration: 0
+    - index: 125
+      sampleIndex0: 125
+      sampleIndex1: 126
+      duration: 0
+    - index: 126
+      sampleIndex0: 126
+      sampleIndex1: 127
+      duration: 0
+    - index: 127
+      sampleIndex0: 127
+      sampleIndex1: 128
+      duration: 0
+    - index: 128
+      sampleIndex0: 128
+      sampleIndex1: 129
+      duration: 0
+    - index: 129
+      sampleIndex0: 129
+      sampleIndex1: 130
+      duration: 0
+    - index: 130
+      sampleIndex0: 130
+      sampleIndex1: 131
+      duration: 0
+    - index: 131
+      sampleIndex0: 131
+      sampleIndex1: 132
+      duration: 0
+    - index: 132
+      sampleIndex0: 132
+      sampleIndex1: 133
+      duration: 0
+    - index: 133
+      sampleIndex0: 133
+      sampleIndex1: 134
+      duration: 0
+    - index: 134
+      sampleIndex0: 134
+      sampleIndex1: 135
+      duration: 0
+    - index: 135
+      sampleIndex0: 135
+      sampleIndex1: 136
+      duration: 0
+    - index: 136
+      sampleIndex0: 136
+      sampleIndex1: 137
+      duration: 0
+    - index: 137
+      sampleIndex0: 137
+      sampleIndex1: 138
+      duration: 0
+    - index: 138
+      sampleIndex0: 138
+      sampleIndex1: 139
+      duration: 0
+    - index: 139
+      sampleIndex0: 139
+      sampleIndex1: 140
+      duration: 0
+    - index: 140
+      sampleIndex0: 140
+      sampleIndex1: 141
+      duration: 0
+    - index: 141
+      sampleIndex0: 141
+      sampleIndex1: 142
+      duration: 0
+    - index: 142
+      sampleIndex0: 142
+      sampleIndex1: 143
+      duration: 0
+    - index: 143
+      sampleIndex0: 143
+      sampleIndex1: 144
+      duration: 0
+    - index: 144
+      sampleIndex0: 144
+      sampleIndex1: 145
+      duration: 0
+    - index: 145
+      sampleIndex0: 145
+      sampleIndex1: 146
+      duration: 0
+    - index: 146
+      sampleIndex0: 146
+      sampleIndex1: 147
+      duration: 0
+    - index: 147
+      sampleIndex0: 147
+      sampleIndex1: 148
+      duration: 0
+    - index: 148
+      sampleIndex0: 148
+      sampleIndex1: 149
+      duration: 0
+    - index: 149
+      sampleIndex0: 149
+      sampleIndex1: 150
+      duration: 0
+    - index: 150
+      sampleIndex0: 150
+      sampleIndex1: 151
+      duration: 0
+    - index: 151
+      sampleIndex0: 151
+      sampleIndex1: 152
+      duration: 0
+    - index: 152
+      sampleIndex0: 152
+      sampleIndex1: 153
+      duration: 0
+    - index: 153
+      sampleIndex0: 153
+      sampleIndex1: 154
+      duration: 0
+    - index: 154
+      sampleIndex0: 154
+      sampleIndex1: 155
+      duration: 0
+    - index: 155
+      sampleIndex0: 155
+      sampleIndex1: 156
+      duration: 0
+    - index: 156
+      sampleIndex0: 156
+      sampleIndex1: 157
+      duration: 0
+    - index: 157
+      sampleIndex0: 157
+      sampleIndex1: 158
+      duration: 0
+    - index: 158
+      sampleIndex0: 158
+      sampleIndex1: 159
+      duration: 0
+    - index: 159
+      sampleIndex0: 159
+      sampleIndex1: 160
+      duration: 0
+    - index: 160
+      sampleIndex0: 160
+      sampleIndex1: 161
+      duration: 0
+    - index: 161
+      sampleIndex0: 161
+      sampleIndex1: 162
+      duration: 0
+    - index: 162
+      sampleIndex0: 162
+      sampleIndex1: 163
+      duration: 0
+    - index: 163
+      sampleIndex0: 163
+      sampleIndex1: 164
+      duration: 0
+    - index: 164
+      sampleIndex0: 164
+      sampleIndex1: 165
+      duration: 0
+    - index: 165
+      sampleIndex0: 165
+      sampleIndex1: 166
+      duration: 0
+    - index: 166
+      sampleIndex0: 166
+      sampleIndex1: 167
+      duration: 0
+    - index: 167
+      sampleIndex0: 167
+      sampleIndex1: 168
+      duration: 0
+    - index: 168
+      sampleIndex0: 168
+      sampleIndex1: 169
+      duration: 0
+    - index: 169
+      sampleIndex0: 169
+      sampleIndex1: 170
+      duration: 0
+    - index: 170
+      sampleIndex0: 170
+      sampleIndex1: 171
+      duration: 0
+    - index: 171
+      sampleIndex0: 171
+      sampleIndex1: 172
+      duration: 0
+    - index: 172
+      sampleIndex0: 172
+      sampleIndex1: 173
+      duration: 0
+    - index: 173
+      sampleIndex0: 173
+      sampleIndex1: 174
+      duration: 0
+    - index: 174
+      sampleIndex0: 174
+      sampleIndex1: 175
+      duration: 0
+    - index: 175
+      sampleIndex0: 175
+      sampleIndex1: 176
+      duration: 0
+    - index: 176
+      sampleIndex0: 176
+      sampleIndex1: 177
+      duration: 0
+    - index: 177
+      sampleIndex0: 177
+      sampleIndex1: 178
+      duration: 0
+    - index: 178
+      sampleIndex0: 178
+      sampleIndex1: 179
+      duration: 0
+    - index: 179
+      sampleIndex0: 179
+      sampleIndex1: 180
+      duration: 0
+    - index: 180
+      sampleIndex0: 180
+      sampleIndex1: 181
+      duration: 0
+    - index: 181
+      sampleIndex0: 181
+      sampleIndex1: 182
+      duration: 0
+    - index: 182
+      sampleIndex0: 182
+      sampleIndex1: 183
+      duration: 0
+    - index: 183
+      sampleIndex0: 183
+      sampleIndex1: 184
+      duration: 0
+    - index: 184
+      sampleIndex0: 184
+      sampleIndex1: 185
+      duration: 0
+    - index: 185
+      sampleIndex0: 185
+      sampleIndex1: 186
+      duration: 0
+    - index: 186
+      sampleIndex0: 186
+      sampleIndex1: 187
+      duration: 0
+    - index: 187
+      sampleIndex0: 187
+      sampleIndex1: 188
+      duration: 0
+    - index: 188
+      sampleIndex0: 188
+      sampleIndex1: 189
+      duration: 0
+    - index: 189
+      sampleIndex0: 189
+      sampleIndex1: 190
+      duration: 0
+    - index: 190
+      sampleIndex0: 190
+      sampleIndex1: 191
+      duration: 0
+    - index: 191
+      sampleIndex0: 191
+      sampleIndex1: 192
+      duration: 0
+    - index: 192
+      sampleIndex0: 192
+      sampleIndex1: 193
+      duration: 0
+    - index: 193
+      sampleIndex0: 193
+      sampleIndex1: 194
+      duration: 0
+    - index: 194
+      sampleIndex0: 194
+      sampleIndex1: 195
+      duration: 0
+    - index: 195
+      sampleIndex0: 195
+      sampleIndex1: 196
+      duration: 0
+    - index: 196
+      sampleIndex0: 196
+      sampleIndex1: 197
+      duration: 0
+    - index: 197
+      sampleIndex0: 197
+      sampleIndex1: 198
+      duration: 0
+    - index: 198
+      sampleIndex0: 198
+      sampleIndex1: 199
+      duration: 0
+    - index: 199
+      sampleIndex0: 199
+      sampleIndex1: 200
+      duration: 0
+    - index: 200
+      sampleIndex0: 200
+      sampleIndex1: 201
+      duration: 0
+    - index: 201
+      sampleIndex0: 201
+      sampleIndex1: 202
+      duration: 0
+    - index: 202
+      sampleIndex0: 202
+      sampleIndex1: 203
+      duration: 0
+    - index: 203
+      sampleIndex0: 203
+      sampleIndex1: 204
+      duration: 0
+    - index: 204
+      sampleIndex0: 204
+      sampleIndex1: 205
+      duration: 0
+    - index: 205
+      sampleIndex0: 205
+      sampleIndex1: 206
+      duration: 0
+    - index: 206
+      sampleIndex0: 206
+      sampleIndex1: 207
+      duration: 0
+    - index: 207
+      sampleIndex0: 207
+      sampleIndex1: 208
+      duration: 0
+    - index: 208
+      sampleIndex0: 208
+      sampleIndex1: 209
+      duration: 0
+    - index: 209
+      sampleIndex0: 209
+      sampleIndex1: 210
+      duration: 0
+    - index: 210
+      sampleIndex0: 210
+      sampleIndex1: 211
+      duration: 0
+    - index: 211
+      sampleIndex0: 211
+      sampleIndex1: 212
+      duration: 0
+    - index: 212
+      sampleIndex0: 212
+      sampleIndex1: 213
+      duration: 0
+    - index: 213
+      sampleIndex0: 213
+      sampleIndex1: 214
+      duration: 0
+    - index: 214
+      sampleIndex0: 214
+      sampleIndex1: 215
+      duration: 0
+    - index: 215
+      sampleIndex0: 215
+      sampleIndex1: 216
+      duration: 0
+    - index: 216
+      sampleIndex0: 216
+      sampleIndex1: 217
+      duration: 0
+    - index: 217
+      sampleIndex0: 217
+      sampleIndex1: 218
+      duration: 0
+    - index: 218
+      sampleIndex0: 218
+      sampleIndex1: 219
+      duration: 0
+    - index: 219
+      sampleIndex0: 219
+      sampleIndex1: 220
+      duration: 0
+    - index: 220
+      sampleIndex0: 220
+      sampleIndex1: 221
+      duration: 0
+    - index: 221
+      sampleIndex0: 221
+      sampleIndex1: 222
+      duration: 0
+    - index: 222
+      sampleIndex0: 222
+      sampleIndex1: 223
+      duration: 0
+    - index: 223
+      sampleIndex0: 223
+      sampleIndex1: 224
+      duration: 0
+    - index: 224
+      sampleIndex0: 224
+      sampleIndex1: 225
+      duration: 0
+    - index: 225
+      sampleIndex0: 225
+      sampleIndex1: 226
+      duration: 0
+    - index: 226
+      sampleIndex0: 226
+      sampleIndex1: 227
+      duration: 0
+    - index: 227
+      sampleIndex0: 227
+      sampleIndex1: 228
+      duration: 0
+    - index: 228
+      sampleIndex0: 228
+      sampleIndex1: 229
+      duration: 0
+    - index: 229
+      sampleIndex0: 229
+      sampleIndex1: 230
+      duration: 0
+    - index: 230
+      sampleIndex0: 230
+      sampleIndex1: 231
+      duration: 0
+    - index: 231
+      sampleIndex0: 231
+      sampleIndex1: 232
+      duration: 0
+    - index: 232
+      sampleIndex0: 232
+      sampleIndex1: 233
+      duration: 0
+    - index: 233
+      sampleIndex0: 233
+      sampleIndex1: 234
+      duration: 0
+    - index: 234
+      sampleIndex0: 234
+      sampleIndex1: 235
+      duration: 0
+    - index: 235
+      sampleIndex0: 235
+      sampleIndex1: 236
+      duration: 0
+    - index: 236
+      sampleIndex0: 236
+      sampleIndex1: 237
+      duration: 0
+    - index: 237
+      sampleIndex0: 237
+      sampleIndex1: 238
+      duration: 0
+    - index: 238
+      sampleIndex0: 238
+      sampleIndex1: 239
+      duration: 0
+    - index: 239
+      sampleIndex0: 239
+      sampleIndex1: 240
+      duration: 0
+    - index: 240
+      sampleIndex0: 240
+      sampleIndex1: 241
+      duration: 0
+    - index: 241
+      sampleIndex0: 241
+      sampleIndex1: 242
+      duration: 0
+    - index: 242
+      sampleIndex0: 242
+      sampleIndex1: 243
+      duration: 0
+    - index: 243
+      sampleIndex0: 243
+      sampleIndex1: 244
+      duration: 0
+    - index: 244
+      sampleIndex0: 244
+      sampleIndex1: 245
+      duration: 0
+    - index: 245
+      sampleIndex0: 245
+      sampleIndex1: 246
+      duration: 0
+    - index: 246
+      sampleIndex0: 246
+      sampleIndex1: 247
+      duration: 0
+    - index: 247
+      sampleIndex0: 247
+      sampleIndex1: 248
+      duration: 0
+    - index: 248
+      sampleIndex0: 248
+      sampleIndex1: 249
+      duration: 0
+    - index: 249
+      sampleIndex0: 249
+      sampleIndex1: 250
+      duration: 0
+    - index: 250
+      sampleIndex0: 250
+      sampleIndex1: 251
+      duration: 0
+    - index: 251
+      sampleIndex0: 251
+      sampleIndex1: 252
+      duration: 0
+    - index: 252
+      sampleIndex0: 252
+      sampleIndex1: 253
+      duration: 0
+    - index: 253
+      sampleIndex0: 253
+      sampleIndex1: 254
+      duration: 0
+    - index: 254
+      sampleIndex0: 254
+      sampleIndex1: 255
+      duration: 0
+    - index: 255
+      sampleIndex0: 255
+      sampleIndex1: 256
+      duration: 0
+    - index: 256
+      sampleIndex0: 256
+      sampleIndex1: 257
+      duration: 0
+    - index: 257
+      sampleIndex0: 257
+      sampleIndex1: 258
+      duration: 0
+    - index: 258
+      sampleIndex0: 258
+      sampleIndex1: 259
+      duration: 0
+    - index: 259
+      sampleIndex0: 259
+      sampleIndex1: 260
+      duration: 0
+    - index: 260
+      sampleIndex0: 260
+      sampleIndex1: 261
+      duration: 0
+    - index: 261
+      sampleIndex0: 261
+      sampleIndex1: 262
+      duration: 0
+    - index: 262
+      sampleIndex0: 262
+      sampleIndex1: 263
+      duration: 0
+    - index: 263
+      sampleIndex0: 263
+      sampleIndex1: 264
+      duration: 0
+    - index: 264
+      sampleIndex0: 264
+      sampleIndex1: 265
+      duration: 0
+    - index: 265
+      sampleIndex0: 265
+      sampleIndex1: 266
+      duration: 0
+    - index: 266
+      sampleIndex0: 266
+      sampleIndex1: 267
+      duration: 0
+    - index: 267
+      sampleIndex0: 267
+      sampleIndex1: 268
+      duration: 0
+    - index: 268
+      sampleIndex0: 268
+      sampleIndex1: 269
+      duration: 0
+    - index: 269
+      sampleIndex0: 269
+      sampleIndex1: 270
+      duration: 0
+    - index: 270
+      sampleIndex0: 270
+      sampleIndex1: 271
+      duration: 0
+    - index: 271
+      sampleIndex0: 271
+      sampleIndex1: 272
+      duration: 0
+    - index: 272
+      sampleIndex0: 272
+      sampleIndex1: 273
+      duration: 0
+    - index: 273
+      sampleIndex0: 273
+      sampleIndex1: 274
+      duration: 0
+    - index: 274
+      sampleIndex0: 274
+      sampleIndex1: 275
+      duration: 0
+    - index: 275
+      sampleIndex0: 275
+      sampleIndex1: 276
+      duration: 0
+    - index: 276
+      sampleIndex0: 276
+      sampleIndex1: 277
+      duration: 0
+    - index: 277
+      sampleIndex0: 277
+      sampleIndex1: 278
+      duration: 0
+    - index: 278
+      sampleIndex0: 278
+      sampleIndex1: 279
+      duration: 0
+    - index: 279
+      sampleIndex0: 279
+      sampleIndex1: 280
+      duration: 0
+    - index: 280
+      sampleIndex0: 280
+      sampleIndex1: 281
+      duration: 0
+    - index: 281
+      sampleIndex0: 281
+      sampleIndex1: 282
+      duration: 0
+    - index: 282
+      sampleIndex0: 282
+      sampleIndex1: 283
+      duration: 0
+    - index: 283
+      sampleIndex0: 283
+      sampleIndex1: 284
+      duration: 0
+    - index: 284
+      sampleIndex0: 284
+      sampleIndex1: 285
+      duration: 0
+    - index: 285
+      sampleIndex0: 285
+      sampleIndex1: 286
+      duration: 0
+    - index: 286
+      sampleIndex0: 286
+      sampleIndex1: 287
+      duration: 0
+    - index: 287
+      sampleIndex0: 287
+      sampleIndex1: 288
+      duration: 0
+    - index: 288
+      sampleIndex0: 288
+      sampleIndex1: 289
+      duration: 0
+    - index: 289
+      sampleIndex0: 289
+      sampleIndex1: 290
+      duration: 0
+    - index: 290
+      sampleIndex0: 290
+      sampleIndex1: 291
+      duration: 0
+    - index: 291
+      sampleIndex0: 291
+      sampleIndex1: 292
+      duration: 0
+    - index: 292
+      sampleIndex0: 292
+      sampleIndex1: 293
+      duration: 0
+    - index: 293
+      sampleIndex0: 293
+      sampleIndex1: 294
+      duration: 0
+    - index: 294
+      sampleIndex0: 294
+      sampleIndex1: 295
+      duration: 0
+    - index: 295
+      sampleIndex0: 295
+      sampleIndex1: 296
+      duration: 0
+    - index: 296
+      sampleIndex0: 296
+      sampleIndex1: 297
+      duration: 0
+    - index: 297
+      sampleIndex0: 297
+      sampleIndex1: 298
+      duration: 0
+    - index: 298
+      sampleIndex0: 298
+      sampleIndex1: 299
+      duration: 0
+    - index: 299
+      sampleIndex0: 299
+      sampleIndex1: 300
+      duration: 0
+    - index: 300
+      sampleIndex0: 300
+      sampleIndex1: 301
+      duration: 0
+    - index: 301
+      sampleIndex0: 301
+      sampleIndex1: 302
+      duration: 0
+    - index: 302
+      sampleIndex0: 302
+      sampleIndex1: 303
+      duration: 0
+    - index: 303
+      sampleIndex0: 303
+      sampleIndex1: 304
+      duration: 0
+    - index: 304
+      sampleIndex0: 304
+      sampleIndex1: 305
+      duration: 0
+    - index: 305
+      sampleIndex0: 305
+      sampleIndex1: 306
+      duration: 0
+    - index: 306
+      sampleIndex0: 306
+      sampleIndex1: 307
+      duration: 0
+    - index: 307
+      sampleIndex0: 307
+      sampleIndex1: 308
+      duration: 0
+    - index: 308
+      sampleIndex0: 308
+      sampleIndex1: 309
+      duration: 0
+    - index: 309
+      sampleIndex0: 309
+      sampleIndex1: 310
+      duration: 0
+    - index: 310
+      sampleIndex0: 310
+      sampleIndex1: 311
+      duration: 0
+    - index: 311
+      sampleIndex0: 311
+      sampleIndex1: 312
+      duration: 0
+    - index: 312
+      sampleIndex0: 312
+      sampleIndex1: 313
+      duration: 0
+    - index: 313
+      sampleIndex0: 313
+      sampleIndex1: 314
+      duration: 0
+    - index: 314
+      sampleIndex0: 314
+      sampleIndex1: 315
+      duration: 0
+    - index: 315
+      sampleIndex0: 315
+      sampleIndex1: 316
+      duration: 0
+    - index: 316
+      sampleIndex0: 316
+      sampleIndex1: 317
+      duration: 0
+    - index: 317
+      sampleIndex0: 317
+      sampleIndex1: 318
+      duration: 0
+    - index: 318
+      sampleIndex0: 318
+      sampleIndex1: 319
+      duration: 0
+    - index: 319
+      sampleIndex0: 319
+      sampleIndex1: 320
+      duration: 0
+    - index: 320
+      sampleIndex0: 320
+      sampleIndex1: 321
+      duration: 0
+    - index: 321
+      sampleIndex0: 321
+      sampleIndex1: 322
+      duration: 0
+    - index: 322
+      sampleIndex0: 322
+      sampleIndex1: 323
+      duration: 0
+    - index: 323
+      sampleIndex0: 323
+      sampleIndex1: 324
+      duration: 0
+    - index: 324
+      sampleIndex0: 324
+      sampleIndex1: 325
+      duration: 0
+    - index: 325
+      sampleIndex0: 325
+      sampleIndex1: 326
+      duration: 0
+    - index: 326
+      sampleIndex0: 326
+      sampleIndex1: 327
+      duration: 0
+    - index: 327
+      sampleIndex0: 327
+      sampleIndex1: 328
+      duration: 0
+    - index: 328
+      sampleIndex0: 328
+      sampleIndex1: 329
+      duration: 0
+    - index: 329
+      sampleIndex0: 329
+      sampleIndex1: 330
+      duration: 0
+    - index: 330
+      sampleIndex0: 330
+      sampleIndex1: 331
+      duration: 0
+    - index: 331
+      sampleIndex0: 331
+      sampleIndex1: 332
+      duration: 0
+    - index: 332
+      sampleIndex0: 332
+      sampleIndex1: 333
+      duration: 0
+    - index: 333
+      sampleIndex0: 333
+      sampleIndex1: 334
+      duration: 0
+    - index: 334
+      sampleIndex0: 334
+      sampleIndex1: 335
+      duration: 0
+    - index: 335
+      sampleIndex0: 335
+      sampleIndex1: 336
+      duration: 0
+    - index: 336
+      sampleIndex0: 336
+      sampleIndex1: 337
+      duration: 0
+    - index: 337
+      sampleIndex0: 337
+      sampleIndex1: 338
+      duration: 0
+    - index: 338
+      sampleIndex0: 338
+      sampleIndex1: 339
+      duration: 0
+    - index: 339
+      sampleIndex0: 339
+      sampleIndex1: 340
+      duration: 0
+    - index: 340
+      sampleIndex0: 340
+      sampleIndex1: 341
+      duration: 0
+    - index: 341
+      sampleIndex0: 341
+      sampleIndex1: 342
+      duration: 0
+    - index: 342
+      sampleIndex0: 342
+      sampleIndex1: 343
+      duration: 0
+    - index: 343
+      sampleIndex0: 343
+      sampleIndex1: 344
+      duration: 0
+    - index: 344
+      sampleIndex0: 344
+      sampleIndex1: 345
+      duration: 0
+    - index: 345
+      sampleIndex0: 345
+      sampleIndex1: 346
+      duration: 0
+    - index: 346
+      sampleIndex0: 346
+      sampleIndex1: 347
+      duration: 0
+    - index: 347
+      sampleIndex0: 347
+      sampleIndex1: 348
+      duration: 0
+    - index: 348
+      sampleIndex0: 348
+      sampleIndex1: 349
+      duration: 0
+    - index: 349
+      sampleIndex0: 349
+      sampleIndex1: 350
+      duration: 0
+    - index: 350
+      sampleIndex0: 350
+      sampleIndex1: 351
+      duration: 0
+    - index: 351
+      sampleIndex0: 351
+      sampleIndex1: 352
+      duration: 0
+    - index: 352
+      sampleIndex0: 352
+      sampleIndex1: 353
+      duration: 0
+    - index: 353
+      sampleIndex0: 353
+      sampleIndex1: 354
+      duration: 0
+    - index: 354
+      sampleIndex0: 354
+      sampleIndex1: 355
+      duration: 0
+    - index: 355
+      sampleIndex0: 355
+      sampleIndex1: 356
+      duration: 0
+    - index: 356
+      sampleIndex0: 356
+      sampleIndex1: 357
+      duration: 0
+    - index: 357
+      sampleIndex0: 357
+      sampleIndex1: 358
+      duration: 0
+    - index: 358
+      sampleIndex0: 358
+      sampleIndex1: 359
+      duration: 0
+    - index: 359
+      sampleIndex0: 359
+      sampleIndex1: 360
+      duration: 0
+    - index: 360
+      sampleIndex0: 360
+      sampleIndex1: 361
+      duration: 0
+    - index: 361
+      sampleIndex0: 361
+      sampleIndex1: 362
+      duration: 0
+    - index: 362
+      sampleIndex0: 362
+      sampleIndex1: 363
+      duration: 0
+    - index: 363
+      sampleIndex0: 363
+      sampleIndex1: 364
+      duration: 0
+    - index: 364
+      sampleIndex0: 364
+      sampleIndex1: 365
+      duration: 0
+    - index: 365
+      sampleIndex0: 365
+      sampleIndex1: 366
+      duration: 0
+    - index: 366
+      sampleIndex0: 366
+      sampleIndex1: 367
+      duration: 0
+    - index: 367
+      sampleIndex0: 367
+      sampleIndex1: 368
+      duration: 0
+    - index: 368
+      sampleIndex0: 368
+      sampleIndex1: 369
+      duration: 0
+    - index: 369
+      sampleIndex0: 369
+      sampleIndex1: 370
+      duration: 0
+    - index: 370
+      sampleIndex0: 370
+      sampleIndex1: 371
+      duration: 0
+    - index: 371
+      sampleIndex0: 371
+      sampleIndex1: 372
+      duration: 0
+    - index: 372
+      sampleIndex0: 372
+      sampleIndex1: 373
+      duration: 0
+    - index: 373
+      sampleIndex0: 373
+      sampleIndex1: 374
+      duration: 0
+    - index: 374
+      sampleIndex0: 374
+      sampleIndex1: 375
+      duration: 0
+    - index: 375
+      sampleIndex0: 375
+      sampleIndex1: 376
+      duration: 0
+    - index: 376
+      sampleIndex0: 376
+      sampleIndex1: 377
+      duration: 0
+    - index: 377
+      sampleIndex0: 377
+      sampleIndex1: 378
+      duration: 0
+    - index: 378
+      sampleIndex0: 378
+      sampleIndex1: 379
+      duration: 0
+    - index: 379
+      sampleIndex0: 379
+      sampleIndex1: 380
+      duration: 0
+    - index: 380
+      sampleIndex0: 380
+      sampleIndex1: 381
+      duration: 0
+    - index: 381
+      sampleIndex0: 381
+      sampleIndex1: 382
+      duration: 0
+    - index: 382
+      sampleIndex0: 382
+      sampleIndex1: 383
+      duration: 0
+    - index: 383
+      sampleIndex0: 383
+      sampleIndex1: 384
+      duration: 0
+    - index: 384
+      sampleIndex0: 384
+      sampleIndex1: 385
+      duration: 0
+    - index: 385
+      sampleIndex0: 385
+      sampleIndex1: 386
+      duration: 0
+    - index: 386
+      sampleIndex0: 386
+      sampleIndex1: 387
+      duration: 0
+    - index: 387
+      sampleIndex0: 387
+      sampleIndex1: 388
+      duration: 0
+    - index: 388
+      sampleIndex0: 388
+      sampleIndex1: 389
+      duration: 0
+    - index: 389
+      sampleIndex0: 389
+      sampleIndex1: 390
+      duration: 0
+    - index: 390
+      sampleIndex0: 390
+      sampleIndex1: 391
+      duration: 0
+    - index: 391
+      sampleIndex0: 391
+      sampleIndex1: 392
+      duration: 0
+    - index: 392
+      sampleIndex0: 392
+      sampleIndex1: 393
+      duration: 0
+    - index: 393
+      sampleIndex0: 393
+      sampleIndex1: 394
+      duration: 0
+    - index: 394
+      sampleIndex0: 394
+      sampleIndex1: 395
+      duration: 0
+    - index: 395
+      sampleIndex0: 395
+      sampleIndex1: 396
+      duration: 0
+    - index: 396
+      sampleIndex0: 396
+      sampleIndex1: 397
+      duration: 0
+    - index: 397
+      sampleIndex0: 397
+      sampleIndex1: 398
+      duration: 0
+    - index: 398
+      sampleIndex0: 398
+      sampleIndex1: 399
+      duration: 0
+    - index: 399
+      sampleIndex0: 399
+      sampleIndex1: 400
+      duration: 0
+    - index: 400
+      sampleIndex0: 400
+      sampleIndex1: 401
+      duration: 0
+    - index: 401
+      sampleIndex0: 401
+      sampleIndex1: 402
+      duration: 0
+    - index: 402
+      sampleIndex0: 402
+      sampleIndex1: 403
+      duration: 0
+    - index: 403
+      sampleIndex0: 403
+      sampleIndex1: 404
+      duration: 0
+    - index: 404
+      sampleIndex0: 404
+      sampleIndex1: 405
+      duration: 0
+    - index: 405
+      sampleIndex0: 405
+      sampleIndex1: 406
+      duration: 0
+    - index: 406
+      sampleIndex0: 406
+      sampleIndex1: 407
+      duration: 0
+    - index: 407
+      sampleIndex0: 407
+      sampleIndex1: 408
+      duration: 0
+    - index: 408
+      sampleIndex0: 408
+      sampleIndex1: 409
+      duration: 0
+    - index: 409
+      sampleIndex0: 409
+      sampleIndex1: 410
+      duration: 0
+    - index: 410
+      sampleIndex0: 410
+      sampleIndex1: 411
+      duration: 0
+    - index: 411
+      sampleIndex0: 411
+      sampleIndex1: 412
+      duration: 0
+    - index: 412
+      sampleIndex0: 412
+      sampleIndex1: 413
+      duration: 0
+    - index: 413
+      sampleIndex0: 413
+      sampleIndex1: 414
+      duration: 0
+    - index: 414
+      sampleIndex0: 414
+      sampleIndex1: 415
+      duration: 0
+    - index: 415
+      sampleIndex0: 415
+      sampleIndex1: 416
+      duration: 0
+    - index: 416
+      sampleIndex0: 416
+      sampleIndex1: 417
+      duration: 0
+    - index: 417
+      sampleIndex0: 417
+      sampleIndex1: 418
+      duration: 0
+    - index: 418
+      sampleIndex0: 418
+      sampleIndex1: 419
+      duration: 0
+    - index: 419
+      sampleIndex0: 419
+      sampleIndex1: 420
+      duration: 0
+    - index: 420
+      sampleIndex0: 420
+      sampleIndex1: 421
+      duration: 0
+    - index: 421
+      sampleIndex0: 421
+      sampleIndex1: 422
+      duration: 0
+    - index: 422
+      sampleIndex0: 422
+      sampleIndex1: 423
+      duration: 0
+    - index: 423
+      sampleIndex0: 423
+      sampleIndex1: 424
+      duration: 0
+    - index: 424
+      sampleIndex0: 424
+      sampleIndex1: 425
+      duration: 0
+    - index: 425
+      sampleIndex0: 425
+      sampleIndex1: 426
+      duration: 0
+    - index: 426
+      sampleIndex0: 426
+      sampleIndex1: 427
+      duration: 0
+    - index: 427
+      sampleIndex0: 427
+      sampleIndex1: 428
+      duration: 0
+    - index: 428
+      sampleIndex0: 428
+      sampleIndex1: 429
+      duration: 0
+    - index: 429
+      sampleIndex0: 429
+      sampleIndex1: 430
+      duration: 0
+    - index: 430
+      sampleIndex0: 430
+      sampleIndex1: 431
+      duration: 0
+    - index: 431
+      sampleIndex0: 431
+      sampleIndex1: 432
+      duration: 0
+    - index: 432
+      sampleIndex0: 432
+      sampleIndex1: 433
+      duration: 0
+    - index: 433
+      sampleIndex0: 433
+      sampleIndex1: 434
+      duration: 0
+    - index: 434
+      sampleIndex0: 434
+      sampleIndex1: 435
+      duration: 0
+    - index: 435
+      sampleIndex0: 435
+      sampleIndex1: 436
+      duration: 0
+    - index: 436
+      sampleIndex0: 436
+      sampleIndex1: 437
+      duration: 0
+    - index: 437
+      sampleIndex0: 437
+      sampleIndex1: 438
+      duration: 0
+    - index: 438
+      sampleIndex0: 438
+      sampleIndex1: 439
+      duration: 0
+    - index: 439
+      sampleIndex0: 439
+      sampleIndex1: 440
+      duration: 0
+    - index: 440
+      sampleIndex0: 440
+      sampleIndex1: 441
+      duration: 0
+    - index: 441
+      sampleIndex0: 441
+      sampleIndex1: 442
+      duration: 0
+    - index: 442
+      sampleIndex0: 442
+      sampleIndex1: 443
+      duration: 0
+    - index: 443
+      sampleIndex0: 443
+      sampleIndex1: 444
+      duration: 0
+    - index: 444
+      sampleIndex0: 444
+      sampleIndex1: 445
+      duration: 0
+    - index: 445
+      sampleIndex0: 445
+      sampleIndex1: 446
+      duration: 0
+    - index: 446
+      sampleIndex0: 446
+      sampleIndex1: 447
+      duration: 0
+    - index: 447
+      sampleIndex0: 447
+      sampleIndex1: 448
+      duration: 0
+    - index: 448
+      sampleIndex0: 448
+      sampleIndex1: 449
+      duration: 0
+    - index: 449
+      sampleIndex0: 449
+      sampleIndex1: 450
+      duration: 0
+    - index: 450
+      sampleIndex0: 450
+      sampleIndex1: 451
+      duration: 0
+    - index: 451
+      sampleIndex0: 451
+      sampleIndex1: 452
+      duration: 0
+    - index: 452
+      sampleIndex0: 452
+      sampleIndex1: 453
+      duration: 0
+    - index: 453
+      sampleIndex0: 453
+      sampleIndex1: 454
+      duration: 0
+    - index: 454
+      sampleIndex0: 454
+      sampleIndex1: 455
+      duration: 0
+    - index: 455
+      sampleIndex0: 455
+      sampleIndex1: 456
+      duration: 0
+    - index: 456
+      sampleIndex0: 456
+      sampleIndex1: 457
+      duration: 0
+    - index: 457
+      sampleIndex0: 457
+      sampleIndex1: 458
+      duration: 0
+    - index: 458
+      sampleIndex0: 458
+      sampleIndex1: 459
+      duration: 0
+    - index: 459
+      sampleIndex0: 459
+      sampleIndex1: 460
+      duration: 0
+    - index: 460
+      sampleIndex0: 460
+      sampleIndex1: 461
+      duration: 0
+    - index: 461
+      sampleIndex0: 461
+      sampleIndex1: 462
+      duration: 0
+    - index: 462
+      sampleIndex0: 462
+      sampleIndex1: 463
+      duration: 0
+    - index: 463
+      sampleIndex0: 463
+      sampleIndex1: 464
+      duration: 0
+    - index: 464
+      sampleIndex0: 464
+      sampleIndex1: 465
+      duration: 0
+    - index: 465
+      sampleIndex0: 465
+      sampleIndex1: 466
+      duration: 0
+    - index: 466
+      sampleIndex0: 466
+      sampleIndex1: 467
+      duration: 0
+    - index: 467
+      sampleIndex0: 467
+      sampleIndex1: 468
+      duration: 0
+    - index: 468
+      sampleIndex0: 468
+      sampleIndex1: 469
+      duration: 0
+    - index: 469
+      sampleIndex0: 469
+      sampleIndex1: 470
+      duration: 0
+    - index: 470
+      sampleIndex0: 470
+      sampleIndex1: 471
+      duration: 0
+    - index: 471
+      sampleIndex0: 471
+      sampleIndex1: 472
+      duration: 0
+    - index: 472
+      sampleIndex0: 472
+      sampleIndex1: 473
+      duration: 0
+    - index: 473
+      sampleIndex0: 473
+      sampleIndex1: 474
+      duration: 0
+    - index: 474
+      sampleIndex0: 474
+      sampleIndex1: 475
+      duration: 0
+    - index: 475
+      sampleIndex0: 475
+      sampleIndex1: 476
+      duration: 0
+    - index: 476
+      sampleIndex0: 476
+      sampleIndex1: 477
+      duration: 0
+    - index: 477
+      sampleIndex0: 477
+      sampleIndex1: 478
+      duration: 0
+    - index: 478
+      sampleIndex0: 478
+      sampleIndex1: 479
+      duration: 0
+    - index: 479
+      sampleIndex0: 479
+      sampleIndex1: 480
+      duration: 0
+    - index: 480
+      sampleIndex0: 480
+      sampleIndex1: 481
+      duration: 0
+    - index: 481
+      sampleIndex0: 481
+      sampleIndex1: 482
+      duration: 0
+    - index: 482
+      sampleIndex0: 482
+      sampleIndex1: 483
+      duration: 0
+    - index: 483
+      sampleIndex0: 483
+      sampleIndex1: 484
+      duration: 0
+    - index: 484
+      sampleIndex0: 484
+      sampleIndex1: 485
+      duration: 0
+    - index: 485
+      sampleIndex0: 485
+      sampleIndex1: 486
+      duration: 0
+    - index: 486
+      sampleIndex0: 486
+      sampleIndex1: 487
+      duration: 0
+    - index: 487
+      sampleIndex0: 487
+      sampleIndex1: 488
+      duration: 0
+    - index: 488
+      sampleIndex0: 488
+      sampleIndex1: 489
+      duration: 0
+    - index: 489
+      sampleIndex0: 489
+      sampleIndex1: 490
+      duration: 0
+    - index: 490
+      sampleIndex0: 490
+      sampleIndex1: 491
+      duration: 0
+    - index: 491
+      sampleIndex0: 491
+      sampleIndex1: 492
+      duration: 0
+    - index: 492
+      sampleIndex0: 492
+      sampleIndex1: 493
+      duration: 0
+    - index: 493
+      sampleIndex0: 493
+      sampleIndex1: 494
+      duration: 0
+    - index: 494
+      sampleIndex0: 494
+      sampleIndex1: 495
+      duration: 0
+    - index: 495
+      sampleIndex0: 495
+      sampleIndex1: 496
+      duration: 0
+    - index: 496
+      sampleIndex0: 496
+      sampleIndex1: 497
+      duration: 0
+    - index: 497
+      sampleIndex0: 497
+      sampleIndex1: 498
+      duration: 0
+    - index: 498
+      sampleIndex0: 498
+      sampleIndex1: 499
+      duration: 0
+    - index: 499
+      sampleIndex0: 499
+      sampleIndex1: 500
+      duration: 0
+    - index: 500
+      sampleIndex0: 500
+      sampleIndex1: 501
+      duration: 0
+    - index: 501
+      sampleIndex0: 501
+      sampleIndex1: 502
+      duration: 0
+    - index: 502
+      sampleIndex0: 502
+      sampleIndex1: 503
+      duration: 0
+    - index: 503
+      sampleIndex0: 503
+      sampleIndex1: 504
+      duration: 0
+    - index: 504
+      sampleIndex0: 504
+      sampleIndex1: 505
+      duration: 0
+    - index: 505
+      sampleIndex0: 505
+      sampleIndex1: 506
+      duration: 0
+    - index: 506
+      sampleIndex0: 506
+      sampleIndex1: 507
+      duration: 0
+    - index: 507
+      sampleIndex0: 507
+      sampleIndex1: 508
+      duration: 0
+    - index: 508
+      sampleIndex0: 508
+      sampleIndex1: 509
+      duration: 0
+    - index: 509
+      sampleIndex0: 509
+      sampleIndex1: 510
+      duration: 0
+    - index: 510
+      sampleIndex0: 510
+      sampleIndex1: 511
+      duration: 0
+    - index: 511
+      sampleIndex0: 511
+      sampleIndex1: 512
+      duration: 0
+    - index: 512
+      sampleIndex0: 512
+      sampleIndex1: 513
+      duration: 0
+    - index: 513
+      sampleIndex0: 513
+      sampleIndex1: 514
+      duration: 0
+    - index: 514
+      sampleIndex0: 514
+      sampleIndex1: 515
+      duration: 0
+    - index: 515
+      sampleIndex0: 515
+      sampleIndex1: 516
+      duration: 0
+    - index: 516
+      sampleIndex0: 516
+      sampleIndex1: 517
+      duration: 0
+    - index: 517
+      sampleIndex0: 517
+      sampleIndex1: 518
+      duration: 0
+    - index: 518
+      sampleIndex0: 518
+      sampleIndex1: 519
+      duration: 0
+    - index: 519
+      sampleIndex0: 519
+      sampleIndex1: 520
+      duration: 0
+    - index: 520
+      sampleIndex0: 520
+      sampleIndex1: 521
+      duration: 0
+    - index: 521
+      sampleIndex0: 521
+      sampleIndex1: 522
+      duration: 0
+    - index: 522
+      sampleIndex0: 522
+      sampleIndex1: 523
+      duration: 0
+    - index: 523
+      sampleIndex0: 523
+      sampleIndex1: 524
+      duration: 0
+    - index: 524
+      sampleIndex0: 524
+      sampleIndex1: 525
+      duration: 0
+    - index: 525
+      sampleIndex0: 525
+      sampleIndex1: 526
+      duration: 0
+    - index: 526
+      sampleIndex0: 526
+      sampleIndex1: 527
+      duration: 0
+    - index: 527
+      sampleIndex0: 527
+      sampleIndex1: 528
+      duration: 0
+    - index: 528
+      sampleIndex0: 528
+      sampleIndex1: 529
+      duration: 0
+    - index: 529
+      sampleIndex0: 529
+      sampleIndex1: 530
+      duration: 0
+    - index: 530
+      sampleIndex0: 530
+      sampleIndex1: 531
+      duration: 0
+    - index: 531
+      sampleIndex0: 531
+      sampleIndex1: 532
+      duration: 0
+    - index: 532
+      sampleIndex0: 532
+      sampleIndex1: 533
+      duration: 0
+    - index: 533
+      sampleIndex0: 533
+      sampleIndex1: 534
+      duration: 0
+    - index: 534
+      sampleIndex0: 534
+      sampleIndex1: 535
+      duration: 0
+    - index: 535
+      sampleIndex0: 535
+      sampleIndex1: 536
+      duration: 0
+    - index: 536
+      sampleIndex0: 536
+      sampleIndex1: 537
+      duration: 0
+    - index: 537
+      sampleIndex0: 537
+      sampleIndex1: 538
+      duration: 0
+    - index: 538
+      sampleIndex0: 538
+      sampleIndex1: 539
+      duration: 0
+    - index: 539
+      sampleIndex0: 539
+      sampleIndex1: 540
+      duration: 0
+    - index: 540
+      sampleIndex0: 540
+      sampleIndex1: 541
+      duration: 0
+    - index: 541
+      sampleIndex0: 541
+      sampleIndex1: 542
+      duration: 0
+    - index: 542
+      sampleIndex0: 542
+      sampleIndex1: 543
+      duration: 0
+    - index: 543
+      sampleIndex0: 543
+      sampleIndex1: 544
+      duration: 0
+    - index: 544
+      sampleIndex0: 544
+      sampleIndex1: 545
+      duration: 0
+    - index: 545
+      sampleIndex0: 545
+      sampleIndex1: 546
+      duration: 0
+    - index: 546
+      sampleIndex0: 546
+      sampleIndex1: 547
+      duration: 0
+    - index: 547
+      sampleIndex0: 547
+      sampleIndex1: 548
+      duration: 0
+    - index: 548
+      sampleIndex0: 548
+      sampleIndex1: 549
+      duration: 0
+    - index: 549
+      sampleIndex0: 549
+      sampleIndex1: 550
+      duration: 0
+    - index: 550
+      sampleIndex0: 550
+      sampleIndex1: 551
+      duration: 0
+    - index: 551
+      sampleIndex0: 551
+      sampleIndex1: 552
+      duration: 0
+    - index: 552
+      sampleIndex0: 552
+      sampleIndex1: 553
+      duration: 0
+    - index: 553
+      sampleIndex0: 553
+      sampleIndex1: 554
+      duration: 0
+    - index: 554
+      sampleIndex0: 554
+      sampleIndex1: 555
+      duration: 0
+    - index: 555
+      sampleIndex0: 555
+      sampleIndex1: 556
+      duration: 0
+    - index: 556
+      sampleIndex0: 556
+      sampleIndex1: 557
+      duration: 0
+    - index: 557
+      sampleIndex0: 557
+      sampleIndex1: 558
+      duration: 0
+    - index: 558
+      sampleIndex0: 558
+      sampleIndex1: 559
+      duration: 0
+    - index: 559
+      sampleIndex0: 559
+      sampleIndex1: 560
+      duration: 0
+    - index: 560
+      sampleIndex0: 560
+      sampleIndex1: 561
+      duration: 0
+    - index: 561
+      sampleIndex0: 561
+      sampleIndex1: 562
+      duration: 0
+    - index: 562
+      sampleIndex0: 562
+      sampleIndex1: 563
+      duration: 0
+    - index: 563
+      sampleIndex0: 563
+      sampleIndex1: 564
+      duration: 0
+    - index: 564
+      sampleIndex0: 564
+      sampleIndex1: 565
+      duration: 0
+    - index: 565
+      sampleIndex0: 565
+      sampleIndex1: 566
+      duration: 0
+    - index: 566
+      sampleIndex0: 566
+      sampleIndex1: 567
+      duration: 0
+    - index: 567
+      sampleIndex0: 567
+      sampleIndex1: 568
+      duration: 0
+    - index: 568
+      sampleIndex0: 568
+      sampleIndex1: 569
+      duration: 0
+    - index: 569
+      sampleIndex0: 569
+      sampleIndex1: 570
+      duration: 0
+    - index: 570
+      sampleIndex0: 570
+      sampleIndex1: 571
+      duration: 0
+    - index: 571
+      sampleIndex0: 571
+      sampleIndex1: 572
+      duration: 0
+    _samples:
+    - _index: 0
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 1
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 2
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 3
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 4
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 5
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 6
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 7
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 8
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 9
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 10
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 11
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 12
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 13
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 14
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 15
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 16
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 17
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 18
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 19
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 20
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 21
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 22
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 23
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 24
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 25
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 26
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 27
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 28
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 29
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 30
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 31
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 32
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 33
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 34
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 35
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 36
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 37
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 38
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 39
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 40
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 41
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 42
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 43
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 44
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 45
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 46
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 47
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 48
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 49
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 50
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 51
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 52
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 53
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 54
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 55
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 56
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 57
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 58
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 59
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 60
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 61
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 62
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 63
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 64
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 65
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 66
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 67
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 68
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 69
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 70
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 71
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 72
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 73
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 74
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 75
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 76
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 77
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 78
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 79
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 80
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 81
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 82
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 83
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 84
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 85
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 86
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 87
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 88
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 89
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 90
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 91
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 92
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 93
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 94
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 95
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 96
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 97
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 98
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 99
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 100
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 101
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 102
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 103
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 104
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 105
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 106
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 107
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 108
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 109
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 110
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 111
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 112
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 113
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 114
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 115
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 116
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 117
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 118
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 119
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 120
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 121
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 122
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 123
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 124
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 125
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 126
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 127
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 128
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 129
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 130
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 131
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 132
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 133
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 134
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 135
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 136
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 137
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 138
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 139
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 140
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 141
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 142
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 143
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 144
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 145
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 146
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 147
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 148
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 149
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 150
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 151
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 152
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 153
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 154
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 155
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 156
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 157
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 158
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 159
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 160
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 161
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 162
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 163
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 164
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 165
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 166
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 167
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 168
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 169
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 170
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 171
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 172
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 173
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 174
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 175
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 176
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 177
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 178
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 179
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 180
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 181
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 182
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 183
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 184
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 185
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 186
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 187
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 188
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 189
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 190
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 191
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 192
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 193
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 194
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 195
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 196
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 197
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 198
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 199
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 200
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 201
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 202
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 203
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 204
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 205
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 206
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 207
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 208
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 209
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 210
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 211
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 212
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 213
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 214
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 215
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 216
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 217
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 218
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 219
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 220
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 221
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 222
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 223
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 224
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 225
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 226
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 227
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 228
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 229
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 230
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 231
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 232
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 233
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 234
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 235
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 236
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 237
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 238
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 239
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 240
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 241
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 242
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 243
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 244
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 245
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 246
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 247
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 248
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 249
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 250
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 251
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 252
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 253
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 254
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 255
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 256
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 257
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 258
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 259
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 260
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 261
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 262
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 263
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 264
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 265
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 266
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 267
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 268
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 269
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 270
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 271
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 272
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 273
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 274
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 275
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 276
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 277
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 278
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 279
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 280
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 281
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 282
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 283
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 284
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 285
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 286
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 287
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 288
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 289
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 290
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 291
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 292
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 293
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 294
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 295
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 296
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 297
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 298
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 299
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 300
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 301
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 302
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 303
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 304
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 305
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 306
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 307
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 308
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 309
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 310
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 311
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 312
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 313
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 314
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 315
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 316
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 317
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 318
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 319
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 320
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 321
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 322
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 323
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 324
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 325
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 326
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 327
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 328
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 329
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 330
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 331
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 332
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 333
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 334
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 335
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 336
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 337
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 338
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 339
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 340
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 341
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 342
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 343
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 344
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 345
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 346
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 347
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 348
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 349
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 350
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 351
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 352
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 353
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 354
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 355
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 356
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 357
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 358
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 359
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 360
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 361
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 362
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 363
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 364
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 365
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 366
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 367
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 368
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 369
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 370
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 371
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 372
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 373
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 374
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 375
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 376
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 377
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 378
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 379
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 380
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 381
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 382
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 383
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 384
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 385
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 386
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 387
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 388
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 389
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 390
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 391
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 392
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 393
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 394
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 395
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 396
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 397
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 398
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 399
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 400
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 401
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 402
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 403
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 404
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 405
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 406
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 407
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 408
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 409
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 410
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 411
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 412
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 413
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 414
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 415
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 416
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 417
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 418
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 419
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 420
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 421
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 422
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 423
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 424
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 425
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 426
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 427
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 428
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 429
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 430
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 431
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 432
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 433
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 434
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 435
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 436
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 437
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 438
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 439
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 440
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 441
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 442
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 443
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 444
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 445
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 446
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 447
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 448
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 449
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 450
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 451
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 452
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 453
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 454
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 455
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 456
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 457
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 458
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 459
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 460
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 461
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 462
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 463
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 464
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 465
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 466
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 467
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 468
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 469
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 470
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 471
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 472
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 473
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 474
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 475
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 476
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 477
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 478
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 479
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 480
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 481
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 482
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 483
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 484
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 485
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 486
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 487
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 488
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 489
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 490
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 491
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 492
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 493
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 494
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 495
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 496
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 497
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 498
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 499
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 500
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 501
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 502
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 503
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 504
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 505
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 506
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 507
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 508
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 509
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 510
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 511
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 512
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 513
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 514
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 515
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 516
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 517
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 518
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 519
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 520
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 521
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 522
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 523
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 524
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 525
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 526
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 527
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 528
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 529
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 530
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 531
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 532
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 533
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 534
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 535
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 536
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 537
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 538
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 539
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 540
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 541
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 542
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 543
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 544
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 545
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 546
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 547
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 548
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 549
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 550
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 551
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 552
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 553
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 554
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 555
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 556
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 557
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 558
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 559
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 560
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 561
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 562
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 563
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 564
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 565
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 566
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 567
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 568
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 569
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 570
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 571
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 572
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    _durationSeconds: 0

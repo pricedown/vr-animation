@@ -13,3 +13,290 @@ MonoBehaviour:
   m_Name: jump_f
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_ClipData
   clipName: jump_f
+  clip:
+    _keyframes:
+    - index: 0
+      sampleIndex0: 0
+      sampleIndex1: 1
+      duration: 0
+    - index: 1
+      sampleIndex0: 1
+      sampleIndex1: 2
+      duration: 0
+    - index: 2
+      sampleIndex0: 2
+      sampleIndex1: 3
+      duration: 0
+    - index: 3
+      sampleIndex0: 3
+      sampleIndex1: 4
+      duration: 0
+    - index: 4
+      sampleIndex0: 4
+      sampleIndex1: 5
+      duration: 0
+    - index: 5
+      sampleIndex0: 5
+      sampleIndex1: 6
+      duration: 0
+    - index: 6
+      sampleIndex0: 6
+      sampleIndex1: 7
+      duration: 0
+    - index: 7
+      sampleIndex0: 7
+      sampleIndex1: 8
+      duration: 0
+    - index: 8
+      sampleIndex0: 8
+      sampleIndex1: 9
+      duration: 0
+    - index: 9
+      sampleIndex0: 9
+      sampleIndex1: 10
+      duration: 0
+    - index: 10
+      sampleIndex0: 10
+      sampleIndex1: 11
+      duration: 0
+    - index: 11
+      sampleIndex0: 11
+      sampleIndex1: 12
+      duration: 0
+    - index: 12
+      sampleIndex0: 12
+      sampleIndex1: 13
+      duration: 0
+    - index: 13
+      sampleIndex0: 13
+      sampleIndex1: 14
+      duration: 0
+    - index: 14
+      sampleIndex0: 14
+      sampleIndex1: 15
+      duration: 0
+    - index: 15
+      sampleIndex0: 15
+      sampleIndex1: 16
+      duration: 0
+    - index: 16
+      sampleIndex0: 16
+      sampleIndex1: 17
+      duration: 0
+    - index: 17
+      sampleIndex0: 17
+      sampleIndex1: 18
+      duration: 0
+    - index: 18
+      sampleIndex0: 18
+      sampleIndex1: 19
+      duration: 0
+    - index: 19
+      sampleIndex0: 19
+      sampleIndex1: 20
+      duration: 0
+    - index: 20
+      sampleIndex0: 20
+      sampleIndex1: 21
+      duration: 0
+    - index: 21
+      sampleIndex0: 21
+      sampleIndex1: 22
+      duration: 0
+    - index: 22
+      sampleIndex0: 22
+      sampleIndex1: 23
+      duration: 0
+    - index: 23
+      sampleIndex0: 23
+      sampleIndex1: 24
+      duration: 0
+    - index: 24
+      sampleIndex0: 24
+      sampleIndex1: 25
+      duration: 0
+    - index: 25
+      sampleIndex0: 25
+      sampleIndex1: 26
+      duration: 0
+    - index: 26
+      sampleIndex0: 26
+      sampleIndex1: 27
+      duration: 0
+    - index: 27
+      sampleIndex0: 27
+      sampleIndex1: 28
+      duration: 0
+    - index: 28
+      sampleIndex0: 28
+      sampleIndex1: 29
+      duration: 0
+    - index: 29
+      sampleIndex0: 29
+      sampleIndex1: 30
+      duration: 0
+    - index: 30
+      sampleIndex0: 30
+      sampleIndex1: 31
+      duration: 0
+    - index: 31
+      sampleIndex0: 31
+      sampleIndex1: 32
+      duration: 0
+    - index: 32
+      sampleIndex0: 32
+      sampleIndex1: 33
+      duration: 0
+    - index: 33
+      sampleIndex0: 33
+      sampleIndex1: 34
+      duration: 0
+    - index: 34
+      sampleIndex0: 34
+      sampleIndex1: 35
+      duration: 0
+    - index: 35
+      sampleIndex0: 35
+      sampleIndex1: 36
+      duration: 0
+    - index: 36
+      sampleIndex0: 36
+      sampleIndex1: 37
+      duration: 0
+    - index: 37
+      sampleIndex0: 37
+      sampleIndex1: 38
+      duration: 0
+    - index: 38
+      sampleIndex0: 38
+      sampleIndex1: 39
+      duration: 0
+    - index: 39
+      sampleIndex0: 39
+      sampleIndex1: 40
+      duration: 0
+    _samples:
+    - _index: 0
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 1
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 2
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 3
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 4
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 5
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 6
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 7
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 8
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 9
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 10
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 11
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 12
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 13
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 14
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 15
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 16
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 17
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 18
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 19
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 20
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 21
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 22
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 23
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 24
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 25
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 26
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 27
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 28
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 29
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 30
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 31
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 32
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 33
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 34
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 35
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 36
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 37
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 38
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 39
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    - _index: 40
+      localTranslation: {x: 0, y: 0, z: 0}
+      localRotation: {x: 0, y: 0, z: 0, w: 0}
+    _durationSeconds: 0
