@@ -147,6 +147,8 @@ namespace pricenerds3D
 
                 //Quaternion worldRot = m_worldSpace[i].rotation;
                 //m_localPose[i].m_basis = Matrix4x4.Rotate(worldRot);
+
+                // TO DO: Fix the bases. these are currently world space!
                 m_localPose[i].m_basis.SetColumn(0, Vector3.right);
                 m_localPose[i].m_basis.SetColumn(1, Vector3.up);
                 m_localPose[i].m_basis.SetColumn(2, Vector3.forward);
