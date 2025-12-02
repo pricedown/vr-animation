@@ -21,6 +21,8 @@ namespace pricenerds3D
         [SerializeField] private P3D_Keyframe[] _keyframes;
         [SerializeField] private P3D_Sample[] _samples;
         [SerializeField] private float _durationSeconds;
+        [SerializeField] private float _durationInverse;
+
 
         public P3D_Clip(uint sampleCount)
         {
@@ -43,16 +45,19 @@ namespace pricenerds3D
         public P3D_Keyframe[] keyframes => _keyframes;
         public P3D_Sample[] samples => _samples;
         public float durationSeconds => _durationSeconds;
+        public float durationInverse => _durationInverse;
 
         // TODO: importer should use this
         public void SetDuration(float duration)
         {
             _durationSeconds = duration;
+            _durationInverse = duration > 0f ? 1f / duration : 0f;
         }
 
         public void SetKeyframeDuration(int index, float duration)
         {
             _keyframes[index].duration = duration;
+            _keyframes[index].durationInverse = duration > 0f ? 1f / duration : 0f;
         }
     }
 
@@ -64,6 +69,7 @@ namespace pricenerds3D
         public uint sampleIndex0;
         public uint sampleIndex1;
         public float duration;
+        public float durationInverse;
 
         public P3D_Sample GetSample0(P3D_Clip clip)
         {
@@ -83,12 +89,24 @@ namespace pricenerds3D
 
         public Vector3 localTranslation;
         public Quaternion localRotation;
+        public Vector3 localScale;
+
 
         public P3D_Sample(uint index)
         {
             _index = index;
+            localTranslation = Vector3.zero;
+            localRotation = Quaternion.identity;
+            localScale = Vector3.one;
         }
 
         public uint index => _index;
+
+        public void SetPose(Vector3 translation, Quaternion rotation, Vector3 scale)
+        {
+            localTranslation = translation;
+            localRotation = rotation;
+            localScale = scale;
+        }
     }
 }
