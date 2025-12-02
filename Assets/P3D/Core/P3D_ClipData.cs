@@ -22,10 +22,12 @@ namespace pricenerds3D
         [SerializeField] private P3D_Sample[] _samples;
         [SerializeField] private float _durationSeconds;
         [SerializeField] private float _durationInverse;
+        [SerializeField] private uint _jointCount;
 
-
-        public P3D_Clip(uint sampleCount)
+        public P3D_Clip(uint sampleCount, uint jointCount = 1)
         {
+            _jointCount = jointCount;
+
             var keyframeCount = sampleCount - 1;
             _samples = new P3D_Sample[sampleCount];
             _keyframes = new P3D_Keyframe[keyframeCount];
@@ -39,13 +41,15 @@ namespace pricenerds3D
                     duration = 0f
                 };
 
-            for (var i = 0; i < sampleCount; i++) _samples[i] = new P3D_Sample((uint)i);
+            for (var i = 0; i < sampleCount; i++)
+                _samples[i] = new P3D_Sample((uint)i, jointCount);
         }
 
         public P3D_Keyframe[] keyframes => _keyframes;
         public P3D_Sample[] samples => _samples;
         public float durationSeconds => _durationSeconds;
         public float durationInverse => _durationInverse;
+        public uint jointCount => _jointCount;
 
         // TODO: importer should use this
         public void SetDuration(float duration)
@@ -86,27 +90,60 @@ namespace pricenerds3D
     public class P3D_Sample
     {
         [SerializeField] private uint _index;
+        [SerializeField] private P3D_JointSample[] _joints;
 
         public Vector3 localTranslation;
         public Quaternion localRotation;
         public Vector3 localScale;
 
 
-        public P3D_Sample(uint index)
+        public P3D_Sample(uint index, uint jointCount = 1)
         {
             _index = index;
-            localTranslation = Vector3.zero;
-            localRotation = Quaternion.identity;
-            localScale = Vector3.one;
+            _joints = new P3D_JointSample[jointCount];
+            for (var i = 0; i < jointCount; i++)
+                _joints[i] = P3D_JointSample.Identity;
         }
 
         public uint index => _index;
+        public int jointCount => _joints?.Length ?? 0;
 
-        public void SetPose(Vector3 translation, Quaternion rotation, Vector3 scale)
+        public void SetJointPose(int jointIndex, Vector3 translation, Quaternion rotation, Vector3 scale)
         {
-            localTranslation = translation;
-            localRotation = rotation;
-            localScale = scale;
+            if (_joints != null && jointIndex >= 0 && jointIndex < _joints.Length)
+                _joints[jointIndex] = new P3D_JointSample(translation, rotation, scale);
+        }
+
+        public P3D_JointSample GetJointPose(int jointIndex)
+        {
+            if (_joints != null && jointIndex >= 0 && jointIndex < _joints.Length)
+                return _joints[jointIndex];
+            return P3D_JointSample.Identity;
+        }
+    }
+
+    [Serializable]
+    public struct P3D_JointSample
+    {
+        public Vector3 translation;
+        public Quaternion rotation;
+        public Vector3 scale;
+
+        public P3D_JointSample(Vector3 t, Quaternion r, Vector3 s)
+        {
+            translation = t;
+            rotation = r;
+            scale = s;
+        }
+
+        public static P3D_JointSample Identity => new(Vector3.zero, Quaternion.identity, Vector3.one);
+
+        public static P3D_JointSample Lerp(P3D_JointSample a, P3D_JointSample b, float t)
+        {
+            return new P3D_JointSample(
+                Vector3.Lerp(a.translation, b.translation, t),
+                Quaternion.Slerp(a.rotation, b.rotation, t),
+                Vector3.Lerp(a.scale, b.scale, t));
         }
     }
 }
