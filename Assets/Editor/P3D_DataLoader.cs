@@ -284,9 +284,36 @@ namespace pricenerds3D
                 var clipData = ScriptableObject.CreateInstance<P3D_ClipData>();
                 clipData.clipName = data.animationData[animationIndex].animationName;
 
+                var animData = data.animationData[animationIndex];
+                var sampleCount = animData.numFrames;
+
                 // create a new clip and store it in clip data scriptable object
-                var clip = new P3D_Clip(data.animationData[animationIndex]
-                    .numFrames); // TO DO: replace 0 with actual sample count
+                var clip = new P3D_Clip(sampleCount);
+
+                var playbackRate = data.frameRate > 0 ? data.frameRate : 30f;
+                var keyframeDuration = 1f / playbackRate;
+                var totalDuration = (sampleCount - 1) * keyframeDuration;
+
+                clip.SetDuration(totalDuration);
+
+                for (var kf = 0; kf < clip.keyframes.Length; kf++)
+                    clip.SetKeyframeDuration(kf, keyframeDuration);
+
+                for (uint frameIdx = 0; frameIdx < sampleCount; frameIdx++)
+                {
+                    var sample = clip.samples[frameIdx];
+
+                    foreach (var segmentName in data.segmentNames)
+                    {
+                        if (animData.position[(int)frameIdx].TryGetValue(segmentName, out var pos))
+                            sample.localTranslation = pos;
+                        if (animData.rotation[(int)frameIdx].TryGetValue(segmentName, out var rot))
+                            sample.localRotation = rot;
+                        if (animData.scale[(int)frameIdx].TryGetValue(segmentName, out var scl))
+                            sample.localScale = scl;
+                        break;
+                    }
+                }
 
                 for (uint frameIndex = 0; frameIndex < data.animationData[animationIndex].numFrames; frameIndex++)
                 {
