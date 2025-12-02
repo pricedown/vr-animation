@@ -51,9 +51,9 @@ namespace pricenerds3D
             Vector3 top = transformMat.MultiplyPoint3x4(new Vector3(0, 0, topLength + bottomLength));
             Vector3 bottom = transformMat.MultiplyPoint3x4(new Vector3(0, 0, 0));
 
-            Debug.DrawRay(bottom, xOrtho * 0.05f, Color.blue);
-            Debug.DrawRay(bottom, zOrtho * 0.05f, Color.green);
-            Debug.DrawRay(bottom, yOrtho * 0.05f, Color.red);
+            Debug.DrawRay(bottom, xOrtho * 0.05f, Color.red);
+            Debug.DrawRay(bottom, yOrtho * 0.05f, Color.green);
+            Debug.DrawRay(bottom, zOrtho * 0.05f, Color.blue);
 
             // get each point using the base width to form the rectangular base of the pyramid 
             Vector3 b1 = transformMat.MultiplyPoint3x4(new Vector3(+baseWidth, +baseWidth, bottomLength));

@@ -13,12 +13,18 @@ namespace pricenerds3D
 
         [Header("Gizmos")]
         [SerializeField]
+        private Transform _tracker;
+        [SerializeField]
+        private string _boneToTrack;
+        [SerializeField]
         private bool _gizmosEnabled = true;
         [SerializeField]
         private Color _boneColor = Color.blue;
 
         public P3D_Rig rig;
         public P3D_RigPose deltaPose;
+        private int jointIndex;
+        private Quaternion initialJointRotation;
 
         private void OnEnable()
         {
@@ -26,6 +32,11 @@ namespace pricenerds3D
             InitializeRig();
             rig.InitializeBasePose();
             deltaPose = new P3D_RigPose(rig);
+
+            // DEBUG
+            jointIndex = deltaPose.m_rig.GetJointFromName(_boneToTrack).m_jointIndex;
+            initialJointRotation = deltaPose.m_localPose[jointIndex].m_jointRotation;
+            _tracker.rotation = deltaPose.m_localPose[jointIndex].m_jointRotation;
         }
 
         // This is essentially a backwards way of creating a rig. We already have the rig using GameObjects for testing purposes. We have to replace this later with a custom importer
@@ -35,21 +46,16 @@ namespace pricenerds3D
             P3D_RigHelpers.DebugInitRigFromHierarchy(_sampleHierarchy, rig);
         }
 
-        float angleDelta;
         private void Update()
         {
-            for (int i = 0; i < rig.m_jointCount; i++)
-            {
-                //deltaPose.m_localPose[i].m_jointRotation = Quaternion.AngleAxis((Time.time * 2.0f) * Time.deltaTime, deltaPose.m_localPose[i].m_jointForward);
-                //deltaPose.SolveFK();
-            }
+            // DEBUG
 
-            UpdateTestClip(_testAnimation);
-        }
+            deltaPose.m_localPose[jointIndex].m_jointRotation = _tracker.localRotation * Quaternion.Inverse(initialJointRotation);
+            deltaPose.SolveFK();
 
-        private void UpdateTestClip(P3D_ClipData clipData)
-        {
-            
+            Debug.DrawRay(_tracker.position, _tracker.right * 0.05f, Color.red);
+            Debug.DrawRay(_tracker.position, _tracker.up * 0.05f, Color.green);
+            Debug.DrawRay(_tracker.position, _tracker.forward * 0.05f, Color.blue);
         }
 
         // this will have to be in a custom editor that reads from some kind of data file

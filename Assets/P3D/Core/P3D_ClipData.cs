@@ -53,16 +53,17 @@ namespace pricenerds3D
     public class P3D_Sample
     {
         public uint index { get; private set; }
-        public float timeSeconds { get; private set; }
+        //public float timeSeconds { get; private set; }
         
         // this would actually be property bindings in a professional engine
+        // offset from base pose
         public Vector3 localTranslation;
         public Quaternion localRotation;
 
-        public P3D_Sample(uint index, float timeSeconds)
+        public P3D_Sample(uint index/*, float timeSeconds*/)
         {
             this.index = index;
-            this.timeSeconds = timeSeconds;
+            //this.timeSeconds = timeSeconds;
         }
     }
 }

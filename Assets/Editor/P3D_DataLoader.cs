@@ -258,21 +258,40 @@ namespace pricenerds3D
             rig = new P3D_Rig((UInt32)data.segmentHierarchy.Count);
             BuildHierarchy(data.segmentNames, data.segmentHierarchy, rig);
 
-            for (int i = 0; i < data.animationData.Count; i++) 
+            // iterate through each animation
+            for (int animationIndex = 0; animationIndex < data.animationData.Count; animationIndex++) 
             {
-                // TO DO: generate bindings for clip
-                //
-
                 // create new clip data
                 P3D_ClipData clipData = ScriptableObject.CreateInstance<P3D_ClipData>();
-                clipData.clipName = data.animationData[i].animationName;
+                clipData.clipName = data.animationData[animationIndex].animationName;
 
                 // create a new clip and store it in clip data scriptable object
-                P3D_Clip clip = new P3D_Clip(data.animationData[i].numFrames); // TO DO: replace 0 with actual sample count
-                //clip.keyframes = ...
+                P3D_Clip clip = new P3D_Clip(data.animationData[animationIndex].numFrames); // TO DO: replace 0 with actual sample count
+
+                // the HTR file contains the offsets from the base pose
+                // for every segment
+                /*
+                for(int segmentIndex = 0; segmentIndex < data.segmentNames.Count; segmentIndex++)
+                {
+                    string currentSegmentName = data.segmentNames[segmentIndex];
+                    // create first keyframe, then start from the second keyframe and move forward to access its end sample
+                    P3D_Keyframe keyframe0 = new P3D_Keyframe();
+                    P3D_Sample sample0 = new P3D_Sample(0);
+                    sample0.localTranslation = data.animationData[animationIndex].position[0][currentSegmentName];
+                    sample0.localRotation = data.animationData[animationIndex].rotation[];
+
+                    P3D_Sample sample1 = new P3D_Sample(1);
+
+                    for (int frameIndex = 1; frameIndex < data.totalFrames; frameIndex++)
+                    {
+                        // we need to access the end sample of the previous and create a new sample for the next
+
+                    }
+                }*/
+
                 clipData.clip = clip;
 
-                clips[i] = clipData;
+                clips[animationIndex] = clipData;
 
                 /*
                 Debug.Log($"Animation name: {data.animationData[i].animationName}");
