@@ -260,17 +260,25 @@ namespace pricenerds3D
 
             for (int i = 0; i < data.animationData.Count; i++) 
             {
-                // process each pose
+                // TO DO: generate bindings for clip
+                //
 
-                // create new clip
+                // create new clip data
                 P3D_ClipData clipData = ScriptableObject.CreateInstance<P3D_ClipData>();
                 clipData.clipName = data.animationData[i].animationName;
+
+                // create a new clip and store it in clip data scriptable object
+                P3D_Clip clip = new P3D_Clip(data.animationData[i].numFrames); // TO DO: replace 0 with actual sample count
+                //clip.keyframes = ...
+                clipData.clip = clip;
+
                 clips[i] = clipData;
 
+                /*
                 Debug.Log($"Animation name: {data.animationData[i].animationName}");
                 Debug.Log($"Frame count: {data.animationData[i].numFrames}");
                 Debug.Log($"Positions count: {data.animationData[i].position.Length}");
-                Debug.Log($"Rotations count: {data.animationData[i].rotation.Length}");
+                Debug.Log($"Rotations count: {data.animationData[i].rotation.Length}");*/
             }
         }
 

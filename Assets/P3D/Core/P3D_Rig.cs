@@ -132,6 +132,7 @@ namespace pricenerds3D
         /// </summary>
         public void SolveFK()
         {
+            // solve forward kinematics
             for(int i = 0; i < m_rig.m_jointCount; i++)
             {
                 P3D_Joint joint = m_rig.m_joints[i];
@@ -143,6 +144,9 @@ namespace pricenerds3D
 
                 if (joint.m_parentIndex == -1) m_worldSpace[i] = localPoseMatrix;
                 else m_worldSpace[i] = m_worldSpace[joint.m_parentIndex] * localPoseMatrix;
+
+                Quaternion worldRot = m_worldSpace[i].rotation;
+                m_localPose[i].m_basis = Matrix4x4.Rotate(worldRot);
             }
         }
     }
@@ -157,12 +161,10 @@ namespace pricenerds3D
         public Quaternion m_jointRotation;
         public Vector3 m_jointTranslation;
         public Vector3 m_jointScale;
+        public Matrix4x4 m_basis;
 
-        public P3D_JointPose(Vector3 translation, Quaternion rotation, Vector3 scale)
-        {
-            m_jointTranslation = translation;
-            m_jointRotation = rotation;
-            m_jointScale = scale;
-        }
+        public Vector3 m_jointRight { get { return m_basis.GetColumn(0); } }
+        public Vector3 m_jointUp { get { return m_basis.GetColumn(1); } }
+        public Vector3 m_jointForward { get { return m_basis.GetColumn(2); } }
     }
 }

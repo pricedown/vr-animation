@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace pricenerds3D
@@ -8,6 +10,24 @@ namespace pricenerds3D
         public static int CountAllChildren(this Transform parentObject)
         {
             return GetChildrenRecursive(parentObject);
+        }
+
+        public static List<Transform> GetAllChildren(this Transform parentObject)
+        {
+            List<Transform> list = new List<Transform>();
+
+            for (int i = 0; i < parentObject.childCount; i++)
+            {
+                Transform child = parentObject.GetChild(i);
+                list.Add(child);
+
+                if (child.childCount > 0)
+                {
+                    list.AddRange(GetAllChildren(child));
+                }
+            }
+
+            return list;
         }
 
         private static int GetChildrenRecursive(Transform parentObject)

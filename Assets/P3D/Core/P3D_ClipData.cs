@@ -18,33 +18,51 @@ namespace pricenerds3D
     [Serializable]
     public class P3D_Clip
     {
-        public Keyframe[] keyframes { get; private set; }
+        public P3D_Keyframe[] keyframes { get; private set; }
+        public P3D_Sample[] samples { get; private set; } 
         public float durationSeconds { get; private set; }
 
-        public P3D_Clip()
+        public P3D_Clip(uint sampleCount)
         {
-            // construct keyframes from data, 
-        }
+            // construct keyframes from data, construct individual samples
+            uint keyframeCount = sampleCount - 1;
 
-        public void AddKeyframe(string key)
-        {
+            samples = new P3D_Sample[sampleCount];
+            keyframes = new P3D_Keyframe[keyframeCount]; // a keyframe spans two samples
 
+            // initalize keyframes
+            for (int i = 0; i < keyframeCount; i++)
+            {
+                keyframes[i] = new P3D_Keyframe();
+                keyframes[i].clip = this; // set reference
+            }
         }
     }
 
+    [Serializable]
     public struct P3D_Keyframe
     {
-        P3D_Sample[] samples;
-
-        int index;
-        uint sampleIndex0;
-        uint sampleIndex1;
-        float duration;
+        public P3D_Clip clip; // you can access the samples inside the clip
+        public uint index;
+        public uint sampleIndex0;
+        public uint sampleIndex1;
+        public float duration;
     }
 
+    [Serializable]
     public class P3D_Sample
     {
-        int index;
-        float timeSeconds;
+        public uint index { get; private set; }
+        public float timeSeconds { get; private set; }
+        
+        // this would actually be property bindings in a professional engine
+        public Vector3 localTranslation;
+        public Quaternion localRotation;
+
+        public P3D_Sample(uint index, float timeSeconds)
+        {
+            this.index = index;
+            this.timeSeconds = timeSeconds;
+        }
     }
 }

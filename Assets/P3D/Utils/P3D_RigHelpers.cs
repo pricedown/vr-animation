@@ -10,7 +10,7 @@ namespace pricenerds3D
         /// This is a static helper function draws a gizmo representing a single bone from provided start and end world space positions
         /// You can use DrawRigPoseGizmo() to draw the entire Rig
         /// </summary>
-        public static void DrawBoneGizmo(Vector3 start, Vector3 end)
+        public static void DrawBoneGizmo(Vector3 start, Vector3 end, P3D_RigPose pose, int jointIndex)
         {
             Vector3 dir = end - start;
             float length = dir.magnitude;
@@ -19,14 +19,24 @@ namespace pricenerds3D
             if (length == 0.0f) return;
             dir /= length;
 
+            /*
             // create an orthonormal basis
             Vector3 zOrtho = dir;
-
             // if we're super lined up with the axis it might not render anything
-            Vector3 xOrtho = Vector3.Cross(zOrtho, Vector3.right).normalized;
-            if (xOrtho.magnitude < 0.001f) xOrtho = Vector3.Cross(zOrtho, Vector3.up).normalized;
+            Vector3 xOrtho = Vector3.Cross(Vector3.right, zOrtho).normalized;
+            if (xOrtho.magnitude < 0.001f) xOrtho = Vector3.Cross(Vector3.up, zOrtho).normalized;
+            Vector3 yOrtho = Vector3.Cross(zOrtho, xOrtho).normalized;
 
-            Vector3 yOrtho = Vector3.Cross(zOrtho, xOrtho);
+            Matrix4x4 transformMat = new Matrix4x4();
+            transformMat.SetColumn(0, new Vector4(xOrtho.x, xOrtho.y, xOrtho.z, 0));
+            transformMat.SetColumn(1, new Vector4(yOrtho.x, yOrtho.y, yOrtho.z, 0));
+            transformMat.SetColumn(2, new Vector4(zOrtho.x, zOrtho.y, zOrtho.z, 0));
+            transformMat.SetColumn(3, new Vector4(start.x, start.y, start.z, 1));*/
+
+            Vector3 xOrtho = pose.m_localPose[jointIndex].m_jointRight;
+            Vector3 yOrtho = pose.m_localPose[jointIndex].m_jointUp;
+            Vector3 zOrtho = pose.m_localPose[jointIndex].m_jointForward;
+
             Matrix4x4 transformMat = new Matrix4x4();
             transformMat.SetColumn(0, new Vector4(xOrtho.x, xOrtho.y, xOrtho.z, 0));
             transformMat.SetColumn(1, new Vector4(yOrtho.x, yOrtho.y, yOrtho.z, 0));
@@ -41,6 +51,10 @@ namespace pricenerds3D
             Vector3 top = transformMat.MultiplyPoint3x4(new Vector3(0, 0, topLength + bottomLength));
             Vector3 bottom = transformMat.MultiplyPoint3x4(new Vector3(0, 0, 0));
 
+            Debug.DrawRay(bottom, xOrtho * 0.05f, Color.blue);
+            Debug.DrawRay(bottom, zOrtho * 0.05f, Color.green);
+            Debug.DrawRay(bottom, yOrtho * 0.05f, Color.red);
+
             // get each point using the base width to form the rectangular base of the pyramid 
             Vector3 b1 = transformMat.MultiplyPoint3x4(new Vector3(+baseWidth, +baseWidth, bottomLength));
             Vector3 b2 = transformMat.MultiplyPoint3x4(new Vector3(+baseWidth, -baseWidth, bottomLength));
@@ -48,6 +62,7 @@ namespace pricenerds3D
             Vector3 b4 = transformMat.MultiplyPoint3x4(new Vector3(-baseWidth, +baseWidth, bottomLength));
 
             // connect the base to the top
+            /*
             Gizmos.DrawLine(b1, top);
             Gizmos.DrawLine(b2, top);
             Gizmos.DrawLine(b3, top);
@@ -63,7 +78,9 @@ namespace pricenerds3D
             Gizmos.DrawLine(b1, bottom);
             Gizmos.DrawLine(b2, bottom);
             Gizmos.DrawLine(b3, bottom);
-            Gizmos.DrawLine(b4, bottom);
+            Gizmos.DrawLine(b4, bottom);*/
+
+            Gizmos.DrawLine(end, start);
         }
 
         /// <summary>
@@ -86,7 +103,7 @@ namespace pricenerds3D
 
                 Vector3 start = pose.m_worldSpace[parentIndex].MultiplyPoint3x4(Vector3.zero);
                 Vector3 end = pose.m_worldSpace[i].MultiplyPoint3x4(Vector3.zero);
-                DrawBoneGizmo(start, end);
+                DrawBoneGizmo(start, end, pose, i);
             }
         }
         #endregion
@@ -132,9 +149,11 @@ namespace pricenerds3D
             joint.m_name = transform.name;
             joint.m_jointIndex = selfIndex;
             joint.m_parentIndex = parentIndex;
-            joint.m_localPosition = transform.transform.localPosition;
-            joint.m_localRotation = transform.transform.localRotation;
+            joint.m_localPosition = transform.localPosition;
+            joint.m_localRotation = transform.localRotation;
             joint.m_localScale = transform.transform.localScale;
+
+            Debug.Log($"Joint name: {joint.m_name}, transform name: {transform.name}, LOCAL rotation of transform: {transform.localEulerAngles}, WORLD rotation of transform: {transform.eulerAngles}");
 
             return joint;
         }

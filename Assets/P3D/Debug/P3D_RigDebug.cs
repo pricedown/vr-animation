@@ -35,8 +35,15 @@ namespace pricenerds3D
             P3D_RigHelpers.DebugInitRigFromHierarchy(_sampleHierarchy, rig);
         }
 
+        float angleDelta;
         private void Update()
         {
+            for (int i = 0; i < rig.m_jointCount; i++)
+            {
+                //deltaPose.m_localPose[i].m_jointRotation = Quaternion.AngleAxis((Time.time * 2.0f) * Time.deltaTime, deltaPose.m_localPose[i].m_jointForward);
+                //deltaPose.SolveFK();
+            }
+
             UpdateTestClip(_testAnimation);
         }
 
