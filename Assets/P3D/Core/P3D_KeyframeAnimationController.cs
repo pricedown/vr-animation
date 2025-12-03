@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace pricenerds3D
 {
     public class P3D_KeyframeAnimationController
@@ -85,6 +87,27 @@ namespace pricenerds3D
         public P3D_Sample GetCurrentSample1()
         {
             return clip?.samples[keyframe.sampleIndex1];
+        }
+
+        public P3D_JointSample GetInterpolatedJoint(int jointIndex)
+        {
+            if (clip == null) return P3D_JointSample.Identity;
+            var s0 = GetCurrentSample0();
+            var s1 = GetCurrentSample1();
+            if (s0 == null || s1 == null) return P3D_JointSample.Identity;
+            return P3D_JointSample.Lerp(s0.GetJointPose(jointIndex), s1.GetJointPose(jointIndex), keyframeParam);
+        }
+
+        public void GetInterpolatedPose(P3D_JointSample[] outPose)
+        {
+            if (clip == null || outPose == null) return;
+            var s0 = GetCurrentSample0();
+            var s1 = GetCurrentSample1();
+            if (s0 == null || s1 == null) return;
+
+            var count = Mathf.Min(outPose.Length, s0.jointCount);
+            for (var i = 0; i < count; i++)
+                outPose[i] = P3D_JointSample.Lerp(s0.GetJointPose(i), s1.GetJointPose(i), keyframeParam);
         }
     }
 
