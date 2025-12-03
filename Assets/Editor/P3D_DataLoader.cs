@@ -288,7 +288,8 @@ namespace pricenerds3D
                 var sampleCount = animData.numFrames;
 
                 // create a new clip and store it in clip data scriptable object
-                var clip = new P3D_Clip(sampleCount);
+                var jointCount = (uint)data.segmentNames.Count;
+                var clip = new P3D_Clip(sampleCount, jointCount);
 
                 var playbackRate = data.frameRate > 0 ? data.frameRate : 30f;
                 var keyframeDuration = 1f / playbackRate;
@@ -303,15 +304,18 @@ namespace pricenerds3D
                 {
                     var sample = clip.samples[frameIdx];
 
-                    foreach (var segmentName in data.segmentNames)
+                    for (var jointIdx = 0; jointIdx < data.segmentNames.Count; jointIdx++)
                     {
-                        if (animData.position[(int)frameIdx].TryGetValue(segmentName, out var pos))
-                            sample.localTranslation = pos;
-                        if (animData.rotation[(int)frameIdx].TryGetValue(segmentName, out var rot))
-                            sample.localRotation = rot;
-                        if (animData.scale[(int)frameIdx].TryGetValue(segmentName, out var scl))
-                            sample.localScale = scl;
-                        break;
+                        var segmentName = data.segmentNames[jointIdx];
+                        var pos = Vector3.zero;
+                        var rot = Quaternion.identity;
+                        var scl = Vector3.one;
+
+                        if (animData.position[(int)frameIdx].TryGetValue(segmentName, out var p)) pos = p;
+                        if (animData.rotation[(int)frameIdx].TryGetValue(segmentName, out var r)) rot = r;
+                        if (animData.scale[(int)frameIdx].TryGetValue(segmentName, out var s)) scl = s;
+
+                        sample.SetJointPose(jointIdx, pos, rot, scl);
                     }
                 }
 
