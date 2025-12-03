@@ -65,7 +65,6 @@ namespace pricenerds3D
         }
     }
 
-
     [Serializable]
     public struct P3D_Keyframe
     {
@@ -138,6 +137,13 @@ namespace pricenerds3D
 
         public static P3D_JointSample Identity => new(Vector3.zero, Quaternion.identity, Vector3.one);
 
+        /// <summary>
+        /// Interpolates between samples s and b by t
+        /// </summary>
+        /// <param name="a">Initial position</param>
+        /// <param name="b">Target position</param>
+        /// <param name="t">Interpolation parameter</param>
+        /// <returns></returns>
         public static P3D_JointSample Lerp(P3D_JointSample a, P3D_JointSample b, float t)
         {
             return new P3D_JointSample(

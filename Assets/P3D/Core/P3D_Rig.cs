@@ -119,6 +119,11 @@ namespace pricenerds3D
             SolveFK();
         }
 
+        /// <summary>
+        /// Applies animation deltas to base pose by adding translation, multiplying rotation, and scaling
+        /// </summary>
+        /// <param name="animPose">The delta pose to be concatenated onto base pose</param>
+        /// <param name="basePose">The base pose</param>
         public void ApplyAnimationPose(P3D_JointSample[] animPose, P3D_RigPose basePose)
         {
             var count = Mathf.Min(animPose.Length, (int)m_rig.m_jointCount);
@@ -161,6 +166,9 @@ namespace pricenerds3D
             }
         }
 
+        /// <summary>
+        /// Converts world space matrices back to local space pose data (TRS)
+        /// </summary>
         public void SolveIK()
         {
             for (var i = 0; i < m_rig.m_jointCount; i++)
@@ -178,6 +186,11 @@ namespace pricenerds3D
             }
         }
 
+        /// <summary>
+        /// Extracts TRS components from a transformation matrix
+        /// </summary>
+        /// <param name="index">localPose index</param>
+        /// <param name="mat">matrix</param>
         private void RestorePoseFromMatrix(int index, Matrix4x4 mat)
         {
             m_localPose[index].m_jointTranslation = mat.GetColumn(3);
@@ -198,6 +211,10 @@ namespace pricenerds3D
             }
         }
 
+        /// <summary>
+        /// Copies local pose transformations from another pose
+        /// </summary>
+        /// <param name="otherPose"></param>
         public void CopyLocalPose(P3D_RigPose otherPose)
         {
             for (var i = 0; i < m_rig.m_jointCount; i++)
@@ -208,12 +225,18 @@ namespace pricenerds3D
             }
         }
 
+        /// <summary>
+        /// Caches inverse world space matrices for all joints
+        /// </summary>
         public void ComputeWorldInverse()
         {
             for (var i = 0; i < m_rig.m_jointCount; i++)
                 m_worldSpaceInverse[i] = m_worldSpace[i].inverse;
         }
 
+        /// <summary>
+        /// Caches inverse local space matrices for all joints
+        /// </summary>
         public void ComputeLocalInverse()
         {
             for (var i = 0; i < m_rig.m_jointCount; i++)

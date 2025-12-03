@@ -9,17 +9,16 @@ namespace pricenerds3D
     public class P3D_PoleIKSolver : MonoBehaviour
     {
         [Header("References")] [SerializeField]
-        private P3D_RigDebug _rigInstance; // replace with P3D_RigInstance when ready
+        private P3D_RigDebug _rigInstance; // TODO: replace with P3D_RigInstance when ready
         //[SerializeField]
         //private Transform _rigTest2;
 
         [Header("Pole IK Settings")] [SerializeField]
-        private int _jointsAffected;
+        [Tooltip("Amount of parent joints from the JointEndAffected affected")] private int _jointsAffected;
 
         [SerializeField]
-        [Tooltip(
-            "The chain creator will start from this joint and work backwards to the parent joints to build the chain")]
-        private string _jointEndAffected;
+        [Tooltip( "The chain creator will start from this joint and work backwards to the parent joints to build the chain")]
+        private string _jointEndAffected; // the last joint effected
 
         [SerializeField] private Transform _endEffectorTarget;
 
@@ -54,8 +53,7 @@ namespace pricenerds3D
         }
 
         /// <summary>
-        ///     This function initializes the chain, starting from the specified end affector and moving up the chain by the
-        ///     specified _jointsAffected
+        ///     Initializes the chain from the end affector and moving up the chain by the _jointsAffected
         ///     (FUTURE) - we need some kind of error checking to ensure we dont choose too many bones to affect
         /// </summary>
         private void InitializeChain()
@@ -76,7 +74,7 @@ namespace pricenerds3D
         }
 
         /// <summary>
-        ///     Takes the jointIKChain array we initialized and calculates the distance between them
+        ///    Calculates every distance between the bones in the jointIKChain we initialized
         /// </summary>
         private void CalculateBoneLengths()
         {

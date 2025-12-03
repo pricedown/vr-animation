@@ -4,14 +4,26 @@ using UnityEngine;
 
 namespace pricenerds3D
 {
+    /// <summary>
+    /// Helper utilities for unity transforms
+    /// </summary>
     public static class TransformUtils
     {
-        // Helper function that gets all children of a hierarchy
+        /// <summary>
+        /// Gets total amount of children in parentObject recursively
+        /// </summary>
+        /// <param name="parentObject"></param>
+        /// <returns></returns>
         public static int CountAllChildren(this Transform parentObject)
         {
-            return GetChildrenRecursive(parentObject);
+            return ChildrenCountRecursive(parentObject);
         }
 
+        /// <summary>
+        /// Gets all children in a transform
+        /// </summary>
+        /// <param name="parentObject"></param>
+        /// <returns></returns>
         public static List<Transform> GetAllChildren(this Transform parentObject)
         {
             List<Transform> list = new List<Transform>();
@@ -30,7 +42,12 @@ namespace pricenerds3D
             return list;
         }
 
-        private static int GetChildrenRecursive(Transform parentObject)
+        /// <summary>
+        /// Gets the number
+        /// </summary>
+        /// <param name="parentObject"></param>
+        /// <returns></returns>
+        private static int ChildrenCountRecursive(Transform parentObject)
         {
             int sum = 0;
 

@@ -239,8 +239,11 @@ namespace pricenerds3D
         }
 
         /// <summary>
-        ///     Converts euler angles to Quaternion based on rotation order
+        /// Converts euler angles to Quaternion based on rotation order
         /// </summary>
+        /// <param name="euler">Euler angles</param>
+        /// <param name="eulerOrder">Order by which axes are combined</param>
+        /// <returns></returns>
         private static Quaternion EulerToQuaternion(Vector3 euler, string eulerOrder)
         {
             var qX = Quaternion.AngleAxis(euler.x, Vector3.right);

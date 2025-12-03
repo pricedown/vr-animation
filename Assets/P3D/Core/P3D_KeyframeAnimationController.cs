@@ -4,6 +4,11 @@ namespace pricenerds3D
 {
     public class P3D_KeyframeAnimationController
     {
+        /// <summary>
+        /// Plays a clip controller forward by deltaTime, resolving its keyframe and state
+        /// </summary>
+        /// <param name="clipController">The clip controller which is on a timeline</param>
+        /// <param name="deltaTime">The amount of seconds passed since last update</param>
         public void ClipControllerUpdate(P3D_ClipController clipController, float deltaTime)
         {
             if (clipController == null || clipController.clip == null) return;
@@ -79,16 +84,29 @@ namespace pricenerds3D
                 keyframe = clip.keyframes[0];
         }
 
+        /// <summary>
+        /// Retrieve beginning sample
+        /// </summary>
+        /// <returns>First sample of keyframe</returns>
         public P3D_Sample GetCurrentSample0()
         {
             return clip?.samples[keyframe.sampleIndex0];
         }
 
+        /// <summary>
+        /// Retrieve ending sample
+        /// </summary>
+        /// <returns>Last sample of keyframe</returns>
         public P3D_Sample GetCurrentSample1()
         {
             return clip?.samples[keyframe.sampleIndex1];
         }
 
+        /// <summary>
+        /// Retrieves a joint's current state as interpolated between samples within keyframe
+        /// </summary>
+        /// <param name="jointIndex">Index of the joint</param>
+        /// <returns>Interpolated sample of joint</returns>
         public P3D_JointSample GetInterpolatedJoint(int jointIndex)
         {
             if (clip == null) return P3D_JointSample.Identity;
@@ -98,6 +116,10 @@ namespace pricenerds3D
             return P3D_JointSample.Lerp(s0.GetJointPose(jointIndex), s1.GetJointPose(jointIndex), keyframeParam);
         }
 
+        /// <summary>
+        /// Retrieves current pose state as interpolated between samples within the keyframe
+        /// </summary>
+        /// <param name="outPose">Resulting interpolated pose</param>
         public void GetInterpolatedPose(P3D_JointSample[] outPose)
         {
             if (clip == null || outPose == null) return;
@@ -111,6 +133,9 @@ namespace pricenerds3D
         }
     }
 
+    /// <summary>
+    /// Signals how a clip should end
+    /// </summary>
     public enum EClipTransitionFlag
     {
         Stop,
