@@ -36,7 +36,7 @@ namespace pricenerds3D
             // DEBUG
             jointIndex = deltaPose.m_rig.GetJointFromName(_boneToTrack).m_jointIndex;
             initialJointRotation = deltaPose.m_localPose[jointIndex].m_jointRotation;
-            _tracker.rotation = deltaPose.m_localPose[jointIndex].m_jointRotation;
+            //_tracker.rotation = deltaPose.m_localPose[jointIndex].m_jointRotation;
         }
 
         // This is essentially a backwards way of creating a rig. We already have the rig using GameObjects for testing purposes. We have to replace this later with a custom importer

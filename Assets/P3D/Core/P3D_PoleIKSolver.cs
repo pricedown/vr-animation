@@ -10,8 +10,6 @@ namespace pricenerds3D
     {
         [Header("References")] [SerializeField]
         private P3D_RigDebug _rigInstance; // TODO: replace with P3D_RigInstance when ready
-        //[SerializeField]
-        //private Transform _rigTest2;
 
         [Header("Pole IK Settings")] [SerializeField]
         [Tooltip("Amount of parent joints from the JointEndAffected affected")] private int _jointsAffected;
@@ -41,8 +39,6 @@ namespace pricenerds3D
             // its important that we do this in the start method because the rig is built in the Awake() method
             InitializeChain();
             CalculateBoneLengths();
-
-            //StartCoroutine(ITest());
         }
 
         private void Update()
@@ -95,41 +91,6 @@ namespace pricenerds3D
                 totalChainLength += length;
             }
         }
-
-        /*
-        private IEnumerator ITest()
-        {
-            yield return null;
-
-            List<Transform> helper = _rigTest2.GetAllChildren();
-            float duration = 0.5f;
-
-            for (int i = 0; i < _rigInstance.deltaPose.m_rig.m_jointCount; i++)
-            {
-                DOVirtual.Float(0.0f, 45.0f, 3.0f, (x) => angle = x);
-                //Vector3 localAcis = _rigInstance.deltaPose.m_localPose[i].m_jointRotation.
-
-                float elapsed = 0.0f;
-                while (elapsed < duration)
-                {
-                    Vector3 forward = _rigInstance.deltaPose.m_worldSpace[i].GetColumn(2);
-                    Vector3 upwards = _rigInstance.deltaPose.m_worldSpace[i].GetColumn(1);
-
-                    _rigInstance.deltaPose.m_localPose[i].m_jointRotation = Quaternion.AngleAxis(angle, forward);
-                    _rigInstance.deltaPose.SolveFK();
-
-                    forward = _rigInstance.deltaPose.m_worldSpace[i].GetColumn(2);
-                    upwards = _rigInstance.deltaPose.m_worldSpace[i].GetColumn(1);
-
-                    helper[i].transform.rotation = Quaternion.LookRotation(forward, upwards);
-
-                    elapsed += Time.deltaTime;
-                    yield return null;
-                }
-            }
-
-            StartCoroutine(ITest());
-        }*/
 
         #region FABRIK
 
