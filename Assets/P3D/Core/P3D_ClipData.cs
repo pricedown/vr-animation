@@ -147,5 +147,19 @@ namespace pricenerds3D
                 Quaternion.Slerp(a.rotation, b.rotation, t),
                 Vector3.Lerp(a.scale, b.scale, t));
         }
+
+        public static P3D_JointSample[] Lerp(P3D_JointSample[] a, P3D_JointSample[] b, float t)
+        {
+            if(a == null || b == null) return new P3D_JointSample[0];
+            if(a.Length != b.Length) return new P3D_JointSample[0];
+
+            P3D_JointSample[] samples = new P3D_JointSample[(int)a.Length];
+            for(int i = 0; i < a.Length; i++)
+            {
+                samples[i] = Lerp(a[i], b[i], t);
+            }
+
+            return samples;
+        }
     }
 }

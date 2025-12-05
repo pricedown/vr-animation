@@ -46,16 +46,23 @@ namespace pricenerds3D
 
         private IEnumerator ITestClip()
         {
-            for(int i = 1; i < _debugClipData.clip.keyframes.Length - 1; i++)
+            P3D_Sample current = _debugClipData.clip.keyframes[0].GetSample0(_debugClipData.clip);
+            for (int i = 0; i < _debugClipData.clip.keyframes.Length - 1; i++)
             {
                 P3D_Keyframe currentKeyframe = _debugClipData.clip.keyframes[i];
-                P3D_Sample sample = currentKeyframe.GetSample0(_debugClipData.clip);
-                deltaPose.ApplyAnimationPose(sample.jointSamples, deltaPose.m_rig.m_basePose);
+                P3D_Sample sample = currentKeyframe.GetSample1(_debugClipData.clip);
 
-                // bc i'm fuckin lazy
-                // fuckin lazy? who's lazy?
-                // ar ar ar ar ar
-                yield return new WaitForSeconds(0.1f);
+                float elapsed = 0.0f;
+                float duration = 0.5f;
+
+                while (elapsed < duration)
+                {
+                    deltaPose.ApplyAnimationPose(P3D_JointSample.Lerp(current.jointSamples, sample.jointSamples, elapsed / duration), deltaPose.m_rig.m_basePose);
+                    elapsed += Time.deltaTime;
+                    yield return null;
+                }
+
+                current = sample;
             }
 
             yield return null;
