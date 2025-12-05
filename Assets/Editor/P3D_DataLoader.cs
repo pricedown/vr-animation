@@ -294,15 +294,17 @@ namespace pricenerds3D
                 var jointCount = (uint)data.segmentNames.Count;
                 var clip = new P3D_Clip(sampleCount, jointCount);
 
+                // sets durations of keyframe of the clip :D
                 var playbackRate = data.frameRate > 0 ? data.frameRate : 30f;
                 var keyframeDuration = 1f / playbackRate;
                 var totalDuration = (sampleCount - 1) * keyframeDuration;
-
                 clip.SetDuration(totalDuration);
 
+                // setting duration for all keyframes (they're all pretty much the same duration because we aren't doing keyframe reduction
                 for (var kf = 0; kf < clip.keyframes.Length; kf++)
                     clip.SetKeyframeDuration(kf, keyframeDuration);
 
+                // foreach frame and sample, we're extracting the data into the joint pose
                 for (uint frameIdx = 0; frameIdx < sampleCount; frameIdx++)
                 {
                     var sample = clip.samples[frameIdx];
@@ -321,32 +323,6 @@ namespace pricenerds3D
                         sample.SetJointPose(jointIdx, pos, rot, scl);
                     }
                 }
-
-                for (uint frameIndex = 0; frameIndex < data.animationData[animationIndex].numFrames; frameIndex++)
-                {
-                    // For each segment set the sample data
-                }
-
-                // the HTR file contains the offsets from the base pose
-                // for every segment
-                /*
-                for(int segmentIndex = 0; segmentIndex < data.segmentNames.Count; segmentIndex++)
-                {
-                    string currentSegmentName = data.segmentNames[segmentIndex];
-                    // create first keyframe, then start from the second keyframe and move forward to access its end sample
-                    P3D_Keyframe keyframe0 = new P3D_Keyframe();
-                    P3D_Sample sample0 = new P3D_Sample(0);
-                    sample0.localTranslation = data.animationData[animationIndex].position[0][currentSegmentName];
-                    sample0.localRotation = data.animationData[animationIndex].rotation[];
-
-                    P3D_Sample sample1 = new P3D_Sample(1);
-
-                    for (int frameIndex = 1; frameIndex < data.totalFrames; frameIndex++)
-                    {
-                        // we need to access the end sample of the previous and create a new sample for the next
-
-                    }
-                }*/
 
                 clipData.clip = clip;
                 clips[animationIndex] = clipData;

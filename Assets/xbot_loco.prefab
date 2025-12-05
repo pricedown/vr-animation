@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7836589966133442173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ef8bd165ad3261408d25e3f3eebfc23, type: 3}
   m_Name: 
@@ -2748,11 +2748,64 @@ MonoBehaviour:
                         m_jointCount: 0
                       m_localPose: []
                       m_worldSpace: []
+                      m_worldSpaceInverse: []
+                      m_localSpaceInverse: []
                   m_localPose: []
                   m_worldSpace: []
+                  m_worldSpaceInverse: []
+                  m_localSpaceInverse: []
               m_localPose: []
               m_worldSpace: []
+              m_worldSpaceInverse: []
+              m_localSpaceInverse: []
           m_localPose: []
           m_worldSpace: []
+          m_worldSpaceInverse: []
+          m_localSpaceInverse: []
       m_localPose: []
       m_worldSpace: []
+      m_worldSpaceInverse: []
+      m_localSpaceInverse: []
+  deltaPose:
+    m_rig:
+      m_jointCount: 0
+      m_joints: []
+      m_basePose:
+        m_rig:
+          m_jointCount: 0
+          m_joints: []
+          m_basePose:
+            m_rig:
+              m_jointCount: 0
+              m_joints: []
+              m_basePose:
+                m_rig:
+                  m_jointCount: 0
+                  m_joints: []
+                  m_basePose:
+                    m_rig:
+                      m_jointCount: 0
+                      m_joints: []
+                    m_localPose: []
+                    m_worldSpace: []
+                    m_worldSpaceInverse: []
+                    m_localSpaceInverse: []
+                m_localPose: []
+                m_worldSpace: []
+                m_worldSpaceInverse: []
+                m_localSpaceInverse: []
+            m_localPose: []
+            m_worldSpace: []
+            m_worldSpaceInverse: []
+            m_localSpaceInverse: []
+        m_localPose: []
+        m_worldSpace: []
+        m_worldSpaceInverse: []
+        m_localSpaceInverse: []
+    m_localPose: []
+    m_worldSpace: []
+    m_worldSpaceInverse: []
+    m_localSpaceInverse: []
+  _debugClipData: {fileID: 0}
+  _gizmosEnabled: 1
+  _boneColor: {r: 0, g: 0, b: 1, a: 1}

@@ -127,8 +127,12 @@ namespace pricenerds3D
         public void ApplyAnimationPose(P3D_JointSample[] animPose, P3D_RigPose basePose)
         {
             var count = Mathf.Min(animPose.Length, (int)m_rig.m_jointCount);
+            Debug.Log($"count: {count}, animPose.Length, {animPose.Length}, m_rig.m_jointCount, {m_rig.m_jointCount}");
+
             for (var i = 0; i < count; i++)
             {
+                Debug.Log("autism");
+
                 m_localPose[i].m_jointTranslation =
                     basePose.m_localPose[i].m_jointTranslation + animPose[i].translation;
                 m_localPose[i].m_jointRotation = basePose.m_localPose[i].m_jointRotation * animPose[i].rotation;

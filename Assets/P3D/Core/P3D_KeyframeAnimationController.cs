@@ -2,57 +2,24 @@ using UnityEngine;
 
 namespace pricenerds3D
 {
-    public class P3D_KeyframeAnimationController
+    /// <summary>
+    /// This will be responsible for blending
+    /// </summary>
+    public class P3D_KeyframeAnimationController : MonoBehaviour 
     {
-        /// <summary>
-        /// Plays a clip controller forward by deltaTime, resolving its keyframe and state
-        /// </summary>
-        /// <param name="clipController">The clip controller which is on a timeline</param>
-        /// <param name="deltaTime">The amount of seconds passed since last update</param>
-        public void ClipControllerUpdate(P3D_ClipController clipController, float deltaTime)
+        [SerializeField] private P3D_ClipData _debugClip;
+
+        public P3D_ClipController clipController;
+
+        private void Awake()
         {
-            if (clipController == null || clipController.clip == null) return;
-            var clip = clipController.clip;
-            if (clip.keyframes.Length == 0) return;
+            clipController = new P3D_ClipController(_debugClip.clip);
+        }
 
-            deltaTime *= clipController.playbackSpeed;
-            clipController.clipTimeSeconds += deltaTime;
-            clipController.keyframeTimeSeconds += deltaTime;
-
-            float overstep;
-
-            while ((overstep = clipController.keyframeTimeSeconds - clipController.keyframe.duration) >= 0f)
-                if (clipController.keyframeIndex >= clip.keyframes.Length - 1)
-                {
-                    clipController.keyframeIndex = 0;
-                    clipController.keyframe = clip.keyframes[0];
-                    clipController.keyframeTimeSeconds = overstep;
-                    clipController.clipTimeSeconds = overstep;
-                }
-                else
-                {
-                    clipController.keyframeIndex++;
-                    clipController.keyframe = clip.keyframes[clipController.keyframeIndex];
-                    clipController.keyframeTimeSeconds = overstep;
-                }
-
-            while ((overstep = clipController.keyframeTimeSeconds) < 0f)
-                if (clipController.keyframeIndex <= 0)
-                {
-                    clipController.keyframeIndex = clip.keyframes.Length - 1;
-                    clipController.keyframe = clip.keyframes[clipController.keyframeIndex];
-                    clipController.keyframeTimeSeconds = clipController.keyframe.duration + overstep;
-                    clipController.clipTimeSeconds = clip.durationSeconds + overstep;
-                }
-                else
-                {
-                    clipController.keyframeIndex--;
-                    clipController.keyframe = clip.keyframes[clipController.keyframeIndex];
-                    clipController.keyframeTimeSeconds = clipController.keyframe.duration + overstep;
-                }
-
-            clipController.keyframeParam = clipController.keyframeTimeSeconds * clipController.keyframe.durationInverse;
-            clipController.clipParam = clipController.clipTimeSeconds * clip.durationInverse;
+        private void Update()
+        {
+            // TO DO: Fix the infinite loop here
+            //clipController.ClipControllerUpdate(Time.deltaTime);
         }
     }
 
@@ -72,9 +39,9 @@ namespace pricenerds3D
         public float keyframeTimeSeconds;
         public float playbackSpeed = 1f;
 
-        public void Initialize(P3D_Clip _clip)
+        public P3D_ClipController(P3D_Clip clip)
         {
-            clip = _clip;
+            this.clip = clip;
             keyframeIndex = 0;
             clipTimeSeconds = 0f;
             keyframeTimeSeconds = 0f;
@@ -82,6 +49,60 @@ namespace pricenerds3D
             clipParam = 0f;
             if (clip != null && clip.keyframes.Length > 0)
                 keyframe = clip.keyframes[0];
+        }
+
+        /// <summary>
+        /// Plays a clip controller forward by deltaTime, resolving its keyframe and state
+        /// </summary>
+        /// <param name="clipController">The clip controller which is on a timeline</param>
+        /// <param name="deltaTime">The amount of seconds passed since last update</param>
+        public void ClipControllerUpdate(float deltaTime)
+        {
+            if (clip == null) return;
+            if (clip.keyframes.Length == 0) return;
+
+            deltaTime *= playbackSpeed;
+            clipTimeSeconds += deltaTime;
+            keyframeTimeSeconds += deltaTime;
+
+            float overstep;
+
+            while ((overstep = keyframeTimeSeconds - keyframe.duration) >= 0f)
+            {
+                if (keyframeIndex >= clip.keyframes.Length - 1)
+                {
+                    keyframeIndex = 0;
+                    keyframe = clip.keyframes[0];
+                    keyframeTimeSeconds = overstep;
+                    clipTimeSeconds = overstep;
+                }
+                else
+                {
+                    keyframeIndex++;
+                    keyframe = clip.keyframes[keyframeIndex];
+                    keyframeTimeSeconds = overstep;
+                }
+            }
+
+            while ((overstep = keyframeTimeSeconds) < 0f)
+            {
+                if (keyframeIndex <= 0)
+                {
+                    keyframeIndex = clip.keyframes.Length - 1;
+                    keyframe = clip.keyframes[keyframeIndex];
+                    keyframeTimeSeconds = keyframe.duration + overstep;
+                    clipTimeSeconds = clip.durationSeconds + overstep;
+                }
+                else
+                {
+                    keyframeIndex--;
+                    keyframe = clip.keyframes[keyframeIndex];
+                    keyframeTimeSeconds = keyframe.duration + overstep;
+                }
+            }
+
+            keyframeParam = keyframeTimeSeconds * keyframe.durationInverse;
+            clipParam = clipTimeSeconds * clip.durationInverse;
         }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace pricenerds3D
             if (length == 0.0f) return;
             dir /= length;
 
-            /*
+            
             // create an orthonormal basis
             Vector3 zOrtho = dir;
             // if we're super lined up with the axis it might not render anything
@@ -31,8 +31,9 @@ namespace pricenerds3D
             transformMat.SetColumn(0, new Vector4(xOrtho.x, xOrtho.y, xOrtho.z, 0));
             transformMat.SetColumn(1, new Vector4(yOrtho.x, yOrtho.y, yOrtho.z, 0));
             transformMat.SetColumn(2, new Vector4(zOrtho.x, zOrtho.y, zOrtho.z, 0));
-            transformMat.SetColumn(3, new Vector4(start.x, start.y, start.z, 1));*/
+            transformMat.SetColumn(3, new Vector4(start.x, start.y, start.z, 1));
 
+            /*
             Vector3 xOrtho = pose.m_localPose[jointIndex].m_jointRight;
             Vector3 yOrtho = pose.m_localPose[jointIndex].m_jointUp;
             Vector3 zOrtho = pose.m_localPose[jointIndex].m_jointForward;
@@ -41,7 +42,7 @@ namespace pricenerds3D
             transformMat.SetColumn(0, new Vector4(xOrtho.x, xOrtho.y, xOrtho.z, 0));
             transformMat.SetColumn(1, new Vector4(yOrtho.x, yOrtho.y, yOrtho.z, 0));
             transformMat.SetColumn(2, new Vector4(zOrtho.x, zOrtho.y, zOrtho.z, 0));
-            transformMat.SetColumn(3, new Vector4(start.x, start.y, start.z, 1));
+            transformMat.SetColumn(3, new Vector4(start.x, start.y, start.z, 1));*/
 
             float baseWidth = length * 0.1f;
             float topLength = length * 0.9f;
@@ -62,7 +63,6 @@ namespace pricenerds3D
             Vector3 b4 = transformMat.MultiplyPoint3x4(new Vector3(-baseWidth, +baseWidth, bottomLength));
 
             // connect the base to the top
-            /*
             Gizmos.DrawLine(b1, top);
             Gizmos.DrawLine(b2, top);
             Gizmos.DrawLine(b3, top);
@@ -78,9 +78,9 @@ namespace pricenerds3D
             Gizmos.DrawLine(b1, bottom);
             Gizmos.DrawLine(b2, bottom);
             Gizmos.DrawLine(b3, bottom);
-            Gizmos.DrawLine(b4, bottom);*/
+            Gizmos.DrawLine(b4, bottom);
 
-            Gizmos.DrawLine(end, start);
+            //Gizmos.DrawLine(end, start);
         }
 
         /// <summary>

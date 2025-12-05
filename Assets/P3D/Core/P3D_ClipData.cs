@@ -88,35 +88,31 @@ namespace pricenerds3D
     [Serializable]
     public class P3D_Sample
     {
-        [SerializeField] private uint _index;
-        [SerializeField] private P3D_JointSample[] _joints;
-
-        public Vector3 localTranslation;
-        public Quaternion localRotation;
-        public Vector3 localScale;
-
-
         public P3D_Sample(uint index, uint jointCount = 1)
         {
-            _index = index;
-            _joints = new P3D_JointSample[jointCount];
+            this.index = index;
+            jointSamples = new P3D_JointSample[jointCount];
             for (var i = 0; i < jointCount; i++)
-                _joints[i] = P3D_JointSample.Identity;
+                jointSamples[i] = P3D_JointSample.Identity;
         }
 
-        public uint index => _index;
-        public int jointCount => _joints?.Length ?? 0;
+        public uint index;
+        public int jointCount => jointSamples?.Length ?? 0;
+        public P3D_JointSample[] jointSamples;
 
         public void SetJointPose(int jointIndex, Vector3 translation, Quaternion rotation, Vector3 scale)
         {
-            if (_joints != null && jointIndex >= 0 && jointIndex < _joints.Length)
-                _joints[jointIndex] = new P3D_JointSample(translation, rotation, scale);
+            if (jointSamples != null && jointIndex >= 0 && jointIndex < jointSamples.Length)
+            {
+                jointSamples[jointIndex] = new P3D_JointSample(translation, rotation, scale);
+            }
+
         }
 
         public P3D_JointSample GetJointPose(int jointIndex)
         {
-            if (_joints != null && jointIndex >= 0 && jointIndex < _joints.Length)
-                return _joints[jointIndex];
+            if (jointSamples != null && jointIndex >= 0 && jointIndex < jointSamples.Length)
+                return jointSamples[jointIndex];
             return P3D_JointSample.Identity;
         }
     }

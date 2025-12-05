@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // Written by Seth Riddensdale
@@ -13,6 +14,10 @@ namespace pricenerds3D
         public P3D_Rig rig;
         public P3D_RigPose deltaPose;
 
+        [Header("Debug")]
+        [SerializeField]
+        private P3D_ClipData _debugClipData;
+
         [Header("Gizmos")]
         [SerializeField]
         private bool _gizmosEnabled = true;
@@ -25,7 +30,40 @@ namespace pricenerds3D
             deltaPose = new P3D_RigPose(rig);
         }
 
-        private void Update()
+        private void Start()
+        {
+            for(int i = 0; i < _debugClipData.clip.keyframes.Length; i++)
+            {
+                if(_debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex0] != null)
+                    Debug.Log("0 = " + _debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex0].jointSamples.Length);
+                if(_debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex1] != null)
+                    Debug.Log("1 = " + _debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex1].jointSamples.Length);
+
+            }
+
+            StartCoroutine(ITestClip());
+        }
+
+        private IEnumerator ITestClip()
+        {
+            for(int i = 1; i < _debugClipData.clip.keyframes.Length - 1; i++)
+            {
+                P3D_Keyframe currentKeyframe = _debugClipData.clip.keyframes[i];
+                P3D_Sample sample = currentKeyframe.GetSample0(_debugClipData.clip);
+                deltaPose.ApplyAnimationPose(sample.jointSamples, deltaPose.m_rig.m_basePose);
+
+                // bc i'm fuckin lazy
+                // fuckin lazy? who's lazy?
+                // ar ar ar ar ar
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return null;
+
+            StartCoroutine(ITestClip());
+        }
+
+        private void LateUpdate()
         {
             // we need to also take into account the position of the game object and add that to the hips global pose
             deltaPose.m_localPose[0].m_jointTranslation = transform.position;
