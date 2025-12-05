@@ -32,16 +32,21 @@ namespace pricenerds3D
             // the rig is already created upon import. we'll create the deltaPose when the game starts running
             rig.InitializeBasePose(); // uncommenting this changes things for some reason
             deltaPose = new P3D_RigPose(rig);
+
+            // initialize solvers
+            for (int i = 0; i < _ikSolvers.Length; i++)
+                _ikSolvers[i].InitializeIK();
         }
 
+        // this is where the magic happens
         private void LateUpdate()
         {
+            // apply animation pose
             deltaPose.ApplyAnimationPose(_animationController.clipController.GetInterpolatedPose(), deltaPose.m_rig.m_basePose);
 
+            // solve IK
             for(int i = 0; i < _ikSolvers.Length; i++)
-            {
                 _ikSolvers[i].SolveIK();
-            }
 
             // we need to also take into account the position of the game object and add that to the hips global pose
             deltaPose.m_localPose[0].m_jointTranslation += transform.position;

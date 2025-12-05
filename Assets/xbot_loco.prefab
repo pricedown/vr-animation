@@ -2806,6 +2806,7 @@ MonoBehaviour:
     m_worldSpace: []
     m_worldSpaceInverse: []
     m_localSpaceInverse: []
-  _debugClipData: {fileID: 0}
+  _animationController: {fileID: 0}
+  _ikSolvers: []
   _gizmosEnabled: 1
   _boneColor: {r: 0, g: 0, b: 1, a: 1}

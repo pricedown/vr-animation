@@ -1520,11 +1520,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774941170}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b39a0bb470b493c48afba22a14a40c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_PoleIKSolver
+  _rigInstance: {fileID: 774941173}
   _rigInstance: {fileID: 774941173}
   _jointEndAffected: LeftHand
   _endEffectorTarget: {fileID: 1211918589}
@@ -1542,7 +1543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d4097d306166648bb44400cd8d3380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_KeyframeAnimationController
-  _debugClip: {fileID: 11400000, guid: 06cbff3dfa2cc4343a0f013cc6f69240, type: 2}
+  _debugClip: {fileID: 11400000, guid: 05cd854638b67004ba648e816f8d3252, type: 2}
 --- !u!114 &774941173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36511,7 +36512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_LookAtIKSolver
   _rigInstance: {fileID: 774941173}
   _lookAtEffector: {fileID: 1064572668}
-  _lookAtAffectedName: Neck
+  _lookAtAffectedName: Head
 --- !u!1 &810798383
 GameObject:
   m_ObjectHideFlags: 0
@@ -36873,7 +36874,7 @@ GameObject:
   m_Layer: 0
   m_Name: LookAt Effector
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36999,7 +37000,7 @@ GameObject:
   m_Layer: 0
   m_Name: L_Wrist Effector
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37012,7 +37013,7 @@ Transform:
   m_GameObject: {fileID: 1211918588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1.5, z: 0.884}
+  m_LocalPosition: {x: -0.5, y: 7, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37655,7 +37656,7 @@ GameObject:
   m_Layer: 0
   m_Name: L_Elbow Pole Constraint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37668,7 +37669,7 @@ Transform:
   m_GameObject: {fileID: 1767009407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1.5, z: -0.4}
+  m_LocalPosition: {x: -2, y: 7, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72767,6 +72768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39a0bb470b493c48afba22a14a40c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_PoleIKSolver
+  _rigInstance: {fileID: 1909917943}
   _rigInstance: {fileID: 1909917943}
   _jointEndAffected: LeftHand
   _endEffectorTarget: {fileID: 1211918589}
