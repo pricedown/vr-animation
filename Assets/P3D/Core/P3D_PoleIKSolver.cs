@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 namespace pricenerds3D
@@ -26,82 +27,81 @@ namespace pricenerds3D
         [SerializeField] [Range(0, 1)] 
         private float _weight;
 
-        private float angle;
-        private float[] boneLengths;
-
         private P3D_Joint ikChainEnd;
         private P3D_Joint ikChainBase;
         private P3D_Joint ikChainHinge;
 
-        private Vector3[] solverPositions;
         private float targetDistance;
         private float totalChainLength;
 
         public override void InitializeIK()
         {
-            solverPositions = new Vector3[3];
-
-            // its important that we do this in the start method because the rig is built in the Awake() method
             InitializeChain();
-            CalculateBoneLengths();
         }
 
-        /// <summary>
-        ///     Initializes the chain from the end affector and moving up the chain by the _jointsAffected
-        ///     (FUTURE) - we need some kind of error checking to ensure we dont choose too many bones to affect
-        /// </summary>
         private void InitializeChain()
         {
-            // initialize chain
-
-            /*
-            jointIKChain = new P3D_Joint[3];
-            jointIKChain[0] =
-                _rigInstance.rig.m_basePose.m_rig.GetJointFromName(_jointEndAffected); // set end affector first
-
-            // add all joints to the chain, working up the hierarchy from the end affector
-            for (var i = 1; i < 3; i++)
-            {
-                var parentIndex = jointIKChain[i - 1].m_parentIndex;
-
-                // IMPORTANT: not sure if we use base pose here !! may change later
-                jointIKChain[i] = _rigInstance.rig.m_basePose.m_rig.m_joints[parentIndex];
-            }*/
+            // initialize joint chain references
+            ikChainEnd = _rigInstance.rig.m_basePose.m_rig.GetJointFromName(_jointEndAffected);
+            ikChainHinge = _rigInstance.rig.m_basePose.m_rig.m_joints[ikChainEnd.m_parentIndex];
+            ikChainBase = _rigInstance.rig.m_basePose.m_rig.m_joints[ikChainHinge.m_parentIndex];
         }
 
-        /// <summary>
-        ///    Calculates every distance between the bones in the jointIKChain we initialized
-        /// </summary>
-        private void CalculateBoneLengths()
+        public override void SolveIK(float weight)
         {
-            boneLengths = new float[2];
-            totalChainLength = 0.0f;
+            // get the hierarchy root object transform relative ot the rig
+            Matrix4x4 worldToRigLocal = _rigInstance.deltaPose.m_worldSpaceInverse[0];
 
-            for (var i = 0; i < 2; i++)
-            {
-                /*
-                // get self to end positions in world space
-                var start = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i].m_jointIndex]
-                    .MultiplyPoint3x4(Vector3.zero);
-                var end = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i + 1].m_jointIndex]
-                    .MultiplyPoint3x4(Vector3.zero);
+            // 1. get affected joints relative to world
+            Matrix4x4 worldEndMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainEnd.m_jointIndex];
+            Matrix4x4 worldHingeMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainHinge.m_jointIndex];
+            Matrix4x4 worldBaseMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainBase.m_jointIndex];
 
-                // calculate length
-                var length = Vector3.Distance(start, end);
-                boneLengths[i] = length;
-                totalChainLength += length;*/
-            }
-        }
-
-        public override void SolveIK()
-        {
-            // geometric solution using Heron's formula
-
-            // 1. get affected joints relative to rig
             // 2. affected joint positions in rig
+            Vector3 endWorldPosition = worldEndMatrix.MultiplyPoint3x4(Vector3.zero);
+            Vector3 baseWorldPosition = worldBaseMatrix.MultiplyPoint3x4(Vector3.zero);
+            Vector3 hingeWorldPosition = worldHingeMatrix.MultiplyPoint3x4(Vector3.zero);
+
             // 3. get effector and constraint positions relative to rig
+            Matrix4x4 j2RigEndAffected = worldToRigLocal * worldEndMatrix;
+            Matrix4x4 j2RigHingeAffected = worldToRigLocal * worldHingeMatrix;
+            Matrix4x4 j2RigBaseAffected = worldToRigLocal * worldBaseMatrix;
+
+            Vector3 endAffectedRigLocalPosition = j2RigEndAffected.MultiplyPoint3x4(Vector3.zero);
+            Vector3 hingeAffectedRigLocalPosition = j2RigHingeAffected.MultiplyPoint3x4(Vector3.zero);
+            Vector3 baseAffectedRigLocalPosition = j2RigBaseAffected.MultiplyPoint3x4(Vector3.zero);
+
+            //Vector3 effectorRigLocalSpacePosition = worldToRigLocal.MultiplyPoint3x4(_endEffectorTarget.transform.position);
+            //Vector3 poleRigLocalSpacePosition = worldToRigLocal.MultiplyPoint3x4(_poleTargetEffector.transform.position);
+
+            Vector3 effectorRigLocalSpacePosition = _rigInstance.transform.TransformPoint(_endEffectorTarget.transform.position);
+            Vector3 poleRigLocalSpacePosition = _rigInstance.transform.TransformPoint(_poleTargetEffector.transform.position);
+
+            Vector3 baseToEffector = effectorRigLocalSpacePosition - baseAffectedRigLocalPosition;
+            Vector3 baseToPole = poleRigLocalSpacePosition - baseAffectedRigLocalPosition;
+
+            float upperDist, lowerDist, effectorDist, maxDist;
+            upperDist = Vector3.Distance(baseAffectedRigLocalPosition, hingeAffectedRigLocalPosition);
+            lowerDist = Vector3.Distance(hingeAffectedRigLocalPosition, endAffectedRigLocalPosition);
+
+            Vector3 normal = Vector3.Cross(baseToPole, baseToEffector).normalized;
+            effectorDist = baseToEffector.magnitude;
+            maxDist = upperDist + lowerDist;
+
             // effector dist >= max dist? 
             //    end goes to farthest possible point, hinge also easy to solve
+            if (effectorDist >= maxDist)
+            {
+                endAffectedRigLocalPosition = baseToEffector * maxDist;
+                baseAffectedRigLocalPosition += endAffectedRigLocalPosition;
+
+                hingeAffectedRigLocalPosition = baseToEffector * upperDist;
+                baseAffectedRigLocalPosition += hingeAffectedRigLocalPosition;
+            }
+            else
+            {
+
+            }
             // otherwise, 
 
             // Heron's formula
@@ -114,6 +114,10 @@ namespace pricenerds3D
             // n = d x c
 
 
+            // check if base pose is all zeros
+            // apply correction, use the first key frame as the base pose instead
+            // copy first keyrame to the base, subtrack base from all of those (ON LOAD you correct all of the keyframes)
+            // make sure you're not adding the base pose twice
         }
 
         public void OnDrawGizmosSelected()

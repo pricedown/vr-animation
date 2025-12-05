@@ -158,8 +158,8 @@ namespace pricenerds3D
                 if (joint.m_parentIndex == -1) m_worldSpace[i] = localPoseMatrix;
                 else m_worldSpace[i] = m_worldSpace[joint.m_parentIndex] * localPoseMatrix;
 
-                //Quaternion worldRot = m_worldSpace[i].rotation;
-                //m_localPose[i].m_basis = Matrix4x4.Rotate(worldRot);
+                m_localSpaceInverse[i] = Matrix4x4.Inverse(localPoseMatrix);
+                m_worldSpaceInverse[i] = Matrix4x4.Inverse(m_worldSpace[i]);
 
                 // Bases are currently all set relative to world space
                 m_localPose[i].m_basis.SetColumn(0, Vector3.right);
