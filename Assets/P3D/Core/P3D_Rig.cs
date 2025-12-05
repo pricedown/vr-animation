@@ -108,6 +108,8 @@ namespace pricenerds3D
             m_worldSpace = new Matrix4x4[m_rig.m_jointCount];
 
             // initialize with local pose values
+
+
             for (var i = 0; i < m_rig.m_jointCount; i++)
             {
                 m_localPose[i].m_jointTranslation = rig.m_joints[i].m_localPosition;

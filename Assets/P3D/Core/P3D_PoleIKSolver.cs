@@ -8,21 +8,23 @@ namespace pricenerds3D
     /// </summary>
     public class P3D_PoleIKSolver : MonoBehaviour
     {
-        [Header("References")] [SerializeField]
-        private P3D_RigDebug _rigInstance; // TODO: replace with P3D_RigInstance when ready
+        [Header("References")] 
+        [SerializeField]
+        private P3D_RigInstance _rigInstance; // TODO: replace with P3D_RigInstance when ready
 
-        [Header("Pole IK Settings")] [SerializeField]
-        [Tooltip("Amount of parent joints from the JointEndAffected affected")] private int _jointsAffected;
-
+        [Header("Pole IK Settings")]
         [SerializeField]
         [Tooltip( "The chain creator will start from this joint and work backwards to the parent joints to build the chain")]
         private string _jointEndAffected; // the last joint effected
 
-        [SerializeField] private Transform _endEffectorTarget;
+        [SerializeField] 
+        private Transform _endEffectorTarget;
 
-        [SerializeField] private Transform _poleTargetEffector;
+        [SerializeField] 
+        private Transform _poleTargetEffector;
 
-        [SerializeField] [Range(0, 1)] private float _weight;
+        [SerializeField] [Range(0, 1)] 
+        private float _weight;
 
         private float angle;
         private float[] boneLengths;
@@ -34,7 +36,7 @@ namespace pricenerds3D
 
         private void Start()
         {
-            solverPositions = new Vector3[_jointsAffected];
+            solverPositions = new Vector3[3];
 
             // its important that we do this in the start method because the rig is built in the Awake() method
             InitializeChain();
@@ -55,12 +57,12 @@ namespace pricenerds3D
         private void InitializeChain()
         {
             // initialize chain
-            jointIKChain = new P3D_Joint[_jointsAffected];
+            jointIKChain = new P3D_Joint[3];
             jointIKChain[0] =
                 _rigInstance.rig.m_basePose.m_rig.GetJointFromName(_jointEndAffected); // set end affector first
 
             // add all joints to the chain, working up the hierarchy from the end affector
-            for (var i = 1; i < _jointsAffected; i++)
+            for (var i = 1; i < 3; i++)
             {
                 var parentIndex = jointIKChain[i - 1].m_parentIndex;
 
@@ -74,10 +76,10 @@ namespace pricenerds3D
         /// </summary>
         private void CalculateBoneLengths()
         {
-            boneLengths = new float[_jointsAffected - 1];
+            boneLengths = new float[2];
             totalChainLength = 0.0f;
 
-            for (var i = 0; i < _jointsAffected - 1; i++)
+            for (var i = 0; i < 2; i++)
             {
                 // get self to end positions in world space
                 var start = _rigInstance.rig.m_basePose.m_worldSpace[jointIKChain[i].m_jointIndex]
@@ -94,6 +96,7 @@ namespace pricenerds3D
 
         #region FABRIK
 
+        /*
         private void FABRIK_UpdateBackward()
         {
             // TODO: backward pass (root to effector)
@@ -121,7 +124,7 @@ namespace pricenerds3D
 
             FABRIK_UpdateForward();
             FABRIK_UpdateBackward();
-        }
+        }*/
 
         #endregion
     }

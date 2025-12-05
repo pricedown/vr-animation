@@ -16,7 +16,10 @@ namespace pricenerds3D
 
         [Header("Debug")]
         [SerializeField]
-        private P3D_ClipData _debugClipData;
+        private P3D_KeyframeAnimationController _animationController;
+
+        [SerializeField]
+        private P3D_IKSolver[] _ikSolvers;
 
         [Header("Gizmos")]
         [SerializeField]
@@ -27,54 +30,22 @@ namespace pricenerds3D
         private void Awake()
         {
             // the rig is already created upon import. we'll create the deltaPose when the game starts running
-            //rig.InitializeBasePose(); // uncommenting this changes things for some reason
+            rig.InitializeBasePose(); // uncommenting this changes things for some reason
             deltaPose = new P3D_RigPose(rig);
-        }
-
-        private void Start()
-        {
-            for(int i = 0; i < _debugClipData.clip.keyframes.Length; i++)
-            {
-                if(_debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex0] != null)
-                    Debug.Log("0 = " + _debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex0].jointSamples.Length);
-                if(_debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex1] != null)
-                    Debug.Log("1 = " + _debugClipData.clip.samples[_debugClipData.clip.keyframes[i].sampleIndex1].jointSamples.Length);
-
-            }
-
-            StartCoroutine(ITestClip());
-        }
-
-        private IEnumerator ITestClip()
-        {
-            P3D_Sample current = _debugClipData.clip.keyframes[0].GetSample0(_debugClipData.clip);
-            for (int i = 0; i < _debugClipData.clip.keyframes.Length - 1; i++)
-            {
-                P3D_Sample sample = _debugClipData.clip.keyframes[i].GetSample1(_debugClipData.clip);
-
-                float elapsed = 0.0f;
-                float duration = 0.04f;
-
-                while (elapsed < duration)
-                {
-                    deltaPose.ApplyAnimationPose(P3D_JointSample.Lerp(current.jointSamples, sample.jointSamples, elapsed / duration), deltaPose.m_rig.m_basePose);
-                    elapsed += Time.deltaTime;
-                    yield return null;
-                }
-
-                current = sample;
-            }
-
-            yield return null;
-
-            StartCoroutine(ITestClip());
         }
 
         private void LateUpdate()
         {
+            deltaPose.ApplyAnimationPose(_animationController.clipController.GetInterpolatedPose(), deltaPose.m_rig.m_basePose);
+
+            for(int i = 0; i < _ikSolvers.Length; i++)
+            {
+                _ikSolvers[i].SolveIK();
+            }
+
             // we need to also take into account the position of the game object and add that to the hips global pose
-            deltaPose.m_localPose[0].m_jointTranslation = transform.position;
-            deltaPose.m_localPose[0].m_jointRotation = transform.rotation;
+            deltaPose.m_localPose[0].m_jointTranslation += transform.position;
+            deltaPose.m_localPose[0].m_jointRotation *= transform.rotation;
 
             // this should be the last step
             deltaPose.SolveFK();
@@ -92,9 +63,15 @@ namespace pricenerds3D
             Gizmos.color = _boneColor;
 
             // we'll draw the delta pose in play mode
-            if (Application.isPlaying) P3D_RigHelpers.DrawRigPoseGizmo(deltaPose);
+            if (Application.isPlaying)
+            {
+                P3D_RigHelpers.DrawRigPoseGizmo(deltaPose);
+            }
             // we'll draw the base pose in editor
-            else P3D_RigHelpers.DrawRigPoseGizmo(rig.m_basePose); // this draws at 0 0 0 rn which is incorrect
+            else
+            {
+                P3D_RigHelpers.DrawRigPoseGizmo(rig.m_basePose); // this draws at 0 0 0 rn which is incorrect
+            }
         }
     }
 }

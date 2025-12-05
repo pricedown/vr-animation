@@ -19,7 +19,7 @@ namespace pricenerds3D
         private void Update()
         {
             // TO DO: Fix the infinite loop here
-            //clipController.ClipControllerUpdate(Time.deltaTime);
+            clipController.ClipControllerUpdate(Time.deltaTime);
         }
     }
 
@@ -140,17 +140,19 @@ namespace pricenerds3D
         /// <summary>
         /// Retrieves current pose state as interpolated between samples within the keyframe
         /// </summary>
-        /// <param name="outPose">Resulting interpolated pose</param>
-        public void GetInterpolatedPose(P3D_JointSample[] outPose)
+        public P3D_JointSample[] GetInterpolatedPose()
         {
-            if (clip == null || outPose == null) return;
+            if (clip == null) return new P3D_JointSample[0];
             var s0 = GetCurrentSample0();
             var s1 = GetCurrentSample1();
-            if (s0 == null || s1 == null) return;
+            if (s0 == null || s1 == null) return new P3D_JointSample[0];
 
-            var count = Mathf.Min(outPose.Length, s0.jointCount);
+            P3D_JointSample[] pose = new P3D_JointSample[(int)clip.jointCount];
+            var count = Mathf.Min(pose.Length, s0.jointCount);
             for (var i = 0; i < count; i++)
-                outPose[i] = P3D_JointSample.Lerp(s0.GetJointPose(i), s1.GetJointPose(i), keyframeParam);
+                pose[i] = P3D_JointSample.Lerp(s0.GetJointPose(i), s1.GetJointPose(i), keyframeParam);
+
+            return pose;
         }
     }
 
