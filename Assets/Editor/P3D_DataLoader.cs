@@ -162,8 +162,8 @@ namespace pricenerds3D
                     // Get scale factor
                     else if (headerStrArr[0] == headerComponents[(int)EHTRHeaderComponents.H_ScaleFactor])
                     {
-                        data.scaleFactor = float.Parse(headerStrArr[1]);
-                        data.globalScale = data.scaleFactor * (100.0f / 1000.0f); // match C implementation
+                        data.scaleFactor = float.Parse(headerStrArr[1]) ;
+                        data.globalScale = data.scaleFactor * (100.0f / 1000.0f) ; // match C implementation
                     }
                 }
 

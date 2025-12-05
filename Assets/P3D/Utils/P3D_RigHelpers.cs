@@ -63,7 +63,7 @@ namespace pricenerds3D
             Vector3 b4 = transformMat.MultiplyPoint3x4(new Vector3(-baseWidth, +baseWidth, bottomLength));
 
             // connect the base to the top
-            Gizmos.DrawLine(b1, top);
+            /*Gizmos.DrawLine(b1, top);
             Gizmos.DrawLine(b2, top);
             Gizmos.DrawLine(b3, top);
             Gizmos.DrawLine(b4, top);
@@ -78,9 +78,9 @@ namespace pricenerds3D
             Gizmos.DrawLine(b1, bottom);
             Gizmos.DrawLine(b2, bottom);
             Gizmos.DrawLine(b3, bottom);
-            Gizmos.DrawLine(b4, bottom);
+            Gizmos.DrawLine(b4, bottom);*/
 
-            //Gizmos.DrawLine(end, start);
+            Gizmos.DrawLine(end, start);
         }
 
         /// <summary>

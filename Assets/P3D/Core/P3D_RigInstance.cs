@@ -27,6 +27,7 @@ namespace pricenerds3D
         private void Awake()
         {
             // the rig is already created upon import. we'll create the deltaPose when the game starts running
+            //rig.InitializeBasePose(); // uncommenting this changes things for some reason
             deltaPose = new P3D_RigPose(rig);
         }
 
@@ -49,11 +50,10 @@ namespace pricenerds3D
             P3D_Sample current = _debugClipData.clip.keyframes[0].GetSample0(_debugClipData.clip);
             for (int i = 0; i < _debugClipData.clip.keyframes.Length - 1; i++)
             {
-                P3D_Keyframe currentKeyframe = _debugClipData.clip.keyframes[i];
-                P3D_Sample sample = currentKeyframe.GetSample1(_debugClipData.clip);
+                P3D_Sample sample = _debugClipData.clip.keyframes[i].GetSample1(_debugClipData.clip);
 
                 float elapsed = 0.0f;
-                float duration = 0.5f;
+                float duration = 0.04f;
 
                 while (elapsed < duration)
                 {
