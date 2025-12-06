@@ -1593,7 +1593,8 @@ MonoBehaviour:
   _jointEndAffected: RightHand
   _endEffectorTarget: {fileID: 1211918589}
   _poleTargetEffector: {fileID: 1767009408}
-  _weight: 1
+  _weight: 0
+  _endRotationWeight: 0
 --- !u!114 &774941172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d4097d306166648bb44400cd8d3380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_KeyframeAnimationController
-  _debugClip: {fileID: 11400000, guid: 1a0cb89548171a447bf84a0372020f0e, type: 2}
+  _clip: {fileID: 11400000, guid: 1a0cb89548171a447bf84a0372020f0e, type: 2}
+  _clipB: {fileID: 11400000, guid: 263d3fe5b1d21eb4b807e8ad39308037, type: 2}
+  _blendingFactor: 0
+  _playbackSpeed: 1
+  blendedPose: []
 --- !u!114 &774941173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36547,7 +36552,7 @@ MonoBehaviour:
   - {fileID: 774941171}
   - {fileID: 774941176}
   _gizmosEnabled: 1
-  _boneColor: {r: 0, g: 0.64668155, b: 1, a: 1}
+  _boneColor: {r: 1, g: 0.8669996, b: 0.3411765, a: 1}
 --- !u!4 &774941174
 Transform:
   m_ObjectHideFlags: 0
@@ -36578,6 +36583,7 @@ MonoBehaviour:
   _rigInstance: {fileID: 774941173}
   _lookAtEffector: {fileID: 1064572668}
   _lookAtAffectedName: Head
+  _weight: 0
 --- !u!114 &774941176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36595,7 +36601,8 @@ MonoBehaviour:
   _jointEndAffected: LeftHand
   _endEffectorTarget: {fileID: 1375189811}
   _poleTargetEffector: {fileID: 1591157912}
-  _weight: 1
+  _weight: 0
+  _endRotationWeight: 0
 --- !u!1 &810798383
 GameObject:
   m_ObjectHideFlags: 0
@@ -72962,7 +72969,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d4097d306166648bb44400cd8d3380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pricenerds3D.P3D_KeyframeAnimationController
-  _debugClip: {fileID: 0}
+  _clip: {fileID: 0}
+  _clipB: {fileID: 0}
+  _blendingFactor: 0
+  _playbackSpeed: 0
+  blendedPose: []
 --- !u!114 &1909917946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72981,6 +72992,7 @@ MonoBehaviour:
   _endEffectorTarget: {fileID: 1211918589}
   _poleTargetEffector: {fileID: 1767009408}
   _weight: 1
+  _endRotationWeight: 0
 --- !u!1 &1915488448
 GameObject:
   m_ObjectHideFlags: 0

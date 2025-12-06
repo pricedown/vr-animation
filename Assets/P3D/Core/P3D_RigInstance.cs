@@ -42,7 +42,7 @@ namespace pricenerds3D
         private void LateUpdate()
         {
             // apply animation pose
-            deltaPose.ApplyAnimationPose(_animationController.clipController.GetInterpolatedPose(), deltaPose.m_rig.m_basePose);
+            deltaPose.ApplyAnimationPose(_animationController.blendedPose, deltaPose.m_rig.m_basePose);
 
             // solve IK
             for(int i = 0; i < _ikSolvers.Length; i++)

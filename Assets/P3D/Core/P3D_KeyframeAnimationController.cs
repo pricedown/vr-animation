@@ -7,19 +7,41 @@ namespace pricenerds3D
     /// </summary>
     public class P3D_KeyframeAnimationController : MonoBehaviour 
     {
-        [SerializeField] private P3D_ClipData _debugClip;
+        [SerializeField] 
+        private P3D_ClipData _clip;
+        [SerializeField] 
+        private P3D_ClipData _clipB;
+        [SerializeField, Range(0, 1)] 
+        private float _blendingFactor;
+
+        [SerializeField, Min(0)] private float _playbackSpeed = 1.0f;
 
         public P3D_ClipController clipController;
+        public P3D_ClipController clipControllerB;
+        public P3D_JointSample[] blendedPose;
 
         private void Awake()
         {
-            clipController = new P3D_ClipController(_debugClip.clip);
+            clipController = new P3D_ClipController(_clip.clip);
+            clipControllerB = new P3D_ClipController(_clipB.clip);
+            blendedPose = new P3D_JointSample[_clip.clip.jointCount];
         }
 
         private void Update()
         {
-            // TO DO: Fix the infinite loop here
+            //_animationController.clipController.GetInterpolatedPose()
+            clipController.playbackSpeed = _playbackSpeed;
+            clipController.playbackSpeed = _playbackSpeed;
+
             clipController.ClipControllerUpdate(Time.deltaTime);
+            clipControllerB.ClipControllerUpdate(Time.deltaTime);
+
+            P3D_JointSample[] sampleA = clipController.GetInterpolatedPose();
+            P3D_JointSample[] sampleB = clipControllerB.GetInterpolatedPose();
+
+            // blend
+            for (var i = 0; i < blendedPose.Length; i++)
+                blendedPose[i] = P3D_JointSample.Lerp(sampleA[i], sampleB[i], _blendingFactor);
         }
     }
 
