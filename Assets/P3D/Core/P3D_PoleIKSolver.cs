@@ -27,12 +27,12 @@ namespace pricenerds3D
         [SerializeField] [Range(0, 1)] 
         private float _weight;
 
+        [SerializeField] [Range(0, 1)]
+        private float _endRotationWeight;
+
         private P3D_Joint ikChainEnd;
         private P3D_Joint ikChainBase;
         private P3D_Joint ikChainHinge;
-
-        private float targetDistance;
-        private float totalChainLength;
 
         public override void InitializeIK()
         {
@@ -47,77 +47,84 @@ namespace pricenerds3D
             ikChainBase = _rigInstance.rig.m_basePose.m_rig.m_joints[ikChainHinge.m_parentIndex];
         }
 
-        public override void SolveIK(float weight)
+        public override void SolveIK()
         {
+            Vector3 hingeSolved, endSolved;
+
             // get the hierarchy root object transform relative ot the rig
             Matrix4x4 worldToRigLocal = _rigInstance.deltaPose.m_worldSpaceInverse[0];
 
-            // 1. get affected joints relative to world
-            Matrix4x4 worldEndMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainEnd.m_jointIndex];
+            Vector3 effectorRigLocal = _rigInstance.transform.TransformPoint(_endEffectorTarget.transform.position);
+            Vector3 poleRigLocal = _rigInstance.transform.TransformPoint(_poleTargetEffector.transform.position);
+
+            // get affected joints relative to world
             Matrix4x4 worldHingeMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainHinge.m_jointIndex];
             Matrix4x4 worldBaseMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainBase.m_jointIndex];
+            Matrix4x4 worldEndMatrix = _rigInstance.deltaPose.m_worldSpace[ikChainEnd.m_jointIndex];
 
-            // 2. affected joint positions in rig
-            Vector3 endWorldPosition = worldEndMatrix.MultiplyPoint3x4(Vector3.zero);
-            Vector3 baseWorldPosition = worldBaseMatrix.MultiplyPoint3x4(Vector3.zero);
-            Vector3 hingeWorldPosition = worldHingeMatrix.MultiplyPoint3x4(Vector3.zero);
+            // affected joint positions in rig
+            Vector3 worldBasePosition = worldBaseMatrix.MultiplyPoint3x4(Vector3.zero);
+            Vector3 worldHingePosition = worldHingeMatrix.MultiplyPoint3x4(Vector3.zero);
+            Vector3 worldEndPosition = worldEndMatrix.MultiplyPoint3x4(Vector3.zero);
 
-            // 3. get effector and constraint positions relative to rig
-            Matrix4x4 j2RigEndAffected = worldToRigLocal * worldEndMatrix;
-            Matrix4x4 j2RigHingeAffected = worldToRigLocal * worldHingeMatrix;
-            Matrix4x4 j2RigBaseAffected = worldToRigLocal * worldBaseMatrix;
+            // calculate bone lengths
+            float upperDist = Vector3.Distance(worldBasePosition, worldHingePosition);
+            float lowerDist = Vector3.Distance(worldHingePosition, worldEndPosition);
+            float totalDist = upperDist + lowerDist;
 
-            Vector3 endAffectedRigLocalPosition = j2RigEndAffected.MultiplyPoint3x4(Vector3.zero);
-            Vector3 hingeAffectedRigLocalPosition = j2RigHingeAffected.MultiplyPoint3x4(Vector3.zero);
-            Vector3 baseAffectedRigLocalPosition = j2RigBaseAffected.MultiplyPoint3x4(Vector3.zero);
+            Vector3 baseToEffector = effectorRigLocal - worldBasePosition;
+            float effectorDist = baseToEffector.magnitude;
+            Vector3 dirBaseToEffector = baseToEffector / effectorDist;
 
-            //Vector3 effectorRigLocalSpacePosition = worldToRigLocal.MultiplyPoint3x4(_endEffectorTarget.transform.position);
-            //Vector3 poleRigLocalSpacePosition = worldToRigLocal.MultiplyPoint3x4(_poleTargetEffector.transform.position);
+            Vector3 baseToPole = poleRigLocal - worldBasePosition;
+            Vector3 normal = Vector3.Cross(dirBaseToEffector, baseToPole).normalized;
 
-            Vector3 effectorRigLocalSpacePosition = _rigInstance.transform.TransformPoint(_endEffectorTarget.transform.position);
-            Vector3 poleRigLocalSpacePosition = _rigInstance.transform.TransformPoint(_poleTargetEffector.transform.position);
-
-            Vector3 baseToEffector = effectorRigLocalSpacePosition - baseAffectedRigLocalPosition;
-            Vector3 baseToPole = poleRigLocalSpacePosition - baseAffectedRigLocalPosition;
-
-            float upperDist, lowerDist, effectorDist, maxDist;
-            upperDist = Vector3.Distance(baseAffectedRigLocalPosition, hingeAffectedRigLocalPosition);
-            lowerDist = Vector3.Distance(hingeAffectedRigLocalPosition, endAffectedRigLocalPosition);
-
-            Vector3 normal = Vector3.Cross(baseToPole, baseToEffector).normalized;
-            effectorDist = baseToEffector.magnitude;
-            maxDist = upperDist + lowerDist;
-
-            // effector dist >= max dist? 
-            //    end goes to farthest possible point, hinge also easy to solve
-            if (effectorDist >= maxDist)
+            // unreachable case (simple solution) fully stretches towards effector
+            if (effectorDist >= totalDist)
             {
-                endAffectedRigLocalPosition = baseToEffector * maxDist;
-                baseAffectedRigLocalPosition += endAffectedRigLocalPosition;
-
-                hingeAffectedRigLocalPosition = baseToEffector * upperDist;
-                baseAffectedRigLocalPosition += hingeAffectedRigLocalPosition;
+                endSolved = worldBasePosition + dirBaseToEffector * totalDist;
+                hingeSolved = worldBasePosition + dirBaseToEffector * upperDist;
             }
             else
             {
+                // herons formula
+                float s = (upperDist + lowerDist + effectorDist) * 0.5f;
+                float area = Mathf.Sqrt(s * (s - upperDist) * (s - lowerDist) * (s - effectorDist));
+                float height = (2.0f * area) / effectorDist;
+                float dist = (upperDist * upperDist - lowerDist * lowerDist + effectorDist * effectorDist) / (2.0f * effectorDist);
 
+                Vector3 offset = worldBasePosition + dirBaseToEffector * dist;
+                hingeSolved = offset - normal * height;
+
+                // End effector is target
+                endSolved = effectorRigLocal;
             }
-            // otherwise, 
 
-            // Heron's formula
-            // A = sqrt(s(s - B)(s - L1)(s - L2))
-            // s = 1/2(B + L1 + L2)
-            // A = 1/2(BH) -> H = 2A/B
+            Quaternion baseFK = _rigInstance.deltaPose.m_localPose[ikChainBase.m_jointIndex].m_jointRotation;
+            Quaternion hingeFK = _rigInstance.deltaPose.m_localPose[ikChainHinge.m_jointIndex].m_jointRotation;
+            Quaternion endFK = _rigInstance.deltaPose.m_localPose[ikChainEnd.m_jointIndex].m_jointRotation;
 
-            // c = e(pole) - e(base) // pole displacement
-            // d = e(end) - e(base) // effector displacement
-            // n = d x c
+            Quaternion baseRot = Quaternion.FromToRotation((worldHingePosition - worldBasePosition).normalized, (hingeSolved - worldBasePosition).normalized);
+            Quaternion hingeRot = Quaternion.FromToRotation((worldEndPosition - worldHingePosition).normalized, (endSolved - hingeSolved).normalized);
 
+            Quaternion baseWorldRot = baseRot * worldBaseMatrix.rotation;
+            Quaternion hingeWorldRot = hingeRot * worldHingeMatrix.rotation;
 
-            // check if base pose is all zeros
-            // apply correction, use the first key frame as the base pose instead
-            // copy first keyrame to the base, subtrack base from all of those (ON LOAD you correct all of the keyframes)
-            // make sure you're not adding the base pose twice
+            // calculate base and hinge rotation in local space
+            Quaternion baseLocalRot = Quaternion.Inverse(_rigInstance.deltaPose.m_worldSpace[ikChainBase.m_parentIndex].rotation) * baseWorldRot;
+            Quaternion hingeLocalRot = Quaternion.Inverse(baseWorldRot) * hingeWorldRot;
+
+            // calculate end rotation, preserve forward
+            Quaternion endLocalRot = Quaternion.Inverse(hingeWorldRot) * _endEffectorTarget.transform.rotation;
+
+            // blend rotations based on weight
+            Quaternion blendedBase = Quaternion.Slerp(baseFK, baseLocalRot, _weight);
+            Quaternion blendedHinge = Quaternion.Slerp(hingeFK, hingeLocalRot, _weight);
+            Quaternion blendedEnd = Quaternion.Slerp(endFK, endLocalRot, _endRotationWeight);
+
+            _rigInstance.deltaPose.m_localPose[ikChainBase.m_jointIndex].m_jointRotation = blendedBase;
+            _rigInstance.deltaPose.m_localPose[ikChainHinge.m_jointIndex].m_jointRotation = blendedHinge;
+            _rigInstance.deltaPose.m_localPose[ikChainEnd.m_jointIndex].m_jointRotation = blendedEnd;
         }
 
         public void OnDrawGizmosSelected()

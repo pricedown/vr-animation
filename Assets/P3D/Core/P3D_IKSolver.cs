@@ -9,6 +9,6 @@ namespace pricenerds3D
         protected P3D_RigInstance _rigInstance;
 
         public abstract void InitializeIK();
-        public abstract void SolveIK(float weight = 1.0f);
+        public abstract void SolveIK();
     }
 }

@@ -12,6 +12,8 @@ namespace pricenerds3D
         private Transform _lookAtEffector;
         [SerializeField] 
         private string _lookAtAffectedName;
+        [SerializeField, Range(0, 1)]
+        private float _weight;
 
         P3D_Joint jointAffected;
         int jointAffectedIndex;
@@ -22,7 +24,7 @@ namespace pricenerds3D
             jointAffectedIndex = jointAffected.m_jointIndex;
         }
 
-        public override void SolveIK(float weight)
+        public override void SolveIK()
         {
             Quaternion worldRotation = _rigInstance.deltaPose.m_worldSpace[jointAffectedIndex].rotation;
             Quaternion parentWorldRotation = _rigInstance.deltaPose.m_worldSpace[jointAffected.m_parentIndex].rotation;
@@ -31,7 +33,9 @@ namespace pricenerds3D
             Vector3 dirToTargetWorld = (_lookAtEffector.position - jointWorldPosition).normalized;
 
             Quaternion lookRot = Quaternion.LookRotation(dirToTargetWorld, Vector3.up);
-            _rigInstance.deltaPose.m_localPose[jointAffectedIndex].m_jointRotation = lookRot;
+            Quaternion lerpedRot = Quaternion.Slerp(_rigInstance.deltaPose.m_localPose[jointAffectedIndex].m_jointRotation, lookRot, _weight);
+
+            _rigInstance.deltaPose.m_localPose[jointAffectedIndex].m_jointRotation = lerpedRot;
         }
     }
 }
